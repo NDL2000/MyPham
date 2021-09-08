@@ -20,7 +20,6 @@
       <th scope="col" class="title-table">Tên đăng nhập</th>
       <th scope="col" class="title-table">Ngày hóa đơn</th>
       <th scope="col" class="title-table">Trạng Thái</th>
-      <th scope="col" class="title-table">Ghi chú</th>
       <th scope="col" class="title-table">Chức năng</th>
     </tr>
   </thead>
@@ -39,7 +38,6 @@
       <td><?php echo $row['TenDangNhap'];?></td>
       <td><?php echo $row['NgayHD'];?></td>
       <td><div class="status st2"><?php echo $row['TrangThai'];?></div></td>
-      <td><?php echo $row['GhiChu'];?></td>
       <td>
         <a href="./index.php?url=cthoadon&id=<?php echo $row['MaHD']?>" class="btn btn-primary"><i class="far fa-eye"></i></a>
         <a href="./index.php?url=checkhd&id=<?php echo $row['MaHD']?>&function=3" onclick="return confirm('Bạn có muốn chuyển trạng thái đơn sang đã giao không?')" class="btn btn-success"><i class="far fa-check-circle"></i></a>

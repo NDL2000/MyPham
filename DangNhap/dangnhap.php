@@ -37,6 +37,8 @@
   </div>
 </div>
 </form> 
+<?php if(isset($_GET['kq'])&&$_GET['kq']==-2){ ?>
+<script>swal("","Tài khoản của bạn đã bị khóa","error")</script><?php } ?>
 <?php if(isset($_GET['kq'])&&$_GET['kq']==-1){ ?>
 <script>swal("","Vui lòng kiểm tra lại thông tin","error")</script><?php } ?>
 <?php if(isset($_GET['kq'])&&$_GET['kq']==0){ ?>

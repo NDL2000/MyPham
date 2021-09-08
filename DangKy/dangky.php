@@ -44,7 +44,7 @@
   </div>
 
   <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
+    <p>Already have an account? <a href="../DangNhap/dangnhap.php">Đăng nhập</a>.</p>
   </div>
 </form>
    <!-- Thong bao  -->

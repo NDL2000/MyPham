@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DSTK Form</title>
+    <title>Quản lý tài khoản</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limontesweetalert2/7.2.0/sweetalert2.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
@@ -15,7 +15,7 @@
 <body>
     <div class="container-qltk">
     <h1 class="title">DANH SÁCH TÀI KHOẢN</h1>
-    <table class="table table-hover">
+    <table class="table table-hover table-qltk">
         <tr>
             <th>STT</th>
             <th>Tên đăng nhập</th>
@@ -43,7 +43,7 @@
                     <td><?php echo $row["HoTen"] ?></td>
                     <td><?php if ($row["GioiTinh"] == 0) echo "Nữ";
                         else echo "Nam" ?></td>
-                    <td><?php if ($row["MaLoai"] == 1) echo "Admin";
+                    <td><?php if ($row["MaLoai"] == "AD") echo "Admin";
                         else echo "User" ?></td>
                     <td><?php echo ($row["TrangThai"] == 1) ?  "Mở" : "Khóa" ?></td>
                     <td>

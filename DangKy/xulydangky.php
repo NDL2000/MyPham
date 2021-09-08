@@ -24,7 +24,8 @@
         $qr = "SELECT * FROM taikhoan where TenDangNhap='$username'";
         $result = mysqli_query($conn,$qr);
         if(mysqli_num_rows($result)>0){             //Ton tai user
-            header("Location:./dangky.php?kq=0");       
+            // header("Location:./dangky.php?kq=0");
+            echo "<script>window.history.back('./dangky.php?kq=0')</script>";       
         }
         else {
             //Tao captcha

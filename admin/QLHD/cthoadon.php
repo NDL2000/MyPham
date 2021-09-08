@@ -28,6 +28,9 @@
         <tr>
         <td class="title-cthd">Email</td><td class="content-cthd"><?php echo $row['TenDangNhap']; ?></td>
         </tr>
+        <tr>
+        <td class="title-cthd">Ghi chú</td><td class="content-cthd"><?php echo ($row['GhiChu']=="") ? "Không": $row['GhiChu']; ?></td>
+        </tr>
         <?php }}?>
         <!-- TT TAIKHOAN -->
     <?php 

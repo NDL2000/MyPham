@@ -71,7 +71,7 @@
     <input type="number" name="ratio" min="1" placeholder="Tỷ lệ KM" required>
 
     <label><b>Ghi chú</b></label>
-    <input type="text" name="note" placeholder="Ghi chú">
+    <textarea type="text" name="note" placeholder="Ghi chú"></textarea>
     
     <label><b>Số lượng khuyến mãi</b></label>
     <input type="number" name="quantity" min="1" placeholder="Số lượng" required>

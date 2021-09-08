@@ -80,7 +80,7 @@
       <td><?php echo $row['GhiChu'];?></td>
       <td><?php echo $row['SoLuongKM'];?></td>
       <td>
-        <a href="" class="btn btn-info"><i class="fas fa-edit"></i></a>
+        <a href="./index.php?url=suactkm&id=<?php echo $_GET['id'];?>&ma=<?php echo $row['MaSP'];?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
         <a href="" onclick="return confirm('Bạn có muốn xóa đợt khuyến mãi này?')" class="btn btn-danger"><i class="fas fa-times"></i></a>
       </td>   
     </tr>

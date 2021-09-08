@@ -61,5 +61,7 @@
   <script>swal("","Thêm thành công","success")</script><?php } ?>
   <?php if(isset($_GET['kq'])&&$_GET['kq']==2) {?>
   <script>swal("","Xóa thành công","success")</script><?php } ?>
+  <?php if(isset($_GET['kq'])&&$_GET['kq']==3) {?>
+  <script>swal("","Sửa thành công","success")</script><?php } ?>
 </body>
 </html>
