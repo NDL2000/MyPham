@@ -55,7 +55,7 @@
         </div>
         <div class="form-group">
           <label for="">Tên danh mục</label>
-          <select class="form-control" name="category_id"style="height: calc(2.25rem + 14px);">
+          <select class="form-control" name="category_id" style="height: calc(2.25rem + 14px);">
             <?php
               while($row_category=mysqli_fetch_array($query_category)){?>
                 <option value="<?php echo $row_category['MaDM']; ?> "><?php echo $row_category['TenDM']; ?></option>

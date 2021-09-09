@@ -11,6 +11,32 @@
 .swal2-content {
     margin-bottom: 15px !important;
 }
+/* ---------- */
+/* CSS table hoa don  */
+.table-date td{
+    padding: 20px;
+    font-weight: bold;
+    color: green;
+}
+.filter {
+    margin-left: 160px !important;
+}
+.button-filter {
+    margin-left: 35%;
+}
+.btn-filter {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    cursor: pointer;
+    border:none;
+    padding: 5px;
+    border-radius: 4px;
+    font-weight: bold;
+    width: 70px;
+    margin: 20px 20px;
+}
+/* ---------- */
 .main {
     display: flex;
     min-height: 100%;

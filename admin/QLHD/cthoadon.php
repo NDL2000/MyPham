@@ -32,7 +32,7 @@
         <td class="title-cthd">Ghi chú</td><td class="content-cthd"><?php echo ($row['GhiChu']=="") ? "Không": $row['GhiChu']; ?></td>
         </tr>
         <?php }}?>
-        <!-- TT TAIKHOAN -->
+    <!-- TT TAIKHOAN -->
     <?php 
         $qr = "SELECT TenDangNhap FROM hoadon where MaHD='".$_GET['id']."'";
         $result = mysqli_query($conn, $qr);
@@ -52,6 +52,7 @@
     <?php }}?>
     <!-- San pham trong hoa don -->
     </table>
+    <br />
     <table class="table table-bordered table-hover table-1">
   <thead>
     <tr>

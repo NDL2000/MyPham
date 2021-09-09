@@ -18,9 +18,9 @@
             <table class="table-date">
                 <tr>
                     <td> Từ ngày </td>
-                    <td> <input type="date"  name="fromdate"> </td>
+                    <td> <input type="date"  name="fromdate" id="fromdate"> </td>
                     <td> Đến ngày </td>
-                    <td> <input  type="date" name="today"> </td>          
+                    <td> <input  type="date" name="today" id="todate"> </td>          
                  </tr>
             </table>           
         </div>

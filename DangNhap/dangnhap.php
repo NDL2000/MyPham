@@ -21,9 +21,9 @@
   </div>
   <div class="login-form">
     <h3>Tài khoản:</h3>
-    <input name="username" type="text" placeholder="Username" required/><br>
+    <input name="username" type="text" placeholder="Username" required /><br>
     <h3>Mật khẩu:</h3>
-    <input name="password" type="password" placeholder="Password" required/>
+    <input name="password" type="password" placeholder="Password" required />
     <br>
     <h3>Mã xác nhận:</h3>
     <input name="code" type="text" placeholder="Mã xác nhận"/>

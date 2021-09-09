@@ -10,8 +10,31 @@
     <title>Hóa đơn đang giao</title>
 </head>
 <body>
-    <?php include './connect.php'; ?>
+    <?php include './connect.php'; 
+          $qr = "SELECT * FROM hoadon where TrangThai = 'Đang giao'";
+          $result = mysqli_query($conn, $qr);
+    ?>
     <h1 class="title">Hóa đơn đang giao</h1>
+     <!-- Loc hoa don -->
+     <div class="filter">
+    <form method="post" action="<?php include("loc.php"); ?>">
+            <table class="table-date">
+                <tr>
+                    <td> Từ ngày </td>
+                    <td> <input type="date"  name="fromdate" id="fromdate"> </td>
+                    <td> Đến ngày </td>
+                    <td> <input  type="date" name="today" id="todate"> </td>          
+                 </tr>
+            </table>           
+        
+        <br>
+        <div class="button-filter">           
+            <button  type="submit" name="filter" class="btn-filter">Lọc</button>
+            <button  class="btn-filter" type="button" onclick="window.location.href='./index.php?url=hdchoduyet'">Huỷ lọc</button>          
+         </div>
+           </form>
+    </div>
+<!-- ------------------------------------------------------- -->
     <table class="table table-bordered table-hover table-1">
   <thead>
     <tr>
@@ -25,8 +48,6 @@
   </thead>
   <tbody>
     <?php 
-        $qr = "SELECT * FROM hoadon where TrangThai = 'Đang giao'";
-        $result = mysqli_query($conn, $qr);
         if(mysqli_num_rows($result)>0){
             $count =0;
             while($row = mysqli_fetch_array($result)) {   
