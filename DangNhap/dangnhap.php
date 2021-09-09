@@ -26,7 +26,7 @@
     <input name="password" type="password" placeholder="Password" required />
     <br>
     <h3>Mã xác nhận:</h3>
-    <input name="code" type="text" placeholder="Mã xác nhận"/>
+    <input name="code" type="text" placeholder="Mã xác nhận" required/>
     <br>
     <h2 class="captcha"><?php if(isset($_SESSION['captcha'])) echo $_SESSION['captcha']; ?></h2>
     <input name="login" type="submit" value="Đăng nhập" class="login-button"/>

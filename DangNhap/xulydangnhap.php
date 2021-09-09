@@ -31,7 +31,7 @@
         // Login user
         
     else {
-        header("Location:./dangnhap.php?kq=0");
+        header("Location:./dangnhap.php?kq=-1");
     }
     
 ?>

@@ -18,6 +18,9 @@
     font-weight: bold;
     color: green;
 }
+.table-date input {
+    padding: 5px;
+}
 .filter {
     margin-left: 160px !important;
 }

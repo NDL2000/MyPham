@@ -26,7 +26,6 @@
                     <td> <input  type="date" name="todate" id="todate"> </td>          
                  </tr>
             </table>           
-        <span id="abc"></span>
         <br>
         <div class="button-filter">           
             <button  type="submit" name="filter" class="btn-filter">Lọc</button>
