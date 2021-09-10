@@ -8,8 +8,8 @@
     <body>
         <div class="content-comment">
       <h1 class="title">QUẢN LÝ ĐÁNH GIÁ</h1>
-    <div class="danhgia "  >
-        <div class="danhgia_content "  >
+    <div class="danhgia"  >
+        <div class="danhgia_content-view"  >
             <form action="<?php include("chon_submit.php"); ?>" method="post"  enctype="multipart/form-data">  
             <table class="table-comment">
                 <tr>

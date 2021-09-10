@@ -30,7 +30,7 @@
         <br>
         <div class="button-filter">           
             <button  type="submit" name="filter" class="btn-filter">Lọc</button>
-            <button  class="btn-filter" type="button" onclick="window.location.href='./index.php?url=hdchoduyet'">Huỷ lọc</button>          
+            <button  class="btn-filter" type="button" onclick="window.location.href='./index.php?url=hddagiao'">Huỷ lọc</button>          
          </div>
            </form>
     </div>
@@ -38,12 +38,12 @@
     <table class="table table-bordered table-hover table-1">
   <thead>
     <tr>
-      <th scope="col" class="title-table">STT</th>
-      <th scope="col" class="title-table">Mã hóa đơn</th>
-      <th scope="col" class="title-table">Tên đăng nhập</th>
-      <th scope="col" class="title-table">Ngày hóa đơn</th>
-      <th scope="col" class="title-table">Trạng Thái</th>
-      <th scope="col" class="title-table">Chức năng</th>
+    <th scope="col" class="title-table" style="width: 3%">STT</th>
+      <th scope="col" class="title-table" style="width: 7%">Mã hóa đơn</th>
+      <th scope="col" class="title-table" style="width: 15%">Tên đăng nhập</th>
+      <th scope="col" class="title-table" style="width: 10%">Ngày hóa đơn</th>
+      <th scope="col" class="title-table" style="width: 10%">Trạng Thái</th>
+      <th scope="col" class="title-table" style="width: 10%">Chức năng</th>
     </tr>
   </thead>
   <tbody>
@@ -56,7 +56,7 @@
     <tr>
       <td style="font-weight: bold"><?php echo $count?></td>
       <td><?php echo $row['MaHD'];?></td>
-      <td><?php echo $row['TenDangNhap'];?></td>
+      <td style="word-wrap:break-word"><?php echo $row['TenDangNhap'];?></td>
       <td><?php echo $row['NgayHD'];?></td>
       <td><div class="status st3"><?php echo $row['TrangThai'];?></div></td>
       <td>

@@ -8,7 +8,9 @@
 .table table-bordered{
     text-align: center;
 }
-
+.title-table {
+    text-align: center;
+}
 .btn-button2{
     align-items:flex-start;
     background-color:#5cb85c;

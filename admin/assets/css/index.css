@@ -51,6 +51,9 @@ body{
 {
     width: 0px;
 }
+.table {
+    table-layout: fixed;
+}
 .name {
     transform: translateY(40px);
 }
@@ -60,6 +63,7 @@ body{
 }
 .content-right
 {
+    width: 75%;
     margin-top: 20px !important;
     font-family: 'Courier New', Courier, monospace;     /* Font  */
     float: left;
@@ -92,9 +96,8 @@ body{
     float:left;
     position:relative;
     box-shadow:0 20px 50px #333;
-    min-height: 120%;
+    /* min-height: 120%; */
     background: #414956;
-    min-height: 1000px;
 }
 .jquery-accordion-menu .jquery-accordion-menu-footer,.jquery-accordion-menu .jquery-accordion-menu-header{
     display:flex;

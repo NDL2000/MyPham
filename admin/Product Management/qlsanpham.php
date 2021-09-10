@@ -22,20 +22,20 @@
     </script>
     
 
-<table class="table table-bordered" style="text-align:center">
-<a type="button" class="btn-button1" href="./index.php?url=add"> <i class="fas fa-plus-circle" id='icon-icon'></i></a
+<table class="table table-bordered" style="text-align:center;margin-left:50px">
+<a type="button" class="btn-button1" href="./index.php?url=add"> <i class="fas fa-plus-circle" id='icon-icon'></i></a>
   <thead>
     <tr>
-      <th scope="col">STT</th>
-      <th scope="col">Mã sản phẩm</th>
-      <th scope="col">Tên sản phẩm</th>
-      <th scope="col">Đơn giá</th>
-      <th scope="col">Hình ảnh</th>
-      <th scope="col">Mã danh mục</th>
-      <th scope="col">Trạng thái</th>
-      <th scope="col">Số Lượng</th>
+      <th scope="col" class="title-table" style="width: 1%">STT</th>
+      <th scope="col" class="title-table" style="width: 2%">Mã sản phẩm</th>
+      <th scope="col" class="title-table" style="width: 3%">Tên sản phẩm</th>
+      <th scope="col" class="title-table" style="width: 3%">Đơn giá</th>
+      <th scope="col" class="title-table" style="width: 3%">Hình ảnh</th>
+      <th scope="col" class="title-table" style="width: 2%">Mã danh mục</th>
+      <th scope="col" class="title-table" style="width: 2%">Trạng thái</th>
+      <th scope="col" class="title-table" style="width: 2%">Số Lượng</th>
       <div>
-          <th scope="col">Chức năng</th>
+          <th scope="col" class="title-table" style="width: 4%">Chức năng</th>
       </div>
     </tr>
   </thead>
@@ -61,7 +61,7 @@
     
       <th scope="row"><?php echo $count ?></th>
       <td><?php echo $row['MaSP'] ?></td>
-      <td><?php echo $row['TenSP'] ?></td>
+      <td style="word-wrap:break-word"><?php echo $row['TenSP'] ?></td>
       <td><?php echo number_format($row['GiaXuat'],0,",",".")." VNĐ"; ?></td>
       <td><img style="background-image: none;" class="image" src="./assets/images/Product_image/<?php echo $row['HinhAnh'] ?>"></td>
       <td><?php echo $row['MaDM'] ?></td>

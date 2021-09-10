@@ -54,13 +54,13 @@
 <table class="table table-bordered table-hover table-2">
   <thead>
     <tr>
-      <th scope="col" class="title-table">STT</th>
-      <th scope="col" class="title-table">Mã sản phẩm</th>
-      <th scope="col" class="title-table">Tên sản phẩm</th>
-      <th scope="col" class="title-table">Tỷ lệ KM</th>
-      <th scope="col" class="title-table">Ghi chú</th>
-      <th scope="col" class="title-table">Số lượng KM</th>
-      <th scope="col" class="title-table">Chức năng</th>
+    <th scope="col" class="title-table" style="width: 5%">STT</th>
+      <th scope="col" class="title-table" style="width: 7%">Mã sản phẩm</th>
+      <th scope="col" class="title-table" style="width: 15%">Tên sản phẩm</th>
+      <th scope="col" class="title-table" style="width: 7%">Tỷ lệ KM</th>
+      <th scope="col" class="title-table" style="width: 15%">Ghi chú</th>
+      <th scope="col" class="title-table" style="width: 7%">Số lượng KM</th>
+      <th scope="col" class="title-table" style="width: 10%">Chức năng</th>
     </tr>
   </thead>
   <tbody>
@@ -75,9 +75,9 @@
       <tr>
       <td style="font-weight: bold"><?php echo $count?></td>
       <td><?php echo $row['MaSP'];?></td>
-      <td><?php echo $row['TenSP'];?></td>
+      <td style="word-wrap:break-word"><?php echo $row['TenSP'];?></td>
       <td><?php echo $row['TyLeKM']." %";?></td>
-      <td><?php echo $row['GhiChu'];?></td>
+      <td style="word-wrap:break-word"><?php echo $row['GhiChu'];?></td>
       <td><?php echo $row['SoLuongKM'];?></td>
       <td>
         <a href="./index.php?url=suactkm&id=<?php echo $_GET['id'];?>&ma=<?php echo $row['MaSP'];?>" class="btn btn-info"><i class="fas fa-edit"></i></a>

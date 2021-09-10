@@ -16,13 +16,13 @@
     <table class="table table-bordered table-hover table-1">
   <thead>
     <tr>
-      <th scope="col" class="title-table">STT</th>
-      <th scope="col" class="title-table">Mã KM</th>
-      <th scope="col" class="title-table">Tên khuyến mãi</th>
-      <th scope="col" class="title-table">Từ ngày</th>
-      <th scope="col" class="title-table">Đến ngày</th>
-      <th scope="col" class="title-table">Trạng Thái</th>
-      <th scope="col" class="title-table">Chức năng</th>
+      <th scope="col" class="title-table" style="width: 3%">STT</th>
+      <th scope="col" class="title-table" style="width: 3%">Mã KM</th>
+      <th scope="col" class="title-table" style="width: 15%">Tên khuyến mãi</th>
+      <th scope="col" class="title-table" style="width: 8%">Từ ngày</th>
+      <th scope="col" class="title-table" style="width: 8%">Đến ngày</th>
+      <th scope="col" class="title-table" style="width: 15%">Trạng Thái</th>
+      <th scope="col" class="title-table" style="width: 15%">Chức năng</th>
     </tr>
   </thead>
   <tbody>
@@ -37,7 +37,7 @@
     <tr>
       <td style="font-weight: bold"><?php echo $count?></td>
       <td><?php echo $row['MaKM'];?></td>
-      <td><?php echo $row['TenKM'];?></td>
+      <td style="word-wrap:break-word"><?php echo $row['TenKM'];?></td>
       <td><?php echo $row['TuNgay'];?></td>
       <td><?php echo $row['DenNgay'];?></td>
       <?php if($row['TrangThai']=="Chưa khuyến mãi"){ ?>

@@ -4,12 +4,12 @@ body{
 
 
 h2{
-    transform: translateX(75px);
+    margin-left: 34%;
     font-weight: bold;
     color: green;
 }
 .container-fluid{
-    transform: translateX(70%);
+    margin: 50px;
 }
 
 .btn-add{
@@ -21,6 +21,7 @@ h2{
     border-radius: 6px;
     margin: 2px 0px 11px 0px;
     border: none;
+    margin-left: 25%;
 }
 .btn-back {
     background: #5cb85c;
@@ -55,7 +56,7 @@ h2{
     
 }
 label{
-    width: 100%;
+    width: 20%;
 }
 .form-control-date
 {
@@ -102,7 +103,7 @@ label{
 }
 .form-control-description{
     display: block;
-    width: 500%;
+    width: 100%;
     height: 89px;
     padding: 6px 12px;
     font-size: 14px;
@@ -117,9 +118,7 @@ label{
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transform: translateX(135px);
 }
-.image-file{
-    
-    transform: translateX(97px);
+.image-file{  
+    transform: translateX(-31px);
 }

@@ -52,7 +52,7 @@
             <tr>
             <td><?= ++$stt ?></td>
            <td><?= $row['MaSP'] ?></td>
-           <td><?= $row['TenDangNhap'] ?></td>
+           <td style="word-wrap:break-word"><?= $row['TenDangNhap'] ?></td>
            <td><?= $row['SoSao'] ?></td>
             
             <td><?= $row['NgayDG'] ?></td>

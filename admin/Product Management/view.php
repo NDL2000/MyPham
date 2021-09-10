@@ -27,9 +27,6 @@
       <th scope="col">Mã danh mục</th>
       <th scope="col">Trạng thái</th>
       <th scope="col">Số Lượng</th>
-      <div>
-          
-      </div>
     </tr>
   </thead>
   <tbody>

@@ -1,8 +1,8 @@
 <?php
  include("connect.php");
 if(isset($_POST['filter'])){
-                $fromdate = $_POST['fromdate'];
-                $todate = $_POST['todate'];
+                $fromdate = trim($_POST['fromdate']);
+                $todate = trim($_POST['todate']);
                 if(isset($_GET["url"])){
                   switch($_GET["url"]){
                     case "hdchoduyet": $status = "Chờ xét duyệt"; break;

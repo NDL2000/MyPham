@@ -20,7 +20,7 @@
             while($row = mysqli_fetch_array($result)){
     ?>
         <tr>
-            <td class="title-cthd">Mã khuyến mãi</td><td class="content-cthd"><?php echo $row['MaKM']; ?></td>
+        <td class="title-cthd">Mã khuyến mãi</td><td class="content-cthd"><?php echo $row['MaKM']; ?></td>
         </tr>
         <tr>
         <td class="title-cthd">Tên khuyến mãi</td><td class="content-cthd"><?php echo $row['TenKM'] ?></td>
@@ -36,16 +36,17 @@
         </tr>
         <?php }}?>
     </table>
+    <br />
     <!-- TT SAN PHAM KM -->
     <table class="table table-bordered table-hover table-1">
   <thead>
     <tr>
-      <th scope="col" class="title-table">STT</th>
-      <th scope="col" class="title-table">Mã sản phẩm</th>
-      <th scope="col" class="title-table">Tên sản phẩm</th>
-      <th scope="col" class="title-table">Tỷ lệ KM</th>
-      <th scope="col" class="title-table">Ghi chú</th>
-      <th scope="col" class="title-table">Số lượng KM</th>
+      <th scope="col" class="title-table" style="width: 1%">STT</th>
+      <th scope="col" class="title-table" style="width: 3%">Mã sản phẩm</th>
+      <th scope="col" class="title-table" style="width: 5%">Tên sản phẩm</th>
+      <th scope="col" class="title-table" style="width: 3%">Tỷ lệ KM</th>
+      <th scope="col" class="title-table" style="width: 5%">Ghi chú</th>
+      <th scope="col" class="title-table" style="width: 3%">Số lượng KM</th>
     </tr>
   </thead>
   <tbody>
@@ -60,9 +61,9 @@
       <tr>
       <td style="font-weight: bold"><?php echo $count?></td>
       <td><?php echo $row['MaSP'];?></td>
-      <td><?php echo $row['TenSP'];?></td>
+      <td style="word-wrap:break-word"><?php echo $row['TenSP'];?></td>
       <td><?php echo $row['TyLeKM']." %";?></td>
-      <td><?php echo $row['GhiChu'];?></td>
+      <td style="word-wrap:break-word"><?php echo $row['GhiChu'];?></td>
       <td><?php echo $row['SoLuongKM'];?></td>
     </tr>
     <?php }}?>

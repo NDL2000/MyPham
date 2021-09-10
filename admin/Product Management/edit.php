@@ -107,11 +107,10 @@
              <!-- <input type="text" name="input_quality"class="form-control"required > -->
              <textarea type="text" name="description"  class="form-control-description" require value="" ><?php echo  $row_update["MoTa"]; ?></textarea>
            </div>
+           
            <button onclick="return Edit('<?php echo $row_update['MaSP']?>') "name="sbm" class="btn-add" type="submit">Sửa</button>
-           <!-- <button class="btn-back"><a type="button" href="./index.php?url=qlsanpham">Tro ve</a></button> -->
-           <!-- <button class="btn-back"><a type="button" href="./index.php?url=qlsanpham">Quay về</a></button> -->
            <button onclick="goBack()" type="button" class="btn-back">Quay Về</button>
-                
+           
         </form>
    </div>
    

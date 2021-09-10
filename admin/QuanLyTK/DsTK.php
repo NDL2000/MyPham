@@ -17,14 +17,14 @@
     <h1 class="title">DANH SÁCH TÀI KHOẢN</h1>
     <table class="table table-hover table-qltk">
         <tr>
-            <th>STT</th>
-            <th>Tên đăng nhập</th>
-            <th>Email</th>
-            <th>Họ tên</th>
-            <th>Giới tính</th>
-            <th>Loại</th>
-            <th>Trạng thái</th>
-            <th>Xử lý</th>
+            <th style="width: 2%">STT</th>
+            <th style="width: 9%">Tên đăng nhập</th>
+            <th style="width: 9%">Email</th>
+            <th style="width: 5%">Họ tên</th>
+            <th style="width: 2%">Giới tính</th>
+            <th style="width: 2%">Loại</th>
+            <th style="width: 2%">Trạng thái</th>
+            <th style="width: 8%">Xử lý</th>
         </tr>
 
         <?php
@@ -38,9 +38,9 @@
         ?>
                 <tr>
                     <td><?php echo $count ?></td>
-                    <td><?php echo $row["TenDangNhap"] ?></td>
-                    <td><?php echo $row["Email"] ?></td>
-                    <td><?php echo $row["HoTen"] ?></td>
+                    <td style="word-wrap:break-word"><?php echo $row["TenDangNhap"] ?></td>
+                    <td style="word-wrap:break-word"><?php echo $row["Email"] ?></td>
+                    <td style="word-wrap:break-word"><?php echo $row["HoTen"] ?></td>
                     <td><?php if ($row["GioiTinh"] == 0) echo "Nữ";
                         else echo "Nam" ?></td>
                     <td><?php if ($row["MaLoai"] == "AD") echo "Admin";

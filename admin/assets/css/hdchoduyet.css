@@ -9,8 +9,9 @@
     text-align: center;
 }
 .table-1 {
-    margin-left: 60px;
+    margin-left: 50px;
     margin-top: 50px;
+    table-layout: fixed;
 }
 .title-table {
     text-align: center;
