@@ -87,25 +87,25 @@
 					 case 'xoakm': include './QLKM/xoakm.php';break;
 					 
 					 // Quan ly tai khoan
-					 case 'QlTK' : include './QuanLyTK/DsTK.php';break;
-					 case 'themtk' : include './QuanLyTK/ThemTK.php';break;
-					 case 'suatk' : include './QuanLyTK/SuaTK.php';break;
-					 case 'suatksb' : include './QuanLyTK/SuaTK_submit.php';break;
-					 case 'doimk' : include './QuanLyTK/DoiMK.php';break;
-					 case 'xoatk' : include './QuanLyTK/XoaTK_submit.php';break;
+					 case 'QlTK' : include './QLTK/DsTK.php';break;
+					 case 'themtk' : include './QLTK/ThemTK.php';break;
+					 case 'suatk' : include './QLTK/SuaTK.php';break;
+					 case 'suatksb' : include './QLTK/SuaTK_submit.php';break;
+					 case 'doimk' : include './QLTK/DoiMK.php';break;
+					 case 'xoatk' : include './QLTK/XoaTK_submit.php';break;
 
 					 // Quan ly danh muc
-					 case 'qldm' : include './QuanLyDM/DsDM.php';break;
-					 case 'themdm' : include './QuanLyDM/ThemDM.php';break;
-					 case 'suadm' : include './QuanLyDM/SuaDM.php';break;
-					 case 'xoadm' : include './QuanLyDM/XoaDM_submit.php';break;
+					 case 'qldm' : include './QLDM/DsDM.php';break;
+					 case 'themdm' : include './QLDM/ThemDM.php';break;
+					 case 'suadm' : include './QLDM/SuaDM.php';break;
+					 case 'xoadm' : include './QLDM/XoaDM_submit.php';break;
 					 
 					 //Quan ly san pham
-					 case 'qlsanpham' : include './Product Management/qlsanpham.php';break;
-					 case 'add' : include './Product Management/add.php';break;
-					 case 'view' : include './Product Management/view.php';break;
-					 case 'edit' : include './Product Management/edit.php';break;
-					 case 'delete' : include './Product Management/delete.php';break;
+					 case 'qlsanpham' : include './QLSP/qlsanpham.php';break;
+					 case 'add' : include './QLSP/add.php';break;
+					 case 'view' : include './QLSP/view.php';break;
+					 case 'edit' : include './QLSP/edit.php';break;
+					 case 'delete' : include './QLSP/delete.php';break;
 					
 					 //Quan ly san pham
 					 case 'qldg' : include './QLDG/DanhSachDG.php';break;

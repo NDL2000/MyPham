@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/suactkm.css"/>
+    <link rel="stylesheet" href="./assets/css/QLKM/suactkm.css"/>
     <title>Sửa chi tiết khuyến mãi</title>
 </head>
 <body>

@@ -1,0 +1,28 @@
+td,th{
+    padding: 5px;
+}
+.title-cthd{
+    color:red;
+    font-weight: bolder;
+}
+.content-cthd{
+    font-weight: bolder;
+}
+.thead{
+    /* text-align: center; */
+    transform: translateX(200px);
+
+}
+.thead-title{
+    display: flex;
+    flex-wrap: wrap;
+    transform:translateX(200px);
+}
+table {
+    margin-left: 50px;
+}
+.btn-back1 {
+    margin-left: 100%;
+    float: none !important;
+    color: white;
+}

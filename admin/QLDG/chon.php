@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <link href="./assets/css/cssQLDG.css" rel="stylesheet" />
+        <link href="./assets/css/QLDG/cssQLDG.css" rel="stylesheet" />
     </head>
     <body>
         <div class="content-comment">
