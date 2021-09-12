@@ -16,22 +16,10 @@
 ?>
 
     <h1 class="title">Chi tiết sản phẩm</h1>
-  <table class="table " style="text-align:center;">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">STT</th>
-      <th scope="col">Mã sản phẩm</th>
-      <th scope="col">Tên sản phẩm</th>
-      <th scope="col">Đơn giá</th>
-      <th scope="col">Hình ảnh</th>
-      <th scope="col">Mã danh mục</th>
-      <th scope="col">Trạng thái</th>
-      <th scope="col">Số Lượng</th>
-    </tr>
-  </thead>
+  <table class="table" style="text-align:center;">
   <tbody>
       <?php
-      $sql="SELECT sp.MaSP,sp.TenSP,nx.GiaXuat,sp.HinhAnh,sp.MaDM,sp.TrangThai,nx.SoLuongNhap FROM sanpham as sp,nhapxuat as nx where sp.MaSP=$id and nx.MaSP=$id ";
+      $sql="SELECT sp.MaSP,sp.TenSP,nx.GiaXuat,sp.HinhAnh,sp.MaDM,sp.TrangThai,nx.SoLuongNhap,sp.MoTa FROM sanpham as sp,nhapxuat as nx where sp.MaSP=$id and nx.MaSP=$id ";
       
       $result = mysqli_query($conn,$sql);
      
@@ -40,21 +28,31 @@
         while($row=mysqli_fetch_array($result)){
             $count++;
       ?>
-    <tr>
-    
-      <th scope="row"><?php echo $count ?></th>
-      <td><?php echo $row['MaSP'] ?></td>
-      <td><?php echo $row['TenSP'] ?></td>
-      <td><?php echo number_format($row['GiaXuat'],0,",",".")." VNĐ"; ?></td>
-      <td><img  class="image" src="./assets/images/QLSP_image/<?php echo $row['HinhAnh'] ?>"></td>
-      <td><?php echo $row['MaDM'] ?></td>
-      <td><?php if($row['TrangThai']==1) echo "Đang hiển thị";
+        <tr>
+        <td class="title-cthd">Mã sản phẩm</td><td class="content-cthd"><?php echo $row['MaSP'] ?></td>
+        </tr>
+        <tr>
+        <td class="title-cthd">Tên sản phẩm</td><td class="content-cthd"><?php echo $row['TenSP'] ?></td>
+        </tr>
+        <tr>
+        <td class="title-cthd">Đơn giá</td><td class="content-cthd"><?php echo number_format($row['GiaXuat'],0,",",".")." VNĐ"; ?></td>
+        </tr>
+        <tr>
+        <td class="title-cthd">Hình ảnh</td><td class="content-cthd"><img  class="image" src="./assets/images/QLSP_image/<?php echo $row['HinhAnh'] ?>"></td>
+        </tr>
+        <tr>
+        <td class="title-cthd">Mã danh mục</td><td class="content-cthd"><?php echo $row['MaDM']; ?></td>
+        </tr>
+        <tr>
+        <td class="title-cthd">Trạng Thái</td><td class="content-cthd"><?php if($row['TrangThai']==1) echo "Đang hiển thị";
         else echo "Chưa hiển thị"?></td>
-      <td><?php echo $row["SoLuongNhap"] ?></td>
-      <div>
-    
-        </div>
-    </tr>
+        </tr>
+        <tr>
+        <td class="title-cthd">Số lượng</td><td class="content-cthd"><?php echo $row['SoLuongNhap']; ?></td>
+        </tr>
+        <tr>
+        <td class="title-cthd">Mô tả</td><td class="content-cthd"><textarea readonly><?php echo $row['MoTa']; ?></textarea></td>
+        </tr>
     <?php }}?>
   </tbody>
 </table>

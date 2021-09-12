@@ -68,27 +68,28 @@
            </div>
            <div class="form-group">
              <label for="">Giá Nhập</label>
-             <input type="number" name="price_input"class="form-control" required >
+             <input type="number" name="price_input" class="form-control" id="price_input" required >
            </div>
+           <div><span id="a"></span></div>
            <div class="form-group">
              <label for="">Giá Xuất</label>
-             <input type="number" name="price_output"class="form-control" required >
+             <input type="number" name="price_output"class="form-control" id="price_output" required >
            </div>
            <div class="form-group">
              <label for="">Số lượng nhập</label>
              <input type="text" name="input_quality"class="form-control"required >
            </div>
-           <!-- <div class="form-group">
-             <label for="">Ngày Áp Dụng</label>
-             <input type="text" name="date"class="form-control" >
-           </div> -->
            <div class="form-group">
+             <label for="">Ngày Áp Dụng</label>
+             <input type="date" name="date" class="form-control" min="<?php echo date("Y-m-d") ?>">
+           </div> 
+           <!-- <div class="form-group">
                 
                  <label for="date">Ngày Áp Dụng</label>
                  <div>
                  <input type="date" id="datetime" name="date" class="form-control-date">
                  </div>
-              </div>
+              </div> -->
           
            
            <div class="form-group">

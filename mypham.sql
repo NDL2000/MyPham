@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 03, 2021 lúc 04:07 AM
+-- Thời gian đã tạo: Th9 11, 2021 lúc 10:53 AM
 -- Phiên bản máy phục vụ: 10.4.20-MariaDB
 -- Phiên bản PHP: 8.0.8
 
@@ -46,7 +46,7 @@ CREATE TABLE `ctkhuyenmai` (
   `MaKM` int(11) NOT NULL,
   `MaSP` int(11) NOT NULL,
   `TyLeKM` int(11) NOT NULL,
-  `GhiChu` text NOT NULL,
+  `GhiChu` text DEFAULT NULL,
   `SoLuongKM` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -61,10 +61,18 @@ CREATE TABLE `danhgia` (
   `MaSP` int(11) NOT NULL,
   `TenDangNhap` varchar(256) NOT NULL,
   `SoSao` int(11) NOT NULL,
-  `NoiDung` text NOT NULL,
-  `NgayDG` datetime NOT NULL,
+  `NoiDung` text DEFAULT NULL,
+  `NgayDG` date NOT NULL,
   `TrangThai` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `danhgia`
+--
+
+INSERT INTO `danhgia` (`MaDG`, `MaSP`, `TenDangNhap`, `SoSao`, `NoiDung`, `NgayDG`, `TrangThai`) VALUES
+(4, 1, 'nguyenducly2000@gmail.com', 5, 'Sản phẩm xài rất tốt ', '2021-09-08', 0),
+(5, 2, 'nguyenducly2000@gmail.com', 5, 'Rất đáng mua', '2021-09-09', 1);
 
 -- --------------------------------------------------------
 
@@ -95,7 +103,7 @@ INSERT INTO `danhmuc` (`MaDM`, `TenDM`, `TrangThai`) VALUES
 CREATE TABLE `hoadon` (
   `TenDangNhap` varchar(256) NOT NULL,
   `MaHD` int(11) NOT NULL,
-  `NgayHD` datetime NOT NULL,
+  `NgayHD` date NOT NULL,
   `TrangThai` varchar(100) NOT NULL,
   `GhiChu` varchar(256) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -105,8 +113,8 @@ CREATE TABLE `hoadon` (
 --
 
 INSERT INTO `hoadon` (`TenDangNhap`, `MaHD`, `NgayHD`, `TrangThai`, `GhiChu`) VALUES
-('nguyenducly2000@gmail.com', 5, '2021-09-01 05:41:12', 'Chờ xét duyệt', NULL),
-('nguyenducly2000@gmail.com', 6, '2021-09-01 05:41:12', 'Đang giao', NULL);
+('nguyenducly2000@gmail.com', 5, '2021-09-01', 'Chờ xét duyệt', NULL),
+('nguyenducly2000@gmail.com', 6, '2021-09-01', 'Đang giao', NULL);
 
 -- --------------------------------------------------------
 
@@ -117,10 +125,17 @@ INSERT INTO `hoadon` (`TenDangNhap`, `MaHD`, `NgayHD`, `TrangThai`, `GhiChu`) VA
 CREATE TABLE `khuyenmai` (
   `MaKM` int(11) NOT NULL,
   `TenKM` varchar(100) NOT NULL,
-  `TuNgay` datetime NOT NULL,
-  `DenNgay` datetime NOT NULL,
-  `TrangThai` int(11) NOT NULL
+  `TuNgay` date NOT NULL,
+  `DenNgay` date NOT NULL,
+  `TrangThai` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `khuyenmai`
+--
+
+INSERT INTO `khuyenmai` (`MaKM`, `TenKM`, `TuNgay`, `DenNgay`, `TrangThai`) VALUES
+(6, 'Tết Nguyên Đán', '2021-09-12', '2021-09-26', 'Chưa khuyến mãi');
 
 -- --------------------------------------------------------
 
@@ -154,8 +169,17 @@ CREATE TABLE `nhapxuat` (
   `GiaNhap` decimal(10,0) NOT NULL,
   `GiaXuat` decimal(10,0) NOT NULL,
   `SoLuongNhap` int(11) NOT NULL,
-  `NgayApDung` datetime NOT NULL
+  `NgayApDung` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `nhapxuat`
+--
+
+INSERT INTO `nhapxuat` (`MaNhapXuat`, `MaSP`, `GiaNhap`, `GiaXuat`, `SoLuongNhap`, `NgayApDung`) VALUES
+(14, 1, '200000', '400000', 40, '2021-09-05'),
+(15, 2, '150000', '200000', 5, '2021-09-05'),
+(16, 3, '20', '50', 4, '2021-09-05');
 
 -- --------------------------------------------------------
 
@@ -169,8 +193,18 @@ CREATE TABLE `sanpham` (
   `DonGia` decimal(10,0) NOT NULL,
   `HinhAnh` varchar(100) NOT NULL,
   `MaDM` int(11) NOT NULL,
-  `TrangThai` int(11) NOT NULL
+  `TrangThai` int(11) NOT NULL,
+  `MoTa` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `sanpham`
+--
+
+INSERT INTO `sanpham` (`MaSP`, `TenSP`, `DonGia`, `HinhAnh`, `MaDM`, `TrangThai`, `MoTa`) VALUES
+(1, 'Nivea', '400000', '1.png', 1, 1, 'Dầu gội đầu Nivea'),
+(2, 'Sunsik', '200000', '2.1.png', 2, 1, 'ssssaaaaasâssssd'),
+(3, 'sunsik', '50', '2.2.png', 1, 1, 'saaaaaaaaaa');
 
 -- --------------------------------------------------------
 
@@ -185,7 +219,7 @@ CREATE TABLE `taikhoan` (
   `MaLoai` varchar(100) NOT NULL,
   `TrangThai` int(11) NOT NULL,
   `HoTen` varchar(256) NOT NULL,
-  `GioiTinh` bit(11) NOT NULL,
+  `GioiTinh` int(11) NOT NULL,
   `SoDienThoai` varchar(256) NOT NULL,
   `DiaChi` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -195,7 +229,8 @@ CREATE TABLE `taikhoan` (
 --
 
 INSERT INTO `taikhoan` (`TenDangNhap`, `Email`, `MatKhau`, `MaLoai`, `TrangThai`, `HoTen`, `GioiTinh`, `SoDienThoai`, `DiaChi`) VALUES
-('nguyenducly2000@gmail.com', 'nguyenducly2000@gmail.com', '12345678', 'AD', 1, 'Nguyễn Đức Lý', b'00000000001', '0963700285', '123 Hùng Vương');
+('nguyenducly2000@gmail.com', 'nguyenducly2000@gmail.com', '$2y$10$jGXjeHUgWFNJxLeDsIZQnuS0uDxXOCk2Z63iWBqs/Jr0dyY4WJ8YC', 'AD', 1, 'Nguyễn Đức Lý', 1, '0963700285', '123 Hùng Vương'),
+('nguyenvanthedtu@gmail.com', 'nguyenvanthedtu@gmail.com', '$2y$10$El5qKsl6nDXA92nbvNPByOaXMQILSqj9tAJ4J4c2saiCM77X6ZUCq', 'AD', 1, 'Nguyễn Văn Thế', 1, '0965720364', 'Huế');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -277,13 +312,13 @@ ALTER TABLE `taikhoan`
 -- AUTO_INCREMENT cho bảng `danhgia`
 --
 ALTER TABLE `danhgia`
-  MODIFY `MaDG` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `MaDG` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `danhmuc`
 --
 ALTER TABLE `danhmuc`
-  MODIFY `MaDM` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `MaDM` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `hoadon`
@@ -295,13 +330,13 @@ ALTER TABLE `hoadon`
 -- AUTO_INCREMENT cho bảng `khuyenmai`
 --
 ALTER TABLE `khuyenmai`
-  MODIFY `MaKM` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `MaKM` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `nhapxuat`
 --
 ALTER TABLE `nhapxuat`
-  MODIFY `MaNhapXuat` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `MaNhapXuat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

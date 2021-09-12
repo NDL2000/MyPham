@@ -15,7 +15,7 @@
     </head>
     
     <body>
-		<?php session_start(); ?>
+		<?php session_start(); include './update_Date.php';?>
 		<!-- Check thong tin truoc khi login admin -->
 		<?php if($_SESSION['user']==null) header("Location:../DangNhap/dangnhap.php");?>
 

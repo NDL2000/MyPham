@@ -10,13 +10,13 @@
 <body>
 <?php 
     include '../admin/connect.php';
-    if(isset($_POST['add'])){
+    if(isset($_POST['edit'])){
         $name = $_POST['name'];
         $fromdate = $_POST['from-date'];
         $todate = $_POST['to-date'];
-        $qr = "insert into khuyenmai(TenKM,TuNgay,DenNgay,TrangThai) values('$name','$fromdate','$todate','Chưa khuyến mãi')";
+        $qr = "update khuyenmai set TuNgay='$fromdate',DenNgay='$todate' where MaKM='".$_GET['id']."'";
         $result = mysqli_query($conn,$qr);
-        header("Location:./index.php?url=khuyenmai&kq=".$result);
+        if($result>0) header("Location:./index.php?url=khuyenmai&kq=3");
     }
     $sql = "SELECT MaKM,TenKM,Date(TuNgay) as FromDay,Date(DenNgay) as ToDay,TrangThai FROM khuyenmai WHERE MaKM='".$_GET['id']."'";
     $rows = mysqli_query($conn,$sql);
@@ -30,10 +30,10 @@
     <input type="text" placeholder="Nhập tên khuyến mãi" name="name" value="<?php echo $row['TenKM'];?>" required>
 
     <label><b>Từ ngày</b></label>
-    <input type="date" name="from-date" value="<?php echo $row['FromDay'] ?>" required>
+    <input type="date" name="from-date" value="<?php echo $row['FromDay'] ?>" id="fromdate" min="<?php echo date("Y-m-d"); ?>" required>
 
     <label><b>Đến ngày</b></label>
-    <input type="date" name="to-date" value="<?php echo $row['ToDay'] ?>" required>
+    <input type="date" name="to-date" value="<?php echo $row['ToDay'] ?>" id="todate" required>
     
     <hr>
     <button type="submit" class="addbtn" name="edit">Sửa khuyến mãi</button>

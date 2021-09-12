@@ -70,11 +70,11 @@
            </div>
            <div class="form-group">
              <label for="">Giá Nhập</label>
-             <input type="number" name="price_input"class="form-control" require value="<?php echo  $row_update["GiaNhap"]?>">
+             <input type="number" name="price_input"class="form-control" require value="<?php echo  $row_update["GiaNhap"]?>" id="price_input">
            </div>
            <div class="form-group">
              <label for="">Giá Xuất</label>
-             <input type="number" name="price_output"class="form-control" require value="<?php echo  $row_update["GiaXuat"]?>" >
+             <input type="number" name="price_output"class="form-control" require value="<?php echo  $row_update["GiaXuat"]?>" id="price_output">
            </div>
            <div class="form-group">
              <label for="">Số lượng nhập</label>
@@ -82,7 +82,7 @@
            </div>
            <div class="form-group">
              <label for="">Ngày Áp Dụng</label>
-             <input type="text" name="date"class="form-control" require value="<?php echo $row_update["NgayApDung"] ?>" >
+             <input type="date" name="date" class="form-control" require value="<?php echo $row_update["NgayApDung"] ?>" min="<?php echo date("Y-m-d") ?>" >
            </div>
            <!-- <div class="form-group">
                 

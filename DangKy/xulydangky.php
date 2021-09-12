@@ -25,7 +25,8 @@
         $result = mysqli_query($conn,$qr);
         if(mysqli_num_rows($result)>0){             //Ton tai user
             // header("Location:./dangky.php?kq=0");
-            echo "<script>window.history.back('./dangky.php?kq=0')</script>";       
+            echo "<script>alert('Email đã tồn tại!!!')</script>";
+            echo "<script>window.history.back('./dangky.php')</script>";       
         }
         else {
             //Tao captcha
