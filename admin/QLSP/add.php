@@ -6,7 +6,7 @@
   if(isset($_POST['sbm'])){
     $prd_id=$_POST['prd_id'];
     $prd_name=$_POST['prd_name'];
-    $price=$_POST['price'];
+    // $price=$_POST['price'];
     $price_input=$_POST['price_input'];
     $price_output=$_POST['price_output'];
     $date=$_POST['date'];
@@ -23,19 +23,22 @@
     $status1=$_POST['status'];
     $description=$_POST['description'];
 
-    $qr = "SELECT * FROM nhapxuat where MaSP=$prd_id";
-    $result = mysqli_query($conn, $qr);
-    if(mysqli_num_rows($result)>0) {echo "<script>alert('Mã tồn tại!');
-      window.history.back('./index.php?url=add');</script>
-      </script>";}
-    else {
+    $qr = "select MAX(MaSP) as MaSP from nhapxuat";
+    $kq = mysqli_query($conn,$qr);
+    if(mysqli_num_rows($kq) > 0){
+      while($row = mysqli_fetch_array($kq)) {
+        if($row['MaSP']==null) $prd_id=1;
+        else $prd_id = (integer)($row['MaSP'])+1;
+      }
+    }
+    
     $sql_input_output ="INSERT INTO nhapxuat (MaSP,GiaNhap,GiaXuat,NgayApDung, SoLuongNhap)  VALUES('$prd_id','$price_input','$price_output','$datetime','$input_quality')";
     $sql_QLSP="INSERT INTO sanpham(MaSP,TenSP,DonGia,HinhAnh,MaDM,TrangThai,MoTa) VALUES ('$prd_id','$prd_name','$price_output','$image1','$category_id','$status1','$description')";
     $query_input_output=mysqli_query($conn,$sql_input_output);
     $query_QLSP=mysqli_query($conn,$sql_QLSP);
     move_uploaded_file($image_tmp,'./assets/images/'.$image1);
     header("Location: ./index.php?url=qlsanpham&kq=".$query_QLSP);
-  }
+  
   }
 ?>
 
@@ -45,10 +48,7 @@
    </div>
    <div class="card-body">
        <form method="POST" enctype="multipart/form-data" >
-       <div class="form-group">
-         <label for="">Mã sản phẩm</label>
-         <input type="text" name="prd_id"class="form-control" autofocus   required >
-        </div>
+      
        <div class="form-group">
          <label for="">Tên sản phẩm</label>
          <input type="text" name="prd_name"class="form-control" required  >
@@ -81,7 +81,7 @@
            </div>
            <div class="form-group">
              <label for="">Ngày Áp Dụng</label>
-             <input type="date" name="date" class="form-control" min="<?php echo date("Y-m-d") ?>">
+             <input type="date" name="date" class="form-control" min="<?php echo date("Y-m-d") ?>" value="<?php echo date("Y-m-d")?>">
            </div> 
            <!-- <div class="form-group">
                 

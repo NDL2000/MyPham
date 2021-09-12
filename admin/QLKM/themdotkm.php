@@ -27,7 +27,7 @@
     <input type="text" placeholder="Nhập tên khuyến mãi" name="name" required>
 
     <label><b>Từ ngày</b></label>
-    <input type="date" name="from-date" id="fromdate" min="<?php echo date("Y-m-d"); ?>" required>
+    <input type="date" name="from-date" id="fromdate" min="<?php echo date("Y-m-d"); ?>" value="<?php echo date("Y-m-d"); ?>"  required>
 
     <label><b>Đến ngày</b></label>
     <input type="date" name="to-date" id="todate"  required>
