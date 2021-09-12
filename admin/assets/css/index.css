@@ -65,7 +65,8 @@ body{
 {
     width: 75%;
     margin-top: 20px !important;
-    font-family: 'Courier New', Courier, monospace;     /* Font  */
+    /* font-family: 'Courier New', Courier, monospace;     Font  */
+    font-family: serif;
     float: left;
 }
 .colors{

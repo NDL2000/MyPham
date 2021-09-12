@@ -36,4 +36,5 @@ table {
 tr>td {
     color: green;
     font-weight: bold;
+    width: 220px;
 }
