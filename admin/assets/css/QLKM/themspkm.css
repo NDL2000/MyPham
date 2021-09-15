@@ -1,5 +1,6 @@
 .container-spkm {
-    width: 1000px;
+    width: 100%;
+    margin-left: 8%;
 }
 .title {
     margin: 30px;
@@ -69,8 +70,9 @@ hr {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 70%;
     opacity: 0.9;
+    margin-left: 15%;
   }
   
   .addbtn:hover {

@@ -25,11 +25,11 @@
         <table>
             <tr>
                 <td>Tên đăng nhập : </td>
-                <td><input type="text" name="tendangnhap" value="<?php echo $tendangnhap; ?>" class="form-control" readonly></td>          
+                <td><input type="text" name="tendangnhap" value="<?php echo $tendangnhap; ?>" class="form-control" readonly style="cursor:not-allowed"></td>          
             </tr>
             <tr>
                 <td>Email(*) : </td>
-                <td><input type="text" name="email" value="<?php echo $email;?>" class="form-control" ></td>
+                <td><input type="text" name="email" value="<?php echo $email;?>" class="form-control" readonly style="cursor:not-allowed"></td>  
                 <td><div class="error"><?php echo $errors['email']; ?></div></td>
             </tr>
         </table>

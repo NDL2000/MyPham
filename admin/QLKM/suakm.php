@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/QLKM/suakm.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
     <title>Sửa khuyến mãi</title>
 </head>
 <body>
@@ -81,11 +82,13 @@
       <td><?php echo $row['SoLuongKM'];?></td>
       <td>
         <a href="./index.php?url=suactkm&id=<?php echo $_GET['id'];?>&ma=<?php echo $row['MaSP'];?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
-        <a href="" onclick="return confirm('Bạn có muốn xóa đợt khuyến mãi này?')" class="btn btn-danger"><i class="fas fa-times"></i></a>
+        <a href="./index.php?url=xoakm&id=<?php echo $_GET['id'];?>&function=2&ma=<?php echo $row['MaSP'];?>" onclick="return confirm('Bạn có muốn xóa đợt khuyến mãi này?')" class="btn btn-danger"><i class="fas fa-times"></i></a>
       </td>   
     </tr>
     <?php }}?>
   </tbody>
 </table>
+<?php if(isset($_GET['kq'])&&$_GET['kq']==1) {?>
+  <script>swal("","Xóa thành công","success")</script><?php } ?>
 </body>
 </html>

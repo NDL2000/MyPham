@@ -37,7 +37,7 @@
 
 
 
-    header("Location: index.php?url=qlsanpham&kq1=".$query_QLSP_update);
+    header("Location: ./index.php?url=qlsanpham&kq1=".$query_QLSP_update);
   }
 ?>
 

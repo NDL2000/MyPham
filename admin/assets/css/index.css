@@ -43,7 +43,18 @@
 .main {
     display: flex;
     min-height: 100%;
-}   
+} 
+.openbtn {
+    font-size: 15px;
+    cursor: pointer;
+    transform:translateY(20%);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    margin-left: 1%;
+    height:0%;
+    display:block;
+  }  
 body{
     background: #f0f0f0;
 }
@@ -63,11 +74,12 @@ body{
 }
 .content-right
 {
-    width: 75%;
-    margin-top: 20px !important;
+    width: 85%;
+    margin-top: 60px !important;
     /* font-family: 'Courier New', Courier, monospace;     Font  */
     font-family: serif;
     float: left;
+    
 }
 .colors{
     width: 260px; 
@@ -99,6 +111,7 @@ body{
     box-shadow:0 20px 50px #333;
     /* min-height: 120%; */
     background: #414956;
+    display:none;
 }
 .jquery-accordion-menu .jquery-accordion-menu-footer,.jquery-accordion-menu .jquery-accordion-menu-header{
     display:flex;
@@ -110,7 +123,7 @@ body{
     line-height:50px;
     font-weight:600;
     color:#f0f0f0;
-    background:#414956;
+    /* background:#414956; */
     margin-bottom: 20px !important;
 }
 .jquery-accordion-menu ul{
@@ -131,7 +144,6 @@ body{
     text-decoration:none;
     color:#f0f0f0;
     font-size:13px;
-    background:#414956;
     white-space:nowrap;
     position:relative;
     overflow:hidden;
@@ -141,8 +153,8 @@ body{
     transition:color .2s linear,background .2s linear
 }
 .jquery-accordion-menu>ul>li.active>a,.jquery-accordion-menu>ul>li:hover>a{
-    color:#fff;
-    background:#3b424d
+    color:#f44336c2;
+
 }
 .jquery-accordion-menu>ul>li>a{
     -bottom:solid 1px #3b424d
@@ -257,3 +269,6 @@ body{
 .black.jquery-accordion-menu>ul>li.active>a,.black.jquery-accordion-menu>ul>li:hover>a{background:#222}
 .black.jquery-accordion-menu>ul>li>a{border-bottom-color:#222}
 .black.jquery-accordion-menu ul ul.submenu li:hover>a{border-left-color:#222}
+.active{
+    background:rebeccapurple;
+}

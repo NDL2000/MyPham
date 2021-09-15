@@ -56,7 +56,7 @@
         }  ?>
 
         <td colspan="8" align="center">
-            <button class="btn btn-secondary btn-qltk" type="submit" onclick="myFunction()">Thêm mới </button>
+            <a class="btn btn-secondary btn-qltk" type="button" href="./index.php?url=themtk">Thêm mới </a>
         </td>
     </table>
     </div>
@@ -65,9 +65,6 @@
 </html>
 
 <script>
-    function myFunction() {
-        location.replace("./index.php?url=themtk");
-    }
 
     function xoa(name) {
         return confirm("Bạn có muốn xóa tài khoản : " + name + " ?");

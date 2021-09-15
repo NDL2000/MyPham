@@ -13,6 +13,9 @@
     margin-top: 50px;
     table-layout: fixed;
 }
+.table-date {
+    margin-left: 15%;
+}
 .title-table {
     text-align: center;
 }

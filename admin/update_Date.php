@@ -11,7 +11,7 @@
         }
     }
 
-    $qr = "select MaKM,DenNgay from khuyenmai where DenNgay=CURRENT_DATE";
+    $qr = "select MaKM,DenNgay from khuyenmai where DenNgay<CURRENT_DATE";
     $kq = mysqli_query($conn, $qr);
     if(mysqli_num_rows($kq)>0){
         while($row = mysqli_fetch_array($kq)){
@@ -21,7 +21,7 @@
         }
     }
     
-    $qr = "select MaKM,TuNgay from khuyenmai where TuNgay!=CURRENT_DATE";
+    $qr = "select MaKM,TuNgay from khuyenmai where TuNgay>CURRENT_DATE";
     $kq = mysqli_query($conn, $qr);
     if(mysqli_num_rows($kq)>0){
         while($row = mysqli_fetch_array($kq)){

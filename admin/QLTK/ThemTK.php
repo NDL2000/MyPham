@@ -26,13 +26,8 @@
                 <td><div class="error"><?php echo $errors['tendangnhap']; ?></div></td>
             </tr>
             <tr>
-                <td>Email(*) : </td>
-                <td><input type="text" name="email" value="<?php echo $email?>" class="form-control" ></td>
-                <td><div class="error"><?php echo $errors['email']; ?></div></td>
-            </tr>
-            <tr>
                 <td>Mật khẩu(*) : </td>
-                <td><input type="password" name="matkhau" value="<?php echo $matkhau?>" class="form-control"></td>
+                <td><input type="password" name="matkhau" value="<?php echo $matkhau?>" class="form-control" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title="Mật khẩu ít nhất 8 ký tự gồm số và chữ cái"></td>
                 <td><div class="error"><?php echo $errors['matkhau']; ?></div></td>
             </tr>
         </table>
@@ -54,30 +49,12 @@
             </tr>
             <tr>
                 <td>Số điện thoại : </td>
-                <td><input type="number" name="sodienthoai" value="<?php echo $sodienthoai?>" class="form-control input-tk" style="width:260% !important"></td>
+                <td><input type="number" name="sodienthoai" value="<?php echo $sodienthoai?>" class="form-control input-tk" style="width:260% !important" pattern="(84|0[3|5|7|8|9])+([0-9]{8})\b"></td>
                 <td><div class="error"><?php echo $errors['sodienthoai']; ?></div></td>
             </tr>
             <tr>
                 <td>Địa chỉ : </td>
                 <td><input type="text" name="diachi" value="<?php echo $diachi?>" class="form-control input-tk" style="width:260% !important"></td>
-            </tr>
-            <tr>
-                <td>Mã loại : </td>
-                <td>
-                    <select class="form-select input-tk" name="maloai" >
-                        
-                        <?php
-                            include ("./connect.php");
-                            $sql = "select * from loaitk";
-                            $old = mysqli_query($conn,$sql);
-                            while ($row = mysqli_fetch_assoc($old)){
-                        ?>
-                            <option value="<?php echo $row["MaLoai"] ?>"><?php echo $row["TenLoai"] ?> </option>
-                        <?php
-                            }
-                        ?>
-                    </select>
-                </td>
             </tr>
             <tr>
                 <td>Trạng thái : </td>
@@ -90,13 +67,14 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <button type="submit" name="submit" value="submit" class="btn btn-primary btn-themtk">Thêm tài khoản</button>
+                    <button type="submit" name="submit" class="btn btn-primary btn-themtk">Thêm tài khoản</button>
                    
                 </td>
             </tr>
         </table>
     </form>
     </div>
+    <?php if(isset($old1)&&$old1>0){echo "<script>window.location.href='./index.php?url=QlTK&kq=1'</script>";} ?>
 </body>
 </html>
 

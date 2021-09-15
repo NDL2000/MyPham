@@ -19,14 +19,15 @@
 		<!-- Check thong tin truoc khi login admin -->
 		<?php if($_SESSION['user']==null) header("Location:../DangNhap/dangnhap.php");?>
 
-		<div class="main" >	
+		<div class="main">
+		<img src="./assets/images/category.png" id="image_nav" class="openbtn">	
 			<div id="jquery-accordion-menu" class="jquery-accordion-menu" style="width: 20%;">
 				<div class="jquery-accordion-menu-header">    
                     <img src="./assets/images/profile.png" alt="./assets/images/profile.png" width="80" class="mr-3 rounded-circle image-profile">      
                     <h4 class="name"><?php if(isset($_SESSION['user'])) echo $_SESSION['user'];?></h4>	
                 </div>	
-				<ul>
-					<li class="active"><a href="./index.php?url=QlTK"><i class="far fa-user" id="icon"></i>Quản lý tài khoản </a></li>
+				<ul class="active1">
+					<li><a href="./index.php?url=QlTK"><i class="far fa-user" id="icon"></i>Quản lý tài khoản </a></li>
 					<li><a href="./index.php?url=qldm"><i class="fas fa-list-ul" id="icon"></i>Quản lý danh mục </a></li>
 					<li><a href="./index.php?url=qlsanpham"><i class="fas fa-tags" id="icon"></i>Quản lý sản phẩm</a>
 					<li><a href="#"><i class="fas fa-file-invoice" id="icon"></i>Quản lý hóa đơn</a>
