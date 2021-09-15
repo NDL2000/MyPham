@@ -13,7 +13,7 @@
             if($kq_pass==true){
                 if($row['TrangThai']=="1"){
                 $_SESSION['user'] = $row['HoTen'];
-                header("Location:../admin");
+                header("Location:../admin/index.php?ad=1");
                 }
                 else {
                      header("Location:./dangnhap.php?kq=-2");

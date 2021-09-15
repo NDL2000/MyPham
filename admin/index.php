@@ -1,6 +1,8 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limontesweetalert2/7.2.0/sweetalert2.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -122,5 +124,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
         <script src="./assets/js/index.js"></script>
 		<script src="./assets/js/date.js"></script>
+		<?php if(isset($_SESSION['user']) && isset($_GET['ad']) && $_GET['ad']==1) {?>
+			<script>swal("","Xin chào,"+ " <?php echo $_SESSION['user'] ?> chào mừng bạn đến với trang quản trị viên của chúng tôi!","success");</script>
+		<?php } ?>	
     </body>
 </html>
