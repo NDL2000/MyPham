@@ -1,7 +1,7 @@
 <?php 
     include './connect.php';
     
-    $qr = "select MaKM,TuNgay from khuyenmai where TuNgay=CURRENT_DATE";
+    $qr = "select MaKM,TuNgay from khuyenmai where TuNgay between TuNgay and CURRENT_DATE";
     $kq = mysqli_query($conn, $qr);
     if(mysqli_num_rows($kq)>0){
         while($row = mysqli_fetch_array($kq)){
