@@ -41,17 +41,17 @@
         }else{
             $flag=0;
         }
-        if(empty($email)){
-            $errors['email']='Bạn chưa nhập email !!!';
-            $flag1=1;
-        }else{
-            if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
-                $errors['email']='Định dạng email chưa đúng !!!';
-                $flag1=1;
-            }else{
-                $flag1=0;
-            }
-        }
+//         if(empty($email)){
+//             $errors['email']='Bạn chưa nhập email !!!';
+//             $flag1=1;
+//         }else{
+//             if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+//                 $errors['email']='Định dạng email chưa đúng !!!';
+//                 $flag1=1;
+//             }else{
+//                 $flag1=0;
+//             }
+//         }
         if($flag == 0 && $flag1 == 0 ){
             $sql1="update taikhoan set Email = '$email' , MaLoai = '$maloai' , TrangThai = '$trangthai' , HoTen = '$hoten' , GioiTinh = '$sex' , SoDienThoai = '$sodienthoai' where TenDangNhap = '$tendangnhap'";
             $old1=mysqli_query($conn,$sql1);
