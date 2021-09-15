@@ -113,6 +113,8 @@
 					 //Quan ly san pham
 					 case 'qldg' : include './QLDG/DanhSachDG.php';break;
 					 case 'review' : include './QLDG/chon.php';break;
+					 case 'confirm' : include './QLDG/duyet_submit.php';break;
+					 case 'xoadg' : include './QLDG/xoa.php';break;
 
 					 case 'dangxuat': include './dangxuat.php';break;
 				}

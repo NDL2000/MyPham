@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limontesweetalert2/7.2.0/sweetalert2.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
 <?php      
             include("connect.php");
                 $sql_select="SELECT *  FROM danhgia ";
@@ -59,8 +70,8 @@
             <td><?php echo ($row["TrangThai"] == 1) ?  "Hiện" : "Ẩn" ?></td>
             <td>
                     <a href="./index.php?url=review&id=<?php echo $row['MaDG']; ?> "  class="view-comment">Xem</a>
-                    <a  href="duyet_submit.php?id=<?php echo $row['MaDG']; ?>" onclick="return confirm('Bạn có muốn duyệt đánh giá này không?')" class="view-comment confirm">Duyệt</a>
-                    <a onclick="return confirm('Bạn có muốn xóa đánh giá này không?')" href="xoa.php?id=<?php echo $row['MaDG']; ?>" class="view-comment delete">Xóa</a>
+                    <a  href="./index.php?url=confirm&id=<?php echo $row['MaDG']; ?>" onclick="return confirm('Bạn có muốn duyệt đánh giá này không?')" class="view-comment confirm">Duyệt</a>
+                    <a onclick="return confirm('Bạn có muốn xóa đánh giá này không?')" href="./index.php?url=xoadg&id=<?php echo $row['MaDG']; ?>" class="view-comment delete">Xóa</a>
             </td>
         </tr>
              <?php
@@ -76,5 +87,9 @@
             location.assign("./index.php?url=qldg");
             }
     </script>
-    </body>
+    <?php if(isset($_GET['kq'])&&$_GET['kq']==1) {?>
+  <script>swal("","Duyệt thành công","success")</script><?php } ?>
+  <?php if(isset($_GET['kq'])&&$_GET['kq']==2) {?>
+  <script>swal("","Xóa thành công","success")</script><?php } ?>
+</body>
 </html>
