@@ -110,7 +110,7 @@
 					 case 'edit' : include './QLSP/edit.php';break;
 					 case 'delete' : include './QLSP/delete.php';break;
 					
-					 //Quan ly san pham
+					 //Quan ly danh gia
 					 case 'qldg' : include './QLDG/DanhSachDG.php';break;
 					 case 'review' : include './QLDG/chon.php';break;
 					 case 'confirm' : include './QLDG/duyet_submit.php';break;
