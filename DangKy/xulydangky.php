@@ -11,6 +11,12 @@
         }
         return $randomstr;                                 
     }
+    if(isset($_POST['checkemail'])){
+        $email = $_POST['checkemail'];
+        $qr = "SELECT * FROM taikhoan where TenDangNhap='$email'";
+        $result = mysqli_query($conn,$qr);
+        if(mysqli_num_rows($result)>0) echo "Tài khoản đã tồn tại";
+    }
     if(isset($_POST['register'])){
         $username = $_POST['email'];
         $password = $_POST['password'];

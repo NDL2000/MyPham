@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../assets/css/dangky.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limontesweetalert2/7.2.0/sweetalert2.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Đăng ký</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
     <hr>
     <label><b>Email (*)</b></label>
     <input type="email" placeholder="Nhập Email" name="email" id="email" required>
-
+    <label><b id="error" style="color:red"></b></label><br/><br />
     <label><b>Mật khẩu (*)</b></label>
     <input type="password" placeholder="Nhập mật khẩu" name="password" id="psw" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
 
@@ -50,6 +51,6 @@
    <!-- Thong bao  -->
 <?php if(isset($_GET['kq'])&&$_GET['kq']==0) {?>
   <script>swal("","Email này đã tồn tại","error")</script><?php } ?>     
-           
+  <script src="../assets/js/dangky.js"></script>       
 </body>
 </html>
