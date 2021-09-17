@@ -17,7 +17,7 @@
         $todate = $_POST['to-date'];
         $qr = "update khuyenmai set TuNgay='$fromdate',DenNgay='$todate' where MaKM='".$_GET['id']."'";
         $result = mysqli_query($conn,$qr);
-        if($result>0) header("Location:./index.php?url=khuyenmai&kq=3");
+        if($result>0) echo "<script>window.location.href='./index.php?url=khuyenmai&kq=3'</script>";
     }
     $sql = "SELECT MaKM,TenKM,Date(TuNgay) as FromDay,Date(DenNgay) as ToDay,TrangThai FROM khuyenmai WHERE MaKM='".$_GET['id']."'";
     $rows = mysqli_query($conn,$sql);
