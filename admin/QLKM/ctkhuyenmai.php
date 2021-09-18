@@ -39,7 +39,7 @@
     <br />
     <!-- TT SAN PHAM KM -->
     <table class="table table-bordered table-hover table-1">
-  <thead>
+  <thead class="table-success">
     <tr>
       <th scope="col" class="title-table" style="width: 1%">STT</th>
       <th scope="col" class="title-table" style="width: 3%">Mã sản phẩm</th>
@@ -66,9 +66,14 @@
       <td style="word-wrap:break-word"><?php echo $row['GhiChu'];?></td>
       <td><?php echo $row['SoLuongKM'];?></td>
     </tr>
-    <?php }}?>
+    <?php }}else{?>
+      <tr>
+        <td colspan="6">Hiện chưa có sản phẩm nào cho đợt khuyến mãi này!</td>
+      </tr>
+      <?php }?>
   </tbody>
 </table>
+<a href="./index.php?url=khuyenmai" class="btn btn-success btn-ctkm">Quay về</a>
     </div>
 </body>
 </html>

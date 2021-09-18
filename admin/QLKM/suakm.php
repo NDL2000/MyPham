@@ -53,7 +53,7 @@
   }
 ?>
 <table class="table table-bordered table-hover table-2">
-  <thead>
+  <thead class="table-success">
     <tr>
     <th scope="col" class="title-table" style="width: 5%">STT</th>
       <th scope="col" class="title-table" style="width: 7%">Mã sản phẩm</th>
@@ -85,9 +85,14 @@
         <a href="./index.php?url=xoakm&id=<?php echo $_GET['id'];?>&function=2&ma=<?php echo $row['MaSP'];?>" onclick="return confirm('Bạn có muốn xóa đợt khuyến mãi này?')" class="btn btn-danger"><i class="fas fa-times"></i></a>
       </td>   
     </tr>
-    <?php }}?>
+    <?php }}else{?>
+      <tr>
+        <td colspan="7">Hiện chưa có sản phẩm nào cho đợt khuyến mãi này!</td>
+      </tr>
+      <?php }?>
   </tbody>
 </table>
+<a href="./index.php?url=khuyenmai" class="btn btn-success btn-suakm">Quay về</a>
 <?php if(isset($_GET['kq'])&&$_GET['kq']==1) {?>
   <script>swal("","Xóa thành công","success")</script><?php } ?>
 </body>

@@ -34,8 +34,14 @@
     
     <hr>
     <button type="submit" class="addbtn" name="add">Thêm đợt khuyến mãi</button>
+    <button class="addbtn" onclick="back()">Quay về</button>
   </div>
 </form>
+<script>
+  function back() {
+    window.location.href="./index.php?url=khuyenmai";
+  }
+</script>
 
 </body>
 </html>

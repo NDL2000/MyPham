@@ -14,7 +14,7 @@
     <div class="container-qldm">
     <h1 class="title">DANH SÁCH DANH MỤC</h1>
     <table class="table table-hover table-qldm">
-        <tr>
+        <tr class="table-success">
             <th>STT</th>
             <th>Mã danh mục</th>
             <th>Tên danh mục</th>
@@ -37,8 +37,8 @@
             <td><?php echo $row["TenDM"] ?></td>
             <td><?php echo($row["TrangThai"] == 1)?  "Hiển thị": "Ẩn" ?></td>
             <td>
-                <a href="./index.php?url=suadm&id=<?php echo $row["MaDM"];?>" class="btn btn-outline-primary">Sửa</a>
-                <a href="./index.php?url=xoadm&id=<?php echo $row["MaDM"];?>" class="btn btn-outline-primary" onclick="return xoa('<?php echo $row['TenDM'];?>')">Xóa</a>
+                <a href="./index.php?url=suadm&id=<?php echo $row["MaDM"];?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                <a href="./index.php?url=xoadm&id=<?php echo $row["MaDM"];?>" class="btn btn-danger" onclick="return xoa('<?php echo $row['TenDM'];?>')"><i class="fas fa-times"></i></a>
             </td>
         </tr>        
     <?php } }  ?>

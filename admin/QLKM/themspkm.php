@@ -77,9 +77,14 @@
     <input type="number" name="quantity" min="1" placeholder="Số lượng" required>
     <hr>
     <button type="submit" class="addbtn" name="add">Thêm sản phẩm khuyến mãi</button>
+    <button class="addbtn" onclick="back()">Quay về</button>
   </div>
 </form>
  </div>
- 
+ <script>
+     function back() {
+         window.location.href="./index.php?url=khuyenmai";
+     }
+ </script>
 </body>
 </html>

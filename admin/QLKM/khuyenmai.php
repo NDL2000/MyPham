@@ -14,7 +14,7 @@
     <h1 class="title">Thông tin đợt khuyến mãi</h1>
     <a href="./index.php?url=themdotkm" type="button" class="btn btn-success btn-km"><i class="fas fa-plus-circle"></i> Thêm đợt khuyến mãi</a>
     <table class="table table-bordered table-hover table-1">
-  <thead>
+  <thead class="table-success">
     <tr>
       <th scope="col" class="title-table" style="width: 3%">STT</th>
       <th scope="col" class="title-table" style="width: 3%">Mã KM</th>
@@ -53,7 +53,11 @@
         <a href="./index.php?url=xoakm&id=<?php echo $row['MaKM'];?>&function=1" onclick="return confirm('Bạn có muốn xóa đợt khuyến mãi này?')" class="btn btn-danger"><i class="fas fa-times"></i></a>
       </td>   
     </tr>
-    <?php }}?>
+    <?php }}else{?>
+      <tr>
+        <td colspan="7">Hiện chưa có đợt khuyến mãi!</td>
+      </tr>
+      <?php }?>
   </tbody>
 </table>
 <!-- Thong bao  -->

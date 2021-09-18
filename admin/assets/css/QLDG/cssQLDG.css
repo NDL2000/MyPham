@@ -80,7 +80,9 @@ h2{
     color: white;
     padding: 30px 0;
 }
-
+.btn-qldg {
+    margin-left: 56%;
+}
 /* Table Styles */
 
 .form-control {

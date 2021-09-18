@@ -68,7 +68,7 @@
             <tr>
                 <td colspan="2">
                     <button type="submit" name="submit" class="btn btn-primary btn-themtk">Thêm tài khoản</button>
-                   
+                    <a href="./index.php?url=QlTK" class="btn btn-primary btn-themtk">Quay về</a> 
                 </td>
             </tr>
         </table>

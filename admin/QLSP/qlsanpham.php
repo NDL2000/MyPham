@@ -24,7 +24,7 @@
 
 <table class="table table-bordered" style="text-align:center;margin-left:50px">
 <a type="button" class="btn-button1" href="./index.php?url=add"> <i class="fas fa-plus-circle" id='icon-icon'></i></a>
-  <thead>
+  <thead class="table-success">
     <tr>
       <th scope="col" class="title-table" style="width: 1%">STT</th>
       <th scope="col" class="title-table" style="width: 2%">Mã sản phẩm</th>

@@ -1,6 +1,6 @@
 .title {
     margin: 30px;
-    margin-left: 50px;
+    margin-left: 100px;
     font-weight: bold;
     color: green;
     text-align: center;
@@ -25,4 +25,7 @@
 }
 td {
     padding: 10px 0;
+}
+.btn-cthd {
+    margin-left: 50%;
 }

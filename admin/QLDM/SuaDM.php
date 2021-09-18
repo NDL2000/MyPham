@@ -42,7 +42,7 @@
             <tr>
                 <td colspan="2">
                     <button type="submit" name="submit" value="submit" class="btn btn-primary btn-suadm" onclick="return suaDM('<?php echo $tendm?>')">Cập nhật</button>
-                  
+                    <a href="./index.php?url=qldm" class="btn btn-primary btn-suadm">Quay về</a>
                 </td>
             </tr>
         </table>           

@@ -36,7 +36,7 @@
     </div>
 <!-- ------------------------------------------------------- -->
     <table class="table table-bordered table-hover table-1">
-  <thead>
+  <thead class="table-success"> 
     <tr>
     <th scope="col" class="title-table" style="width: 3%">STT</th>
       <th scope="col" class="title-table" style="width: 7%">Mã hóa đơn</th>
@@ -60,12 +60,16 @@
       <td><?php echo $row['NgayHD'];?></td>
       <td><div class="status st2"><?php echo $row['TrangThai'];?></div></td>
       <td>
-        <a href="./index.php?url=cthoadon&id=<?php echo $row['MaHD']?>" class="btn btn-primary"><i class="far fa-eye"></i></a>
+        <a href="./index.php?url=cthoadon&id=<?php echo $row['MaHD']?>&fc=4" class="btn btn-primary"><i class="far fa-eye"></i></a>
         <a href="./index.php?url=checkhd&id=<?php echo $row['MaHD']?>&function=3" onclick="return confirm('Bạn có muốn chuyển trạng thái đơn sang đã giao không?')" class="btn btn-success"><i class="far fa-check-circle"></i></a>
       
       </td>   
     </tr>
-    <?php }}?>
+    <?php }}else{?>
+      <tr>
+        <td colspan="6">Không có hóa đơn nào đang giao!</td>
+      </tr>
+      <?php }?>
   </tbody>
 </table>
 <!-- Thong bao  -->

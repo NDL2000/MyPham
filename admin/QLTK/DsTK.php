@@ -16,7 +16,7 @@
     <div class="container-qltk">
     <h1 class="title">DANH SÁCH TÀI KHOẢN</h1>
     <table class="table table-hover table-qltk">
-        <tr>
+        <tr class="table-success">
             <th style="width: 2%">STT</th>
             <th style="width: 9%">Tên đăng nhập</th>
             <th style="width: 9%">Email</th>
@@ -47,9 +47,9 @@
                         else echo "User" ?></td>
                     <td><?php echo ($row["TrangThai"] == 1) ?  "Mở" : "Khóa" ?></td>
                     <td>
-                        <a href="./index.php?url=suatk&id=<?php echo $row["TenDangNhap"]; ?>" class="btn btn-outline-primary">Sửa</a>
-                        <a href="./index.php?url=doimk&id=<?php echo $row["TenDangNhap"]; ?>" class="btn btn-outline-primary">Đổi mật khẩu</a>
-                        <a href="./index.php?url=xoatk&id=<?php echo $row["TenDangNhap"]; ?>" class="btn btn-outline-primary" onclick="return xoa('<?php echo $row['TenDangNhap']; ?>')">Xóa</a>
+                        <a href="./index.php?url=suatk&id=<?php echo $row["TenDangNhap"]; ?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                        <a href="./index.php?url=doimk&id=<?php echo $row["TenDangNhap"]; ?>" class="btn btn-primary"><i class="fas fa-key"></i></a>
+                        <a href="./index.php?url=xoatk&id=<?php echo $row["TenDangNhap"]; ?>" class="btn btn-danger" onclick="return xoa('<?php echo $row['TenDangNhap']; ?>')"><i class="fas fa-times"></i></a>
                     </td>
                 </tr>
         <?php }

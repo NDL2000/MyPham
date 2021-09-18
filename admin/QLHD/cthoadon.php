@@ -54,7 +54,7 @@
     </table>
     <br />
     <table class="table table-bordered table-hover table-1">
-  <thead>
+  <thead class="table-success">
     <tr>
       <th scope="col" class="title-table">STT</th>
       <th scope="col" class="title-table">Tên sản phẩm</th>
@@ -86,9 +86,19 @@
     <?php }}?>
   </tbody>
     <tr>
-            <td></td><td></td><td></td><td></td><td class="title-cthd">Tổng tiền</td><td class="content-cthd" style="font-weight: bold  ;color:red"><?php if(isset($tongtien)&&$tongtien!=null) echo number_format($tongtien,0,",",".")." VNĐ"; ?></td>
+           <td class="title-cthd" colspan="5" style="text-align: right;padding-right:5%;font-size: 20px;">Tổng tiền</td><td class="content-cthd" style="font-weight: bold  ;color:red;font-size: 20px;"><?php if(isset($tongtien)&&$tongtien!=null) echo number_format($tongtien,0,",",".")." VNĐ"; ?></td>
     </tr>
 </table>
-
+<?php
+if(isset($_GET["fc"])){
+    switch($_GET["fc"]){
+        case '1': echo "<a href='./index.php?url=hdchoduyet' class='btn btn-success btn-cthd'>Quay về</a>";break;
+        case '2': echo "<a href='./index.php?url=hddagiao' class='btn btn-success btn-cthd'>Quay về</a>";break;
+        case '3': echo "<a href='./index.php?url=hddahuy' class='btn btn-success btn-cthd'>Quay về</a>";break;
+        case '4': echo "<a href='./index.php?url=hddanggiao' class='btn btn-success btn-cthd'>Quay về</a>";break;
+        default: echo "<a href='./index.php?url=hdchoduyet' class='btn btn-success btn-cthd'>Quay về</a>";break;
+    }
+}
+?>
 </body>
 </html>

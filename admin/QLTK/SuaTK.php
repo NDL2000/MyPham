@@ -79,7 +79,7 @@
             <tr>
                 <td colspan="2">
                     <button type="submit" name="submit" value="submit" class="btn btn-primary btn-suatk" onclick="return suaTK('<?php echo $tendangnhap;?>')">Cập nhật</button>
-                    
+                    <a href="./index.php?url=QlTK" class="btn btn-primary btn-suatk">Quay về</a> 
                 </td>
             </tr>
         </table>

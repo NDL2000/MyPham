@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $("#fromdate").mouseleave(function() {
+    $("#fromdate").blur(function() {        //Xu ly khi click khoi vung input date
         var fromdate = $("#fromdate").val();
         var date = fromdate.split("-");
         if(parseInt(date[2])+1<10){

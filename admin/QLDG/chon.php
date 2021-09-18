@@ -31,6 +31,7 @@
                 
             </table>
         </div>
+        <a href="./index.php?url=qldg" class="btn btn-success btn-qldg">Quay về</a>
         </div>
         </div>
          </form> 
@@ -38,5 +39,6 @@
         <br>
       
         </div>
+       
     </body>
 </html>

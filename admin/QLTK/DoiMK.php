@@ -43,7 +43,7 @@
             <tr>
                 <td colspan="2">
                     <button type="submit" name="submit" value="submit" class="btn btn-primary btn-doimk" onclick="return doiMK('<?php echo $tendangnhap ?>')">Cập nhật</button>
-                    
+                    <a href="./index.php?url=QlTK" class="btn btn-primary btn-doimk">Quay về</a> 
                 </td>
             </tr>
         </table>

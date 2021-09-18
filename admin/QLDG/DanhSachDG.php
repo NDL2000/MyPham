@@ -74,10 +74,11 @@
                     <a onclick="return confirm('Bạn có muốn xóa đánh giá này không?')" href="./index.php?url=xoadg&id=<?php echo $row['MaDG']; ?>" class="view-comment delete">Xóa</a>
             </td>
         </tr>
-             <?php
-             }
-             }
-             ?>
+        <?php }}else{?>
+      <tr>
+        <td colspan="7">Hiện chưa có đánh giá!</td>
+      </tr>
+      <?php }?>
         </tbody>
     </table>   
         </div>

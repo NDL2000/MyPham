@@ -1,3 +1,4 @@
+// xu ly kiem tra ton tai email
 $(document).ready(function() {
     $("#email").keyup(function() {
         $.ajax({
