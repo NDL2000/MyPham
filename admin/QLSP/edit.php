@@ -3,13 +3,12 @@
 <script src="./assets/js/QLSP_js/edit.js"></script>
 <?php include "./connect.php";
   $id=$_GET["id"];
-  $sql_category="SELECT * FROM danhmuc  ";
+  $sql_category="SELECT * FROM danhmuc";
   $query_category=mysqli_query($conn,$sql_category);
   $sql_update="SELECT sp.MaSP,sp.TenSP,nx.GiaXuat,nx.GiaNhap,sp.HinhAnh,sp.MaDM,sp.TrangThai,nx.SoLuongNhap,nx.NgayApDung,sp.MoTa FROM sanpham as sp,nhapxuat as nx where sp.MaSP=$id and nx.MaSP=$id";
   $query_update=mysqli_query($conn,$sql_update);
   $row_update=mysqli_fetch_assoc($query_update);
   if(isset($_POST['sbm'])){
-    $prd_id=$_POST['prd_id'];
     $prd_name=$_POST['prd_name'];
     if($_FILES['image']['name']==' '){
 
@@ -21,7 +20,7 @@
       move_uploaded_file($image1_tmp,'./assets/images/'.$image1) ;
 
     }
-    $price=$_POST['price'];
+   
     $price_input=$_POST['price_input'];
     $price_output=$_POST['price_output'];
     $date=$_POST['date'];
@@ -82,7 +81,7 @@
            </div>
            <div class="form-group">
              <label for="">Ngày Áp Dụng</label>
-             <input type="date" name="date" class="form-control" require value="<?php echo $row_update["NgayApDung"] ?>" min="<?php echo date("Y-m-d") ?>" >
+             <input type="date" name="date" class="form-control" require value="<?php echo $row_update["NgayApDung"] ?>" >
            </div>
            <!-- <div class="form-group">
                 
