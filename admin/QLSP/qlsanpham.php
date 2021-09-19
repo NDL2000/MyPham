@@ -41,7 +41,7 @@
   </thead>
   <tbody>
       <?php
-      $sql="SELECT sp.MaSP,sp.TenSP,nx.GiaXuat,sp.HinhAnh,sp.MaDM,sp.TrangThai,nx.SoLuongNhap FROM sanpham as sp,nhapxuat as nx where sp.MaSP=nx.MaSP order by sp.MaSP ASC";
+      $sql="SELECT sp.MaSP,sp.TenSP,sp.DonGia,sp.HinhAnh,sp.MaDM,sp.TrangThai,nx.SoLuongNhap FROM sanpham as sp,nhapxuat as nx where sp.MaSP=nx.MaSP and nx.GiaXuat = sp.DonGia order by sp.MaSP ASC";
       
       $result = mysqli_query($conn,$sql);
       // $sql_price="SELECT * FROM  nhapxuat INNER JOIN sanpham on nhapxuat.GiaXuat=sanpham.DonGia";
@@ -62,7 +62,7 @@
       <th scope="row"><?php echo $count ?></th>
       <td><?php echo $row['MaSP'] ?></td>
       <td style="word-wrap:break-word"><?php echo $row['TenSP'] ?></td>
-      <td><?php echo number_format($row['GiaXuat'],0,",",".")." VNĐ"; ?></td>
+      <td><?php echo number_format($row['DonGia'],0,",",".")." VNĐ"; ?></td>
       <td><img style="background-image: none;" class="image" src="./assets/images/QLSP_image/<?php echo $row['HinhAnh'] ?>"></td>
       <td><?php echo $row['MaDM'] ?></td>
       <td><?php if($row['TrangThai']==1) echo "Đang hiển thị";

@@ -58,6 +58,7 @@ h2{
 label{
     width: 30%;
     color: green;
+    font-weight: bold;
 }
 .form-control-date
 {

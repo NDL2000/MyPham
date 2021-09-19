@@ -4,7 +4,6 @@
   $sql_category="SELECT * FROM danhmuc  ";
   $query_category=mysqli_query($conn,$sql_category);
   if(isset($_POST['sbm'])){
-    $prd_id=$_POST['prd_id'];
     $prd_name=$_POST['prd_name'];
     // $price=$_POST['price'];
     $price_input=$_POST['price_input'];
@@ -31,14 +30,29 @@
         else $prd_id = (integer)($row['MaSP'])+1;
       }
     }
-    
+    // Kiem tra trung ten sp
+    $sql = "SELECT * FROM sanpham where TenSP='$prd_name'";
+    $res = mysqli_query($conn,$sql);
+    if(mysqli_num_rows($res)>0) {
+       while($row = mysqli_fetch_array($res)){
+         $masp = $row['MaSP'];
+        $sql_input_output ="INSERT INTO nhapxuat (MaSP,GiaNhap,GiaXuat,NgayApDung, SoLuongNhap)  VALUES('$masp','$price_input','$price_output','$datetime','$input_quality')";
+        $sql_QLSP= "UPDATE SANPHAM SET DonGia='$price_output',HinhAnh='$image1',MaDM='$category_id',TrangThai='$status1',MoTa='$description' where MaSP='$masp'";
+        $query_input_output=mysqli_query($conn,$sql_input_output);
+        $query_QLSP=mysqli_query($conn,$sql_QLSP);
+        move_uploaded_file($image_tmp,'./assets/images/'.$image1);
+        header("Location: ./index.php?url=qlsanpham&kq=".$query_QLSP);
+      }
+    }
+    //-------------------------------------------------------------------------
+    else {
     $sql_input_output ="INSERT INTO nhapxuat (MaSP,GiaNhap,GiaXuat,NgayApDung, SoLuongNhap)  VALUES('$prd_id','$price_input','$price_output','$datetime','$input_quality')";
     $sql_QLSP="INSERT INTO sanpham(MaSP,TenSP,DonGia,HinhAnh,MaDM,TrangThai,MoTa) VALUES ('$prd_id','$prd_name','$price_output','$image1','$category_id','$status1','$description')";
     $query_input_output=mysqli_query($conn,$sql_input_output);
     $query_QLSP=mysqli_query($conn,$sql_QLSP);
     move_uploaded_file($image_tmp,'./assets/images/'.$image1);
     header("Location: ./index.php?url=qlsanpham&kq=".$query_QLSP);
-  
+    }
   }
 ?>
 
@@ -55,7 +69,7 @@
         </div>
         <div class="form-group">
           <label for="">Tên danh mục</label>
-          <select class="form-control" name="category_id" style="height: calc(2.25rem + 14px);">
+          <select class="form-control" name="category_id">
             <?php
               while($row_category=mysqli_fetch_array($query_category)){?>
                 <option value="<?php echo $row_category['MaDM']; ?> "><?php echo $row_category['TenDM']; ?></option>
