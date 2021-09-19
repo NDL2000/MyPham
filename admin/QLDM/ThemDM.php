@@ -19,7 +19,7 @@
     <br>
     <form action=" <?php include("ThemDM_submit.php"); ?>" method="post">
        
-        <table>
+        <table class="table-themdm">
             <tr>
                 <td>Tên danh mục(*) : </td>
                 <td><input type="text" name="tendm" value="<?php echo $tendm?>" class="form-control" ></td>

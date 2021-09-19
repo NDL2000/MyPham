@@ -5,14 +5,14 @@ eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){w
 //Slide menu
 $(document).ready(function(){
     $(".openbtn").click(function(){
-        $("#jquery-accordion-menu").slideDown(1000);
+        $("#jquery-accordion-menu").slideDown(500);
         $('#image_nav').css("display","none");  
         $('.content-right').css("width","75%");  
     });
     $('.content-right').click(function() {     
-        $('#jquery-accordion-menu').slideUp(1000);  
+        $('#jquery-accordion-menu').slideUp(500);  
         $('.content-right').css("width","85%");
-        $('#image_nav').delay(1000).fadeIn();   
+        $('#image_nav').delay(500).fadeIn();   
      });
     
 });
