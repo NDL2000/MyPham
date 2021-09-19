@@ -21,7 +21,7 @@
             $qr = "insert into ctkhuyenmai(MaKM,MaSP,TyLeKM,GhiChu,SoLuongKM) values ('$id','$value','$ratio','$note','$quantity')";
             $result = mysqli_query($conn,$qr);
         }
-        header("Location:./index.php?url=khuyenmai&kq=1");
+        echo "<script>window.location.href='./index.php?url=khuyenmai?kq=1';</script>";
     }
 ?>
 <!-- -------------------------------------------------------------------- -->

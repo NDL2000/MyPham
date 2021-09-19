@@ -22,7 +22,7 @@
 		<?php session_start(); include './update_Date.php';?>
 		<!-- Check thong tin truoc khi login admin -->
 		<?php if($_SESSION['user']==null) header("Location:../DangNhap/dangnhap.php");?>
-
+		<div id="fade"></div>
 		<div class="main">
 		<img src="./assets/images/category.png" id="image_nav" class="openbtn">	
 			<div id="jquery-accordion-menu" class="jquery-accordion-menu" style="width: 20%;">
@@ -67,10 +67,10 @@
 				</div>      <!--Footer-->
 			</div>
 			
-		
 	
             <!-- Content -->
             <div class="content-right">
+			
 			<?php
 			   if(isset($_GET['url'])){
 				switch($_GET['url']){
@@ -124,6 +124,7 @@
 			?>
 			</div>
 			</div>
+			
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
         <script src="./assets/js/index.js"></script>

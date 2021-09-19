@@ -7,12 +7,14 @@ $(document).ready(function(){
     $(".openbtn").click(function(){
         $("#jquery-accordion-menu").slideDown(500);
         $('#image_nav').css("display","none");  
-        $('.content-right').css("width","75%");  
+        $('.content-right').css("width","75%"); 
+        $('#fade').css("display","block");  
     });
-    $('.content-right').click(function() {     
+    $('#fade').click(function() {     
         $('#jquery-accordion-menu').slideUp(500);  
         $('.content-right').css("width","85%");
         $('#image_nav').delay(500).fadeIn();   
+        $('#fade').css("display","none");  
      });
     
 });

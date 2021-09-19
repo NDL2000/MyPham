@@ -93,7 +93,14 @@ body{
 #icon { 
     font-family: 'Font Awesome 5 Pro';
 }
-
+#fade {
+    display: none;
+    background: #0000008a;
+    height: 100%;
+    width: 100%;
+	z-index:1;
+    position: fixed;
+}
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
 .jquery-accordion-menu,.jquery-accordion-menu 
 *{
@@ -112,6 +119,7 @@ body{
     /* min-height: 120%; */
     background: #414956;
     display:none;
+    z-index: 2;
 }
 .jquery-accordion-menu .jquery-accordion-menu-footer,.jquery-accordion-menu .jquery-accordion-menu-header{
     display:flex;
