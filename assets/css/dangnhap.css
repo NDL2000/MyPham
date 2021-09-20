@@ -33,7 +33,7 @@ body {
   .login-form {
     box-sizing:border-box;
     padding-top:15px;
-      padding-bottom:10%;
+    padding-bottom:3%;
     margin:5% auto;
     text-align:center;
   }
@@ -79,10 +79,17 @@ body {
     cursor:pointer;
   }
   .captcha {
-    font-style: italic;
-    color: red !important;
-    font-weight: bold;
-    transform: translateX(-160px);
+    margin-top: 20px;
+    letter-spacing: 10px;
+    transform: translate(245px, -78px);
+  }
+  .img-captcha {
+    width: 30%;
+    margin-left: -250px;
+  }
+  .details-captcha {
+    transform: translateY(-58px);
+    margin-left: -235px;
   }
   /*Media Querie*/
   @media only screen and (min-width : 150px) and (max-width : 530px){

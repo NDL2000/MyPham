@@ -26,14 +26,16 @@
     <input name="password" type="password" placeholder="Mật khẩu" required />
     <br>
     <h3>Mã xác nhận:</h3>
-    <input name="code" type="text" placeholder="Mã xác nhận" required/>
+    <input name="code" type="text" placeholder="Mã xác nhận" required style="width: 45%;margin-left: -145px;"/>
+    <div class="captcha">
+    <img src="../assets/images/cpt_bgr.jpg" alt="Captcha" class="img-captcha">
+    <h2 class="details-captcha"><?php if(isset($_SESSION['captcha'])) echo $_SESSION['captcha']; ?></h2></div>
+    <input name="login" type="submit" value="Đăng nhập" class="login-button" style="transform: translateY(-80px);"/>
     <br>
-    <h2 class="captcha"><?php if(isset($_SESSION['captcha'])) echo $_SESSION['captcha']; ?></h2>
-    <input name="login" type="submit" value="Đăng nhập" class="login-button"/>
-    <br>
+    <div style="transform: translateY(-30px);">
     <a href="../DangKy/dangky.php" class="sign-up">Đăng ký!</a>
     <br>
-    <h6 class="no-access">Quên mật khẩu?</h6>
+    <h6 class="no-access">Quên mật khẩu?</h6></div>
   </div>
 </div>
 </form> 

@@ -3,12 +3,13 @@
 <script src="./assets/js/QLSP_js/edit.js"></script>
 <?php include "./connect.php";
   $id=$_GET["id"];
-  $sql_category="SELECT * FROM danhmuc";
+  $sql_category="SELECT * FROM danhmuc  ";
   $query_category=mysqli_query($conn,$sql_category);
-  $sql_update="SELECT sp.MaSP,sp.TenSP,nx.GiaXuat,nx.GiaNhap,sp.HinhAnh,sp.MaDM,sp.TrangThai,nx.SoLuongNhap,nx.NgayApDung,sp.MoTa FROM sanpham as sp,nhapxuat as nx where sp.MaSP=$id and nx.MaSP=$id";
+  $sql_update="SELECT sp.MaSP,sp.TenSP,nx.GiaNhap,nx.GiaXuat,sp.HinhAnh,sp.MaDM,sp.TrangThai,nx.SoLuongNhap,sp.MoTa,nx.NgayApDung FROM sanpham as sp,nhapxuat as nx where sp.MaSP=nx.MaSP and nx.GiaXuat = sp.DonGia and sp.MaSP=$id and nx.MaSP=$id";
   $query_update=mysqli_query($conn,$sql_update);
   $row_update=mysqli_fetch_assoc($query_update);
   if(isset($_POST['sbm'])){
+    // $prd_id=$_POST['prd_id'];
     $prd_name=$_POST['prd_name'];
     if($_FILES['image']['name']==' '){
 
@@ -20,7 +21,7 @@
       move_uploaded_file($image1_tmp,'./assets/images/'.$image1) ;
 
     }
-   
+    // $price=$_POST['price'];
     $price_input=$_POST['price_input'];
     $price_output=$_POST['price_output'];
     $date=$_POST['date'];
@@ -33,13 +34,9 @@
     $sql_QLSP_update = "UPDATE sanpham SET TenSP = '$prd_name', DonGia= '$price_output', HinhAnh = '$image1', MaDM= '$category_id', TrangThai= '$status1',MoTa='$description' where MaSP='$id'";
     $query_input_output_update=mysqli_query($conn,$sql_input_output_update);
     $query_QLSP_update=mysqli_query($conn,$sql_QLSP_update);
-
-
-
-    header("Location: ./index.php?url=qlsanpham&kq1=".$query_QLSP_update);
+    echo "<script>window.location.href='./index.php?url=qlsanpham&kq1=$query_QLSP_update'</script>";
   }
 ?>
-
 <div class="container-fluid">
    <div class="card-header">
        <h2>Sửa sản phẩm</h2>
@@ -81,17 +78,8 @@
            </div>
            <div class="form-group">
              <label for="">Ngày Áp Dụng</label>
-             <input type="date" name="date" class="form-control" require value="<?php echo $row_update["NgayApDung"] ?>" >
+             <input type="date" name="date" class="form-control" require value="<?php echo $row_update["NgayApDung"] ?>" min="<?php echo date("Y-m-d") ?>" >
            </div>
-           <!-- <div class="form-group">
-                
-                 <label for="birthday">Ngày Áp Dụng</label>
-                 <div>
-                 <input type="date" id="datetime" name="date" require value="<?php echo $row_update["NgayApDung"] ?>">
-                 </div>
-              </div>
-           -->
-           
            <div class="form-group">
          <label for="">Trạng thái</label>
          <select class="form-control" name="status"style="height: calc(2.25rem + 14px);" require value="<?php echo $row_update['TrangThai']?>">
@@ -106,23 +94,16 @@
              <!-- <input type="text" name="input_quality"class="form-control"required > -->
              <textarea type="text" name="description"  class="form-control-description" require value="" ><?php echo  $row_update["MoTa"]; ?></textarea>
            </div>
-           
            <button onclick="return Edit('<?php echo $row_update['MaSP']?>') "name="sbm" class="btn-add" type="submit">Sửa</button>
            <button onclick="goBack()" type="button" class="btn-back">Quay Về</button>
-           
         </form>
    </div>
-   
 </div>
 <script>
     function Edit(name){
       return confirm (`Bạn có chắc là muốn sửa sản phẩm: ${name} ?`)
-
     }
     function goBack(){
       window.location.href="./index.php?url=qlsanpham"
 }
-   
-
-
 </script>
