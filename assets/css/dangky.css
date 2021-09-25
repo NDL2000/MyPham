@@ -11,7 +11,7 @@
 input[type=text], input[type=password],input[type=email] {
   width: 100%;
   padding: 15px;
-  margin: 5px 0 22px 0;
+  margin: 15px 0 15px 0;
   display: inline-block;
   border: none;
   background: #f1f1f1;
@@ -85,4 +85,8 @@ hr {
     cursor: pointer;
     width: 100%;
     opacity: 0.9;
+  }
+  #error {
+    transform: translate(-268px, -10px);
+    color: red;
   }

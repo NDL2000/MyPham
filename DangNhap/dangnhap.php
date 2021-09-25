@@ -29,13 +29,14 @@
     <input name="code" type="text" placeholder="Mã xác nhận" required style="width: 45%;margin-left: -145px;"/>
     <div class="captcha">
     <img src="../assets/images/cpt_bgr.jpg" alt="Captcha" class="img-captcha">
-    <h2 class="details-captcha"><?php if(isset($_SESSION['captcha'])) echo $_SESSION['captcha']; ?></h2></div>
+    <h2 class="details-captcha"><?php if(isset($_SESSION['captcha'])) echo $_SESSION['captcha']; ?></h2>
+     </div>
     <input name="login" type="submit" value="Đăng nhập" class="login-button" style="transform: translateY(-80px);"/>
     <br>
     <div style="transform: translateY(-30px);">
     <a href="../DangKy/dangky.php" class="sign-up">Đăng ký!</a>
-    <br>
-    <h6 class="no-access">Quên mật khẩu?</h6></div>
+    <br><br>
+    <a href="../DangNhap/quenmk.php" class="no-access">Quên mật khẩu!</a>
   </div>
 </div>
 </form> 
@@ -45,6 +46,8 @@
 <script>swal("","Vui lòng kiểm tra lại thông tin","error")</script><?php } ?>
 <?php if(isset($_GET['kq'])&&$_GET['kq']==0){ ?>
 <script>swal("","Tài khoản không tồn tại","error")</script><?php } ?>
+<?php if(isset($_GET['m'])&&$_GET['m']==99){ ?>
+<script>swal("","Mật khẩu mới đã gửi về email của bạn!","success")</script><?php } ?>
 <!-- Thong bao dang ky thanh cong va xoa bien tam -->
 <?php if(isset($_GET['kq'])&&$_GET['kq']==1){ ?>
 <script>swal("","Đăng ký thành công","success")</script><?php unset($_SESSION['username-reg'],$_SESSION['password-reg'],$_SESSION['name-reg'],$_SESSION['gender-reg'],$_SESSION['phone-reg'],$_SESSION['add-reg']); } ?>

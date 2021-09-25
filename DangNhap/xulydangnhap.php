@@ -1,6 +1,41 @@
 <?php
     session_start();
     include '../admin/connect.php';
+    // Xu ly ajax
+    if(isset($_POST['checkemail'])){
+        $email = $_POST['checkemail'];
+        $qr = "SELECT * FROM taikhoan where TenDangNhap='$email'";
+        $result = mysqli_query($conn,$qr);
+        if(mysqli_num_rows($result)<1) echo "Email không tồn tại";
+    }
+    else {}
+    if(isset($_POST['quenmk'])){
+        function taoma($input,$cdmxn)
+        {   
+         $cd=mb_strlen($input);
+         $randomstr="";
+         for($i=0;$i<$cdmxn;$i++)
+        { $randomkt=$input[mt_rand(0,$cd-1)];
+          $randomstr .=$randomkt; 
+        }
+        return $randomstr;                                 
+        }
+        //Tao captcha
+        $s='0123456789abcdefghyklmnopqrstuvwxyzABCDEFGHYKLMNOPQRSTUVWXYZ';          
+        $MatKhau= taoma($s,8);
+        $email = $_POST['emailqmk'];
+        $to_email="$email";
+            $subject="Gửi mật khẩu mới cho khách hàng";
+            $body="Chào bạn, đây là mật khẩu mới của bạn: ".$MatKhau."\nVui lòng đổi mật khẩu sau khi đăng nhập thành công!!!";
+            $headers = "From: NDL\'s email";
+            $result = mail($to_email,$subject,$body,$headers);
+
+            $pass_hash = password_hash($MatKhau,PASSWORD_DEFAULT);
+            $sql = "update TAIKHOAN set MatKhau='$pass_hash' where TenDangNhap='$username'";
+            mysqli_query($conn,$sql);
+            header("Location:../DangNhap/dangnhap.php?m=99");
+           
+    }
     if(isset($_POST['login'])&&$_POST['code']!=null&&$_POST['code']==$_SESSION['captcha']){
         $username = $_POST['username'];
         $password = $_POST['password'];
