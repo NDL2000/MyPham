@@ -8,7 +8,6 @@
         $result = mysqli_query($conn,$qr);
         if(mysqli_num_rows($result)<1) echo "Email không tồn tại";
     }
-    else {}
     if(isset($_POST['quenmk'])){
         function taoma($input,$cdmxn)
         {   
@@ -36,18 +35,19 @@
             header("Location:../DangNhap/dangnhap.php?m=99");
            
     }
-    if(isset($_POST['login'])&&$_POST['code']!=null&&$_POST['code']==$_SESSION['captcha']){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+    if(isset($_POST["login"])){
+        if($_POST["code"]!=null&&$_POST["code"]==$_SESSION["captcha"]){
+        $username = $_POST["username"];
+        $password = $_POST["password"];
         // Login Admin
         $sql = "SELECT MatKhau,HoTen,TrangThai from taikhoan where TenDangNhap='$username' and MaLoai='AD'";
         $kq = mysqli_query($conn,$sql);
         if(mysqli_num_rows($kq)>0){
             while($row = mysqli_fetch_array($kq)){
-            $kq_pass = password_verify($password,$row['MatKhau']);
+            $kq_pass = password_verify($password,$row["MatKhau"]);
             if($kq_pass==true){
-                if($row['TrangThai']=="1"){
-                $_SESSION['user'] = $row['HoTen'];
+                if($row["TrangThai"]=="1"){
+                $_SESSION["user"] = $row["HoTen"];
                 header("Location:../admin/index.php?ad=1");
                 }
                 else {
@@ -60,13 +60,13 @@
         else {
             header("Location:./dangnhap.php?kq=0");
         }
-            
-            
+    }     
+    else {
+        header("Location:./dangnhap.php?kq=-1");
+    }   
     }
         // Login user
         
-    else {
-        header("Location:./dangnhap.php?kq=-1");
-    }
+    
     
 ?>
