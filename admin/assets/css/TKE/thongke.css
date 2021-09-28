@@ -1,0 +1,82 @@
+.statistics {
+    display: flex;
+    justify-content: space-around;
+}
+.statistics_total {
+    width: fit-content;
+    background: #93bbf49e;
+    padding: 15px 20px;
+    height: 60px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px #0a58ca9e;
+}
+.statistics_bill {
+    width: 20%;
+    background: #dc35457d;
+    padding: 15px 20px;
+    height: 60px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px #dc35457d;
+}
+.statistics_product {
+    width: 20%;
+    background: #1ebfae;
+    padding: 15px 20px;
+    height: 60px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px #1ebfae;
+}
+.icon_currency {
+    color: #21e277;
+    font-size: 30px;
+}
+.icon_cart {
+    color: #007bff;
+    font-size: 30px;
+}
+.icon_product {
+    color: #ff0080;
+    font-size: 30px;
+}
+.currency {
+    font-weight: bold;
+    color: #3c00ff;
+    font-size: 25px;
+    padding-left: 35px;
+    transform: translateY(-33px);
+}
+.cart {
+    font-weight: bold;
+    color: #198754;
+    font-size: 25px;
+    padding-left: 50px;
+    transform: translateY(-33px);
+}
+.product {
+    font-weight: bold;
+    color: #ffc107c4;
+    font-size: 25px;
+    padding-left: 50px;
+    transform: translateY(-33px);
+
+}
+.table-1 {
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    table-layout: fixed;
+    text-align: center;
+}
+.table-date {
+    margin-left: 15%;
+}
+.title {
+    margin: 30px;
+    margin-left: 100px;
+    font-weight: bold;
+    color: green;
+    text-align: center;
+}

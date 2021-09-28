@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/TKE/thongke.css"/>
+    <title>Thống kê</title>
+</head>
+<body>
+    <?php include './connect.php';
+
+    $qr = "SELECT * FROM hoadon";
+    $result = mysqli_query($conn, $qr);
+    ?>
+    <h1 class="title">THỐNG KÊ</h1>
+     <!-- Loc hoa don -->
+    <div class="filter">
+    <form method="post" action="<?php include("loc.php"); ?>">
+            <table class="table-date">
+                <tr>
+                    <td> Từ ngày </td>
+                    <td> <input type="date"  name="fromdate" id="fromdate"> </td>
+                    <td> Đến ngày </td>
+                    <td> <input  type="date" name="todate" id="todate"> </td>          
+                 </tr>
+            </table>         
+        <br>
+        <div class="button-filter">           
+            <button  type="submit" name="filter" class="btn-filter">Lọc</button>
+            <button  class="btn-filter" type="button" onclick="window.location.href='./index.php?url=thongke'">Huỷ lọc</button>          
+         </div>
+           </form>
+    </div>
+<!-- ------------------------------------------------------- -->
+
+<table class="table table-bordered table-hover table-1">
+  <thead class="table-success">
+    <tr>
+      <th scope="col" class="title-table" style="width: 3%">STT</th>
+      <th scope="col" class="title-table" style="width: 7%">Mã hóa đơn</th>
+      <th scope="col" class="title-table" style="width: 15%">Tên đăng nhập</th>
+      <th scope="col" class="title-table" style="width: 10%">Ngày hóa đơn</th>
+      <th scope="col" class="title-table" style="width: 10%">Thành tiền</th>
+      <th scope="col" class="title-table" style="width: 10%">Chức năng</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php   
+        $total=0;
+        $quantity = 0;
+        if(mysqli_num_rows($result)>0){
+            $count =0;
+            
+            while($row = mysqli_fetch_array($result)) { 
+                $MaHD = $row['MaHD'];
+                $count++;
+                include("thanhtien.php");
+
+                 if(mysqli_num_rows($result1)>0){
+                    $tongtien = 0;
+                    
+                     while($row1 = mysqli_fetch_array($result1)) {
+                 
+                 $tongtien +=  $row1['SoLuongMua']*$row1['GiaGoc']-($row1['SoLuongMua']*$row1['GiaGoc']*$row1['TyLeKM'])/100;
+                 $quantity += $row1['SoLuongMua'];
+                }
+                $total += $tongtien;  
+    ?>
+    <tr>
+      <td style="font-weight: bold"><?php echo $count?></td>
+      <td><?php echo $row['MaHD'];?></td>
+      <td style="word-wrap:break-word"><?php echo $row['TenDangNhap'];?></td>
+      <td><?php echo $row['NgayHD'];?></td>
+      <td> <?php echo number_format($tongtien,"0",",",".")." VNĐ"; ?> </td>
+      <td>
+        <a href="./index.php?url=cthoadon&id=<?php echo $row['MaHD']?>&fc=5" class="btn btn-primary"><i class="far fa-eye"></i></a>
+      </td>   
+    </tr>
+    <?php }}}else{?>
+      <tr >
+        <td colspan="6">Không có hóa đơn nào!</td>
+      </tr>
+      <?php }?>
+  </tbody>
+</table>
+<div class="statistics">
+    <div class="statistics_total">
+    <i class="fas fa-dollar-sign icon_currency"></i><div class="currency"><span><?php echo number_format($total,"0",",",".")." VNĐ"; ?></span></div>
+    </div>
+    <div class="statistics_bill">
+    <i class="fas fa-shopping-cart icon_cart"></i><div class="cart"><span><?php echo $count." đơn hàng"; ?></span></div>
+    </div>
+    <div class="statistics_product">
+    <i class="fas fa-air-freshener icon_product"></i><div class="product"><span><?php echo $quantity." sản phẩm";  ?></span></div>
+    </div>
+</div>
+</body>
+</html>

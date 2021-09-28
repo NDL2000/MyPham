@@ -66,22 +66,23 @@
   </thead>
   <tbody>
     <?php 
-        $qr = "SELECT ct.MaSP,TenSP,HinhAnh,DonGia,ct.TyLeKM,ct.SoLuongMua FROM cthoadon ct, sanpham sp where ct.MaSP=sp.MaSP and MaHD='".$_GET['id']."'";
+        $qr = "SELECT ct.MaSP,TenSP,HinhAnh,ct.GiaGoc,ct.TyLeKM,ct.SoLuongMua FROM cthoadon ct, sanpham sp where ct.MaSP=sp.MaSP and MaHD='".$_GET['id']."'";
         $result = mysqli_query($conn, $qr);
         if(mysqli_num_rows($result)>0){
             $count =0;
             $tongtien = 0;
             while($row = mysqli_fetch_array($result)) {   
                 $count++;
-                $tongtien +=  $row['SoLuongMua']*$row['DonGia']-($row['SoLuongMua']*$row['DonGia']*$row['TyLeKM'])/100;
+                $tongtien +=  $row['SoLuongMua']*$row['GiaGoc']-($row['SoLuongMua']*$row['GiaGoc']*$row['TyLeKM'])/100;
+                
     ?>
       <tr>
       <td style="font-weight: bold"><?php echo $count?></td>
       <td><?php echo $row['TenSP'];?></td>
-      <td><?php echo number_format($row['DonGia'],0,",",".")." VNĐ";?></td>
+      <td><?php echo number_format($row['GiaGoc'],0,",",".")." VNĐ";?></td>
       <td><?php echo $row['TyLeKM']." %";?></td>
       <td><?php echo $row['SoLuongMua'];?></td>
-      <td><?php echo number_format($row['SoLuongMua']*$row['DonGia']-($row['SoLuongMua']*$row['DonGia']*$row['TyLeKM'])/100,0,",",".")." VNĐ";?></td>  
+      <td><?php echo number_format($row['SoLuongMua']*$row['GiaGoc']-($row['SoLuongMua']*$row['GiaGoc']*$row['TyLeKM'])/100,0,",",".")." VNĐ";?></td>  
     </tr>
     <?php }}?>
   </tbody>
@@ -96,6 +97,7 @@ if(isset($_GET["fc"])){
         case '2': echo "<a href='./index.php?url=hddagiao' class='btn btn-success btn-cthd'>Quay về</a>";break;
         case '3': echo "<a href='./index.php?url=hddahuy' class='btn btn-success btn-cthd'>Quay về</a>";break;
         case '4': echo "<a href='./index.php?url=hddanggiao' class='btn btn-success btn-cthd'>Quay về</a>";break;
+        case '5': echo "<a href='./index.php?url=thongke' class='btn btn-success btn-cthd'>Quay về</a>";break;
         default: echo "<a href='./index.php?url=hdchoduyet' class='btn btn-success btn-cthd'>Quay về</a>";break;
     }
 }

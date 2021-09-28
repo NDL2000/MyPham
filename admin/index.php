@@ -59,7 +59,7 @@
 						</ul> -->
 					</li>
                     <li><a href="./index.php?url=qldg"><i class="far fa-comments" id="icon"></i>Quản lý đánh giá</a></li>
-					<li><a href="#"><i class="far fa-chart-bar" id="icon"></i>Thống kê</a></li>
+					<li><a href="./index.php?url=thongke"><i class="far fa-chart-bar" id="icon"></i>Thống kê</a></li>
 					<li><a href="./index.php?url=dangxuat"><i class="fas fa-sign-out-alt" id="icon"></i>Đăng xuất</a></li>
 				</ul>
 				<div class="jquery-accordion-menu-footer">
@@ -120,7 +120,7 @@
 					 case 'xoadg' : include './QLDG/xoa.php';break;
 					
 					 //Thong ke
-					 
+					 case 'thongke' : include './TKE/thongke.php';break;
 
 					 case 'dangxuat': include './dangxuat.php';break;
 				}
