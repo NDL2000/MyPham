@@ -94,7 +94,7 @@
 
             if($old1 > 0){
 
-                header("location:./index.php?url=QlTK&kq=4");
+                header("location:./index.php?url=QlTK&kq=4&page=1");
             }
         }
     }

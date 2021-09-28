@@ -51,7 +51,7 @@
     $query_input_output=mysqli_query($conn,$sql_input_output);
     $query_QLSP=mysqli_query($conn,$sql_QLSP);
     move_uploaded_file($image_tmp,'./assets/images/'.$image1);
-    header("Location: ./index.php?url=qlsanpham&kq=".$query_QLSP);
+    header("Location: ./index.php?url=qlsanpham&kq=".$query_QLSP."&page=1");
     }
   }
 ?>

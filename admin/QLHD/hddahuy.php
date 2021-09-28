@@ -11,6 +11,16 @@
 </head>
 <body>
     <?php include './connect.php'; 
+     //Xu ly Pagination
+     $sql = "SELECT * FROM hoadon where TrangThai= 'Đã hủy' limit $page,$rows";
+     $kq = mysqli_query($conn,$sql);
+     $num_rows = mysqli_num_rows($kq); //So rows trong database
+     $rows = 5;  //So rows muon hien thi
+     if(isset($_GET['page'])&&$_GET['page']>0&&$_GET['page']<=ceil($num_rows / $rows)){
+       $page = ($_GET['page']-1)*$rows;  //Vi tri record 
+     }
+     else {$page = 1;echo "<script>window.location.href='./index.php?url=hddagiao&page=1'</script>"; }
+     
           $qr = "SELECT * FROM hoadon where TrangThai = 'Đã hủy'";
           $result = mysqli_query($conn, $qr);
     ?>
@@ -71,7 +81,36 @@
       <?php }?>
   </tbody>
 </table>
+
+
+<?php if(ceil($num_rows / $rows)>1){?>
+<nav aria-label="Page navigation example" style="margin-left:50%;">
+  <ul class="pagination">
+    <?php if(isset($_GET['page'])&& $_GET['page']>1){ ?>
+    <li class="page-item">
+      <a class="page-link" href="./index.php?url=hddahuy&page=<?php if(isset($_GET['page'])) echo $_GET['page']-1 ?>" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <?php } ?>
+    <?php $num_pages = ceil($num_rows / $rows);   //So pagination
+          for($i=1;$i<=$num_pages;$i++) { 
+    ?>
+    <li class="page-item"><a class="page-link" href="./index.php?url=hddahuy&page=<?php echo $i ?>"><?php echo $i; ?></a></li>
+    <?php } if(isset($_GET['page'])&& $_GET['page']!=$num_pages){?>
+    <li class="page-item">
+      <a class="page-link" href="./index.php?url=hddahuy&page=<?php if(isset($_GET['page'])) echo $_GET['page']+1 ?>" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+    <?php } ?>
+  </ul>
+</nav>
+<?php } ?>
+
 <!-- Thong bao  -->
+<?php if(isset($_GET['kqa'])&&$_GET['kqa']==1) {?>
+  <script>swal("","Đơn hàng đã chuyển sang trạng thái Đã hủy","success")</script><?php } ?>
 <?php if(isset($_GET['kq'])&&$_GET['kq']==1) {?>
   <script>swal("","Xóa thành công","success")</script><?php } ?>
 </body>

@@ -34,7 +34,7 @@
     $sql_QLSP_update = "UPDATE sanpham SET TenSP = '$prd_name', DonGia= '$price_output', HinhAnh = '$image1', MaDM= '$category_id', TrangThai= '$status1',MoTa='$description' where MaSP='$id'";
     $query_input_output_update=mysqli_query($conn,$sql_input_output_update);
     $query_QLSP_update=mysqli_query($conn,$sql_QLSP_update);
-    echo "<script>window.location.href='./index.php?url=qlsanpham&kq1=$query_QLSP_update'</script>";
+    echo "<script>window.location.href='./index.php?url=qlsanpham&page=1&kq1=$query_QLSP_update'</script>";
   }
 ?>
 <div class="container-fluid">

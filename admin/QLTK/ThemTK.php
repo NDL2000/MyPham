@@ -74,7 +74,7 @@
         </table>
     </form>
     </div>
-    <?php if(isset($old1)&&$old1>0){echo "<script>window.location.href='./index.php?url=QlTK&kq=1'</script>";} ?>
+    <?php if(isset($old1)&&$old1>0){echo "<script>window.location.href='./index.php?url=QlTK&kq=1&page=1'</script>";} ?>
 </body>
 </html>
 

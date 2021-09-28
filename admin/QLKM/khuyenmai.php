@@ -26,8 +26,18 @@
     </tr>
   </thead>
   <tbody>
-    <?php 
-        $qr = "SELECT * FROM khuyenmai";
+    <?php
+    //Xu ly Pagination
+        $sql = "SELECT * FROM khuyenmai";
+        $kq = mysqli_query($conn,$sql);
+        $num_rows = mysqli_num_rows($kq); //So rows trong database
+        $rows = 5;  //So rows muon hien thi
+        if(isset($_GET['page'])&&$_GET['page']>0&&$_GET['page']<=ceil($num_rows / $rows)){
+          $page = ($_GET['page']-1)*$rows;  //Vi tri record 
+        }
+        else {$page = 1;echo "<script>window.location.href='./index.php?url=khuyenmai&page=1'</script>"; }
+        
+        $qr = "SELECT * FROM khuyenmai limit $page,$rows";
         $result = mysqli_query($conn, $qr);
         if(mysqli_num_rows($result)>0){
             $count =0;
@@ -51,6 +61,9 @@
         <a href="./index.php?url=themspkm&id=<?php echo $row['MaKM']?>" class="btn btn-success"><i class="fas fa-plus-circle"></i></a>
         <a href="./index.php?url=suakm&id=<?php echo $row['MaKM']?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
         <a href="./index.php?url=xoakm&id=<?php echo $row['MaKM'];?>&function=1" onclick="return confirm('Bạn có muốn xóa đợt khuyến mãi này?')" class="btn btn-danger"><i class="fas fa-times"></i></a>
+        <?php if($row['TrangThai']=="Đang khuyến mãi"){?>
+          <a href="./index.php?url=khoakm&id=<?php echo $row['MaKM']?>" class="btn btn-primary" onclick="return confirm('Bạn có muốn khóa đợt khuyến mãi này?')"><i class="fas fa-key"></i></a>
+          <?php }?>
       </td>   
     </tr>
     <?php }}else{?>
@@ -60,6 +73,30 @@
       <?php }?>
   </tbody>
 </table>
+<?php if(ceil($num_rows / $rows)>1){?>
+<nav aria-label="Page navigation example" style="margin-left:50%;">
+  <ul class="pagination">
+    <?php if(isset($_GET['page'])&& $_GET['page']>1){ ?>
+    <li class="page-item">
+      <a class="page-link" href="./index.php?url=khuyenmai&page=<?php if(isset($_GET['page'])) echo $_GET['page']-1 ?>" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <?php } ?>
+    <?php $num_pages = ceil($num_rows / $rows);   //So pagination
+          for($i=1;$i<=$num_pages;$i++) { 
+    ?>
+    <li class="page-item"><a class="page-link" href="./index.php?url=khuyenmai&page=<?php echo $i ?>"><?php echo $i; ?></a></li>
+    <?php } if(isset($_GET['page'])&& $_GET['page']!=$num_pages){?>
+    <li class="page-item">
+      <a class="page-link" href="./index.php?url=khuyenmai&page=<?php if(isset($_GET['page'])) echo $_GET['page']+1 ?>" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+    <?php } ?>
+  </ul>
+</nav>
+<?php } ?>
 <!-- Thong bao  -->
 <?php if(isset($_GET['kq'])&&$_GET['kq']==1) {?>
   <script>swal("","Thêm thành công","success")</script><?php } ?>

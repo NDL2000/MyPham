@@ -11,7 +11,16 @@
 </head>
 <body>
     <?php include './connect.php'; 
-          $qr = "SELECT * FROM hoadon where TrangThai = 'Đang giao'";
+    //Xu ly Pagination
+    $sql = "SELECT * FROM hoadon where TrangThai= 'Đang giao'";
+    $kq = mysqli_query($conn,$sql);
+    $num_rows = mysqli_num_rows($kq); //So rows trong database
+    $rows = 5;  //So rows muon hien thi
+    if(isset($_GET['page'])&&$_GET['page']>0&&$_GET['page']<=ceil($num_rows / $rows)){
+      $page = ($_GET['page']-1)*$rows;  //Vi tri record 
+    }
+    else {$page = 1;echo "<script>window.location.href='./index.php?url=hddanggiao&page=1'</script>"; }
+          $qr = "SELECT * FROM hoadon where TrangThai = 'Đang giao' limit $page,$rows";
           $result = mysqli_query($conn, $qr);
     ?>
     <h1 class="title">Hóa đơn đang giao</h1>
@@ -62,7 +71,7 @@
       <td>
         <a href="./index.php?url=cthoadon&id=<?php echo $row['MaHD']?>&fc=4" class="btn btn-primary"><i class="far fa-eye"></i></a>
         <a href="./index.php?url=checkhd&id=<?php echo $row['MaHD']?>&function=3" onclick="return confirm('Bạn có muốn chuyển trạng thái đơn sang đã giao không?')" class="btn btn-success"><i class="far fa-check-circle"></i></a>
-      
+        <a href="./index.php?url=checkhd&id=<?php echo $row['MaHD']?>&function=5" onclick="return confirm('Bạn có muốn khôi phục trạng thái đơn thành chờ xét duyệt không?')" class="btn btn-danger"><i class="fas fa-undo"></i></a>
       </td>   
     </tr>
     <?php }}else{?>
@@ -72,8 +81,38 @@
       <?php }?>
   </tbody>
 </table>
+
+
+<?php if(ceil($num_rows / $rows)>1){?>
+<nav aria-label="Page navigation example" style="margin-left:50%;">
+  <ul class="pagination">
+    <?php if(isset($_GET['page'])&& $_GET['page']>1){ ?>
+    <li class="page-item">
+      <a class="page-link" href="./index.php?url=hddanggiao&page=<?php if(isset($_GET['page'])) echo $_GET['page']-1 ?>" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <?php } ?>
+    <?php $num_pages = ceil($num_rows / $rows);   //So pagination
+          for($i=1;$i<=$num_pages;$i++) { 
+    ?>
+    <li class="page-item"><a class="page-link" href="./index.php?url=hddanggiao&page=<?php echo $i ?>"><?php echo $i; ?></a></li>
+    <?php } if(isset($_GET['page'])&& $_GET['page']!=$num_pages){?>
+    <li class="page-item">
+      <a class="page-link" href="./index.php?url=hddanggiao&page=<?php if(isset($_GET['page'])) echo $_GET['page']+1 ?>" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+    <?php } ?>
+  </ul>
+</nav>
+<?php } ?>
+
 <!-- Thong bao  -->
 <?php if(isset($_GET['kq'])&&$_GET['kq']==1) {?>
-  <script>swal("","Đơn hàng đã chuyển sang trạng thái Đã giao","success")</script><?php } ?>
+  <script>swal("","Đơn hàng đã chuyển sang trạng thái Đang giao","success")</script><?php } ?>
+
+  <?php if(isset($_GET['kq'])&&$_GET['kq']==5) {?>
+  <script>swal("","Khôi phục thành công","success")</script><?php } ?>
 </body>
 </html>

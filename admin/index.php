@@ -90,6 +90,7 @@
 					 case 'suakm': include './QLKM/suakm.php';break;
 					 case 'suactkm': include './QLKM/suactkm.php';break;
 					 case 'xoakm': include './QLKM/xoakm.php';break;
+					 case 'khoakm': include './QLKM/khoakm.php';break;
 					 
 					 // Quan ly tai khoan
 					 case 'QlTK' : include './QLTK/DsTK.php';break;
@@ -117,6 +118,9 @@
 					 case 'review' : include './QLDG/chon.php';break;
 					 case 'confirm' : include './QLDG/duyet_submit.php';break;
 					 case 'xoadg' : include './QLDG/xoa.php';break;
+					
+					 //Thong ke
+					 
 
 					 case 'dangxuat': include './dangxuat.php';break;
 				}

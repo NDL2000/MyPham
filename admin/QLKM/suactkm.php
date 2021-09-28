@@ -17,7 +17,7 @@
         $quantity = $_POST['quantity'];
         $qr = "update ctkhuyenmai set TyLeKM='$ratio',GhiChu='$note',SoLuongKM='$quantity' where MaKM='$id' and MaSP='$ma'";
         $result = mysqli_query($conn,$qr);
-        if($result==1) header("Location:./index.php?url=khuyenmai&kq=3");
+        if($result==1) header("Location:./index.php?url=khuyenmai&kq=3&page=1");
     }
     $sql = "select ct.MaSP,sp.TenSP,ct.TyLeKM,ct.GhiChu,ct.SoLuongKM from ctkhuyenmai as ct,sanpham as sp where ct.MaSP=sp.MaSP and ct.MaKM='$id' and ct.MaSP='$ma'";
     $rows = mysqli_query($conn,$sql);

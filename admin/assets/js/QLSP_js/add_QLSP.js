@@ -186,11 +186,5 @@ $(function() {
         saveEvent();
     });
 });
-$(document).ready(function(){
-    $("#price_input").mouseleave(function(){
-        var gianhap = $('#price_input').val();
-        $("#price_output").attr("min",gianhap);
-    });
 
-});
 

@@ -21,7 +21,7 @@
             $qr = "insert into ctkhuyenmai(MaKM,MaSP,TyLeKM,GhiChu,SoLuongKM) values ('$id','$value','$ratio','$note','$quantity')";
             $result = mysqli_query($conn,$qr);
         }
-        echo "<script>window.location.href='./index.php?url=khuyenmai?kq=1';</script>";
+        echo "<script>window.location.href='./index.php?url=khuyenmai&kq=1&page=1';</script>";
     }
 ?>
 <!-- -------------------------------------------------------------------- -->
@@ -56,7 +56,7 @@
   <div class="container">
     <h1 class="title-reg">Thêm sản phẩm cho đợt khuyến mãi</h1>
     <hr>
-    <label><b>Tên sản phẩm <b style="font-style:italic;color:red;">(Nhấn giữ Ctrl để chọn hoặc bỏ chọn nhiều sản phẩm)</b></b></label>
+    <label><b>Tên sản phẩm </b></label>
     <select multiple name="sanpham[]" size="5"> 
     <?php $qr = "select MaSP,TenSP from sanpham"; 
         $result = mysqli_query($conn, $qr);

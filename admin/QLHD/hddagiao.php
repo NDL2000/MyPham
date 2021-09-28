@@ -11,7 +11,17 @@
 </head>
 <body>
     <?php include './connect.php'; 
-     $qr = "SELECT * FROM hoadon where TrangThai = 'Đã giao'";
+     //Xu ly Pagination
+     $sql = "SELECT * FROM hoadon where TrangThai= 'Đã giao'";
+     $kq = mysqli_query($conn,$sql);
+     $num_rows = mysqli_num_rows($kq); //So rows trong database
+     $rows = 5;  //So rows muon hien thi
+     if(isset($_GET['page'])&&$_GET['page']>0&&$_GET['page']<=ceil($num_rows / $rows)){
+       $page = ($_GET['page']-1)*$rows;  //Vi tri record 
+     }
+     else {$page = 1;echo "<script>window.location.href='./index.php?url=hddagiao&page=1'</script>"; }
+     
+     $qr = "SELECT * FROM hoadon where TrangThai = 'Đã giao' limit $page,$rows";
      $result = mysqli_query($conn, $qr);
     ?>
     <h1 class="title">Hóa đơn đã giao</h1>
@@ -61,6 +71,7 @@
       <td><div class="status st3"><?php echo $row['TrangThai'];?></div></td>
       <td>
         <a href="./index.php?url=cthoadon&id=<?php echo $row['MaHD']?>&fc=2" class="btn btn-primary"><i class="far fa-eye"></i></a>
+        <a href="./index.php?url=checkhd&id=<?php echo $row['MaHD']?>&function=6" onclick="return confirm('Bạn có muốn khôi phục trạng thái đơn thành đang giao không?')" class="btn btn-danger"><i class="fas fa-undo"></i></a>
       </td>   
     </tr>
     <?php }}else{?>
@@ -70,5 +81,34 @@
       <?php }?>
   </tbody>
 </table>
+
+
+<?php if(ceil($num_rows / $rows)>1){?>
+<nav aria-label="Page navigation example" style="margin-left:50%;">
+  <ul class="pagination">
+    <?php if(isset($_GET['page'])&& $_GET['page']>1){ ?>
+    <li class="page-item">
+      <a class="page-link" href="./index.php?url=hddagiao&page=<?php if(isset($_GET['page'])) echo $_GET['page']-1 ?>" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <?php } ?>
+    <?php $num_pages = ceil($num_rows / $rows);   //So pagination
+          for($i=1;$i<=$num_pages;$i++) { 
+    ?>
+    <li class="page-item"><a class="page-link" href="./index.php?url=hddagiao&page=<?php echo $i ?>"><?php echo $i; ?></a></li>
+    <?php } if(isset($_GET['page'])&& $_GET['page']!=$num_pages){?>
+    <li class="page-item">
+      <a class="page-link" href="./index.php?url=hddagiao&page=<?php if(isset($_GET['page'])) echo $_GET['page']+1 ?>" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+    <?php } ?>
+  </ul>
+</nav>
+<?php } ?>
+
+<?php if(isset($_GET['kq'])&&$_GET['kq']==1) {?>
+  <script>swal("","Đơn hàng đã chuyển sang trạng thái Đã giao","success")</script><?php } ?>
 </body>
 </html>

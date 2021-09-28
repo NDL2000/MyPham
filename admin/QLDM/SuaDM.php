@@ -7,6 +7,7 @@
     <title>Sửa danh mục</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link  rel="stylesheet" href="./assets/css/QLDM/suadm.css"/>
+
     <style>
         .error{
             color: red;
@@ -26,7 +27,7 @@
             </tr>
             <tr>
                 <td>Tên danh mục(*) : </td>
-                <td><input type="text" name="tendm" value="<?php echo $tendm?>" class="form-control" ></td>
+                <td><input type="text" name="tendm" value="<?php echo $tendm?>" class="form-control" id="name"></td>
                 <td><div class="error"><?php echo $errors['tendm']; ?></div></td>
             </tr>
             <tr>
@@ -41,7 +42,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <button type="submit" name="submit" value="submit" class="btn btn-primary btn-suadm" onclick="return suaDM('<?php echo $tendm?>')">Cập nhật</button>
+                    <button type="submit" name="submit" value="submit" class="btn btn-primary btn-suadm" onclick="return suaDM('<?php echo $tendm?>')" id="btn_suadm">Cập nhật</button>
                     <a href="./index.php?url=qldm" class="btn btn-primary btn-suadm">Quay về</a>
                 </td>
             </tr>
@@ -50,10 +51,14 @@
     </div>
 </body>
 </html>
-
+<?php if(isset($old1)&&$old1>0){
+               echo "<script>window.location.href='./index.php?url=qldm&kq=2'</script>";
+                
+            }   ?>
 <script>
     function suaDM(name){
         return confirm("Bạn có muốn cập nhật danh mục : "+ name +" ?");
     }
 </script>
+<script src="./assets/js/ajax.js"></script>
 

@@ -34,20 +34,13 @@
         }
         
         if($flag1 == 0){
-            
-            $sql = "update danhmuc set  TenDM = '$tendm' , TrangThai =  '$trangthai' where MaDM = '$madm'";
-            $old = mysqli_query($conn,$sql);
-
-            if($old>0){
-
-                header("location:./index.php?url=qldm&kq=2");
-            }    
+            $sql1 = "update danhmuc set  TenDM = '$tendm' , TrangThai =  '$trangthai' where MaDM = '$madm'";
+            $old1 = mysqli_query($conn,$sql1);
+             
         }
     
     }
+    
 
-    if(isset($_POST['submit1'])){
-        header("location:DsDM.php");
-    }
-
+  
 ?>

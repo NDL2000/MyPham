@@ -29,7 +29,17 @@
 
         <?php
         include("../admin/connect.php");
-        $sql = "select * from taikhoan";
+    //Xu ly Pagination
+      $sql = "SELECT * FROM taikhoan";
+      $kq = mysqli_query($conn,$sql);
+      $num_rows = mysqli_num_rows($kq); //So rows trong database
+      $rows = 5;  //So rows muon hien thi
+      if(isset($_GET['page'])&&$_GET['page']>0&&$_GET['page']<=ceil($num_rows / $rows)){
+        $page = ($_GET['page']-1)*$rows;  //Vi tri record 
+      }
+      else {$page = 1;echo "<script>window.location.href='./index.php?url=QlTK&page=1'</script>"; }
+
+        $sql = "select * from taikhoan limit $page,$rows";
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) {
             $count = 0;
@@ -49,7 +59,9 @@
                     <td>
                         <a href="./index.php?url=suatk&id=<?php echo $row["TenDangNhap"]; ?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
                         <a href="./index.php?url=doimk&id=<?php echo $row["TenDangNhap"]; ?>" class="btn btn-primary"><i class="fas fa-key"></i></a>
+                        <?php if ($row["MaLoai"] != "AD"){ ?>
                         <a href="./index.php?url=xoatk&id=<?php echo $row["TenDangNhap"]; ?>" class="btn btn-danger" onclick="return xoa('<?php echo $row['TenDangNhap']; ?>')"><i class="fas fa-times"></i></a>
+                            <?php }?>
                     </td>
                 </tr>
         <?php }
@@ -59,6 +71,30 @@
             <a class="btn btn-secondary btn-qltk" type="button" href="./index.php?url=themtk">Thêm mới </a>
         </td>
     </table>
+<?php if(ceil($num_rows / $rows)>1){?>
+    <nav aria-label="Page navigation example" style="margin-left:50%;">
+  <ul class="pagination">
+    <?php if(isset($_GET['page'])&& $_GET['page']>1){ ?>
+    <li class="page-item">
+      <a class="page-link" href="./index.php?url=QlTK&page=<?php if(isset($_GET['page'])) echo $_GET['page']-1 ?>" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <?php } ?>
+    <?php $num_pages = ceil($num_rows / $rows);   //So pagination
+          for($i=1;$i<=$num_pages;$i++) { 
+    ?>
+    <li class="page-item"><a class="page-link" href="./index.php?url=QlTK&page=<?php echo $i ?>"><?php echo $i; ?></a></li>
+    <?php } if(isset($_GET['page'])&& $_GET['page']!=$num_pages){?>
+    <li class="page-item">
+      <a class="page-link" href="./index.php?url=QlTK&page=<?php if(isset($_GET['page'])) echo $_GET['page']+1 ?>" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+    <?php } ?>
+  </ul>
+</nav>
+<?php } ?>
     </div>
 </body>
 
