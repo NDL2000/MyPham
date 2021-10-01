@@ -58,9 +58,8 @@
     <?php   
         $total=0;
         $quantity = 0;
-        if(mysqli_num_rows($result)>0){
-            $count =0;
-            
+        $count =0;
+        if(mysqli_num_rows($result)>0){           
             while($row = mysqli_fetch_array($result)) { 
                 $MaHD = $row['MaHD'];
                 $count++;
