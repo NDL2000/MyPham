@@ -1,68 +1,87 @@
 .statistics {
     display: flex;
     justify-content: space-around;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
 .statistics_total {
     width: fit-content;
-    background: #93bbf49e;
-    padding: 15px 20px;
-    height: 60px;
+    /* background: #93bbf49e; */
+    padding: 30px 20px;
+    height: 93px;
     margin-bottom: 30px;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px #0a58ca9e;
+    border-radius: 15px;
+    box-shadow: 0 1px 8px #d92550;
+    min-width: 20%;
 }
 .statistics_bill {
     width: 20%;
-    background: #dc35457d;
-    padding: 15px 20px;
-    height: 60px;
+    /* background: #dc35457d; */
+    padding: 30px 20px;
+    height: 93px;
     margin-bottom: 30px;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px #dc35457d;
+    border-radius: 15px;
+    box-shadow: 0 1px 8px #3dc57f;
+    padding-left: 40px;
 }
 .statistics_product {
     width: 20%;
-    background: #1ebfae;
-    padding: 15px 20px;
-    height: 60px;
+    /* background: #1ebfae; */
+    padding: 30px 20px;
+    height: 93px;
     margin-bottom: 30px;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px #1ebfae;
+    border-radius: 15px;
+    box-shadow: 0 1px 8px #ffc107c4;
+    padding-left: 40px;
 }
 .icon_currency {
-    color: #21e277;
+    color: #d92550;
     font-size: 30px;
 }
 .icon_cart {
-    color: #007bff;
+    color: #3dc57f;
     font-size: 30px;
 }
 .icon_product {
-    color: #ff0080;
+    color: #ffc107c4;
     font-size: 30px;
 }
 .currency {
     font-weight: bold;
-    color: #3c00ff;
-    font-size: 25px;
-    padding-left: 35px;
-    transform: translateY(-33px);
+    color: #d92550;
+    font-size: 50px;
+    padding-left: 45px;
+    transform: translateY(-63px);
+}
+.currency_title {
+    font-size: 15px;
+    padding-left: 47px;
+    transform: translateY(-72px);
 }
 .cart {
-    font-weight: bold;
-    color: #198754;
-    font-size: 25px;
-    padding-left: 50px;
-    transform: translateY(-33px);
+    color: #5ace92;
+    font-size: 50px;
+    padding-left: 80px;
+    transform: translateY(-65px);
+    
+}
+.cart_title {
+    font-size: 15px;
+    padding-left: 63px;
+    transform: translateY(-72px);
+    
 }
 .product {
-    font-weight: bold;
     color: #ffc107c4;
-    font-size: 25px;
-    padding-left: 50px;
-    transform: translateY(-33px);
-
+    font-size: 50px;
+    padding-left: 80px;
+    transform: translateY(-65px);
 }
+.product_title {
+    font-size: 15px;
+    padding-left: 63px;
+    transform: translateY(-72px);
+}
+
 .table-1 {
     margin-left: 50px;
     margin-top: 50px;

@@ -10,7 +10,7 @@
 <body>
     <?php include './connect.php';
 
-    $qr = "SELECT * FROM hoadon";
+    $qr = "SELECT * FROM hoadon where TrangThai='Đã giao'";
     $result = mysqli_query($conn, $qr);
     ?>
     <h1 class="title">THỐNG KÊ</h1>
@@ -86,14 +86,33 @@
 </table>
 <div class="statistics">
     <div class="statistics_total">
-    <i class="fas fa-dollar-sign icon_currency"></i><div class="currency"><span><?php echo number_format($total,"0",",",".")." VNĐ"; ?></span></div>
+    <i class="fas fa-dollar-sign icon_currency"></i>
+          <div class="currency">
+              <span><?php echo number_format($total,"0",",","."); ?></span>
+          </div>
+          <div class="currency_title">
+              <span><?php echo "VNĐ"; ?></span>
+          </div>
     </div>
     <div class="statistics_bill">
-    <i class="fas fa-shopping-cart icon_cart"></i><div class="cart"><span><?php echo $count." đơn hàng"; ?></span></div>
+    <i class="fas fa-shopping-cart icon_cart"></i>
+          <div class="cart">
+              <span><?php echo $count; ?></span>
+          </div>
+          <div class="cart_title">
+              <span><?php echo "Đơn hàng"; ?></span>
+          </div>
     </div>
     <div class="statistics_product">
-    <i class="fas fa-air-freshener icon_product"></i><div class="product"><span><?php echo $quantity." sản phẩm";  ?></span></div>
+    <i class="fas fa-air-freshener icon_product"></i>
+          <div class="product">
+              <span><?php echo $quantity; ?></span>
+          </div>
+          <div class="product_title">
+              <span><?php echo "Sản phẩm"; ?></span>
+          </div>
     </div>
 </div>
+
 </body>
 </html>
