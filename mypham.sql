@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 27, 2021 lúc 12:45 PM
+-- Thời gian đã tạo: Th10 02, 2021 lúc 02:11 AM
 -- Phiên bản máy phục vụ: 10.4.20-MariaDB
 -- Phiên bản PHP: 8.0.8
 
@@ -134,7 +134,7 @@ CREATE TABLE `hoadon` (
 
 INSERT INTO `hoadon` (`TenDangNhap`, `MaHD`, `NgayHD`, `TrangThai`, `GhiChu`) VALUES
 ('nguyenducly2000@gmail.com', 5, '2021-09-01', 'Chờ xét duyệt', NULL),
-('nguyenducly2000@gmail.com', 6, '2021-09-01', 'Đã giao', NULL);
+('nguyenducly2000@gmail.com', 6, '2021-09-06', 'Đã giao', NULL);
 
 -- --------------------------------------------------------
 
@@ -161,7 +161,7 @@ INSERT INTO `khuyenmai` (`MaKM`, `TenKM`, `TuNgay`, `DenNgay`, `TrangThai`) VALU
 (13, 'aaaa', '2021-09-27', '2021-09-26', 'Hết khuyến mãi'),
 (14, 'rt', '2021-09-27', '2021-09-26', 'Hết khuyến mãi'),
 (15, 'aaaaa', '2021-09-27', '2021-09-26', 'Hết khuyến mãi'),
-(18, 'aa', '2021-09-27', '2021-09-28', 'Đang khuyến mãi');
+(18, 'aa', '2021-09-27', '2021-09-28', 'Hết khuyến mãi');
 
 -- --------------------------------------------------------
 

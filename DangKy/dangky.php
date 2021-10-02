@@ -16,16 +16,16 @@
   <div class="container">
     <h1 class="title-reg">Đăng ký</h1>
     <hr>
-    <label><b>Email (*)</b></label>
+    <label><b>Email</b><b style="color:red;"> (*)</b></label>
     <input type="email" placeholder="Nhập Email" name="email" id="email" required>
     <label><b id="error" style="color:red"></b></label><br/><br />
-    <label><b>Mật khẩu (*)</b></label>
+    <label><b>Mật khẩu</b><b style="color:red;"> (*)</b></label>
     <input type="password" placeholder="Nhập mật khẩu" name="password" id="psw" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
 
-    <label><b>Xác nhận mật khẩu (*)</b></label>
+    <label><b>Xác nhận mật khẩu</b><b style="color:red;"> (*)</b></label>
     <input type="password" placeholder="Xác nhận mật khẩu" name="password-repeat" id="psw-repeat" required>
     
-    <label><b>Họ tên (*)</b></label>
+    <label><b>Họ tên</b><b style="color:red;"> (*)</b></label>
     <input type="text" placeholder="Họ tên" name="name" required>
     </br></br>
     <label><b>Giới tính</b></label>
@@ -34,10 +34,10 @@
         <option value="0">Nữ</>
     </select>
     </br></br></br>
-    <label><b>Số điện thoại (*)</b></label>
+    <label><b>Số điện thoại</b><b style="color:red;"> (*)</b></label>
     <input type="text" placeholder="Số điện thoại" name="phone" required>
 
-    <label><b>Địa chỉ (*)</b></label>
+    <label><b>Địa chỉ</b><b style="color:red;"> (*)</b></label>
     <input type="text" placeholder="Địa chỉ" name="address" required>
 
     <hr>
