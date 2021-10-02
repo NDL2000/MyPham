@@ -40,32 +40,39 @@
         $username = $_POST["username"];
         $password = $_POST["password"];
         // Login Admin
-        $sql = "SELECT MatKhau,HoTen,TrangThai from taikhoan where TenDangNhap='$username' and MaLoai='AD'";
+        $sql = "SELECT MatKhau,HoTen,TrangThai,MaLoai from taikhoan where TenDangNhap='$username'";
         $kq = mysqli_query($conn,$sql);
         if(mysqli_num_rows($kq)>0){
             while($row = mysqli_fetch_array($kq)){
             $kq_pass = password_verify($password,$row["MatKhau"]);
             if($kq_pass==true){
                 if($row["TrangThai"]=="1"){
-                $_SESSION["user"] = $row["HoTen"];
-                header("Location:../admin/index.php?ad=1");
+                    if($row["MaLoai"]=="AD"){
+                        $_SESSION["admin"] = $row["HoTen"];
+                        header("Location:../admin/index.php?ad=1");
+                    }
+                    else {
+                        $_SESSION["user"] = $row["HoTen"];
+                        header("Location:../index.php");
+                    }
                 }
                 else {
                      header("Location:./dangnhap.php?kq=-2");
                 }
             }
-        }
-        
+        } 
         }
         else {
             header("Location:./dangnhap.php?kq=0");
         }
+        // Login user
+        
     }     
     else {
         header("Location:./dangnhap.php?kq=-1");
     }   
     }
-        // Login user
+        
         
     
     

@@ -18,7 +18,7 @@
     else{
       $image1=$_FILES['image']['name'];
       $image1_tmp=$_FILES['image']['tmp_name'];
-      move_uploaded_file($image1_tmp,'./assets/images/'.$image1) ;
+      move_uploaded_file($image1_tmp,'./assets/images/images_product/'.$image1) ;
 
     }
     // $price=$_POST['price'];
@@ -70,11 +70,11 @@
            </div>
            <div class="form-group">
              <label for="">Giá Xuất</label>
-             <input type="number" name="price_output"class="form-control" require value="<?php echo  $row_update["GiaXuat"]?>" id="price_output">
+             <input type="number" name="price_output"class="form-control" require value="<?php echo  $row_update["GiaXuat"]?>" id="price_output" min="1">
            </div>
            <div class="form-group">
              <label for="">Số lượng nhập</label>
-             <input type="text" name="input_quality"class="form-control" require value="<?php echo  $row_update['SoLuongNhap']?>" >
+             <input type="text" name="input_quality"class="form-control" require value="<?php echo  $row_update['SoLuongNhap']?>" min="1">
            </div>
            <div class="form-group">
              <label for="">Ngày Áp Dụng</label>

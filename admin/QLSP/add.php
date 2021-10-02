@@ -40,8 +40,8 @@
         $sql_QLSP= "UPDATE SANPHAM SET DonGia='$price_output',HinhAnh='$image1',MaDM='$category_id',TrangThai='$status1',MoTa='$description' where MaSP='$masp'";
         $query_input_output=mysqli_query($conn,$sql_input_output);
         $query_QLSP=mysqli_query($conn,$sql_QLSP);
-        move_uploaded_file($image_tmp,'./assets/images/'.$image1);
-        header("Location: ./index.php?url=qlsanpham&kq=".$query_QLSP);
+        move_uploaded_file($image_tmp,'./assets/images/images_product/'.$image1);
+        header("Location: ./index.php?url=qlsanpham&page=1&kq=".$query_QLSP);
       }
     }
     //-------------------------------------------------------------------------
@@ -50,7 +50,7 @@
     $sql_QLSP="INSERT INTO sanpham(MaSP,TenSP,DonGia,HinhAnh,MaDM,TrangThai,MoTa) VALUES ('$prd_id','$prd_name','$price_output','$image1','$category_id','$status1','$description')";
     $query_input_output=mysqli_query($conn,$sql_input_output);
     $query_QLSP=mysqli_query($conn,$sql_QLSP);
-    move_uploaded_file($image_tmp,'./assets/images/'.$image1);
+    move_uploaded_file($image_tmp,'./assets/images/images_product/'.$image1);
     header("Location: ./index.php?url=qlsanpham&kq=".$query_QLSP."&page=1");
     }
   }
@@ -82,12 +82,12 @@
            </div>
            <div class="form-group">
              <label for="">Giá Nhập</label>
-             <input type="number" name="price_input" class="form-control" id="price_input" required >
+             <input type="number" name="price_input" class="form-control" id="price_input" min="1" required >
            </div>
            <div><span id="a"></span></div>
            <div class="form-group">
              <label for="">Giá Xuất</label>
-             <input type="number" name="price_output"class="form-control" id="price_output" required >
+             <input type="number" name="price_output"class="form-control" id="price_output" min="1" required >
            </div>
            <div class="form-group">
              <label for="">Số lượng nhập</label>

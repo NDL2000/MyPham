@@ -16,7 +16,7 @@
     $kq = mysqli_query($conn,$sql);
     $num_rows = mysqli_num_rows($kq); //So rows trong database
     $rows = 5;  //So rows muon hien thi
-    if(isset($_GET['page'])&&$_GET['page']>0&&$_GET['page']<=ceil($num_rows / $rows)){
+    if(isset($_GET['page'])&&$_GET['page']>0){
       $page = ($_GET['page']-1)*$rows;  //Vi tri record 
     }
     else {$page = 1;echo "<script>window.location.href='./index.php?url=hddanggiao&page=1'</script>"; }

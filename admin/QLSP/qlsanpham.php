@@ -46,7 +46,7 @@
       $kq = mysqli_query($conn,$sql);
       $num_rows = mysqli_num_rows($kq); //So rows trong database
       $rows = 5;  //So rows muon hien thi
-      if(isset($_GET['page'])&&$_GET['page']>0&&$_GET['page']<=ceil($num_rows / $rows)){
+      if(isset($_GET['page'])&&$_GET['page']>0){
         $page = ($_GET['page']-1)*$rows;  //Vi tri record 
       }
       else {$page = 1;echo "<script>window.location.href='./index.php?url=qlsanpham&page=1'</script>"; }
@@ -73,7 +73,7 @@
       <td><?php echo $row['MaSP'] ?></td>
       <td style="word-wrap:break-word"><?php echo $row['TenSP'] ?></td>
       <td><?php echo number_format($row['DonGia'],0,",",".")." VNĐ"; ?></td>
-      <td><img style="background-image: none;" class="image" src="./assets/images/QLSP_image/<?php echo $row['HinhAnh'] ?>"></td>
+      <td><img style="background-image: none;" class="image" src="./assets/images/images_product/<?php echo $row['HinhAnh'] ?>"></td>
       <td><?php echo $row['MaDM'] ?></td>
       <td><?php if($row['TrangThai']==1) echo "Đang hiển thị";
         else echo "Chưa hiển thị"?></td>
@@ -122,6 +122,7 @@
 ?>
   <?php if(isset($_GET['kq1'])&&$_GET['kq1']==1){?>
   <script>swal("","Sửa thành công","success")</script><?php }?>
-  
+  <?php if(isset($_GET['kq'])&&$_GET['kq']==2){?>
+  <script>swal("","Xóa thành công","success")</script><?php }?>
 </body>
 </html>

@@ -4,6 +4,9 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limontesweetalert2/7.2.0/sweetalert2.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+<link rel="icon" href="./assets/images/images_home/favicon.PNG" sizes="32x32" />
+<link rel="icon" href="./assets/images/images_home/favicon.PNG" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="./assets/images/images_home/favicon.PNG" />
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -21,7 +24,7 @@
     <body>
 		<?php session_start(); include './update_Date.php';?>
 		<!-- Check thong tin truoc khi login admin -->
-		<?php if($_SESSION['user']==null) header("Location:../DangNhap/dangnhap.php");?>
+		<?php if($_SESSION['admin']==null) header("Location:../DangNhap/dangnhap.php");?>
 		<div id="fade"></div>
 		<div class="main">
 		<img src="./assets/images/category.png" id="image_nav" class="openbtn">	
