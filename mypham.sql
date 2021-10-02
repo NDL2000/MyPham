@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 02, 2021 lúc 02:11 AM
+-- Thời gian đã tạo: Th10 02, 2021 lúc 05:26 PM
 -- Phiên bản máy phục vụ: 10.4.20-MariaDB
 -- Phiên bản PHP: 8.0.8
 
@@ -36,15 +36,6 @@ CREATE TABLE `cthoadon` (
   `SoLuongMua` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Đang đổ dữ liệu cho bảng `cthoadon`
---
-
-INSERT INTO `cthoadon` (`MaHD`, `MaSP`, `TenKH`, `GiaGoc`, `TyLeKM`, `SoLuongMua`) VALUES
-(5, 2, 'Nguyễn Đức Lý', '128000', 5, 1),
-(6, 3, 'Nguyễn Văn Thế', '135000', 7, 1),
-(6, 4, 'Nguyễn Văn Thế', '128000', 7, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -64,11 +55,8 @@ CREATE TABLE `ctkhuyenmai` (
 --
 
 INSERT INTO `ctkhuyenmai` (`MaKM`, `MaSP`, `TyLeKM`, `GhiChu`, `SoLuongKM`) VALUES
-(9, 2, 5, '', 10),
-(9, 3, 10, '', 20),
-(9, 4, 10, '', 20),
-(9, 5, 10, '', 20),
-(9, 7, 10, '', 20);
+(9, 20, 10, NULL, 10),
+(9, 22, 5, NULL, 10);
 
 -- --------------------------------------------------------
 
@@ -85,13 +73,6 @@ CREATE TABLE `danhgia` (
   `NgayDG` date NOT NULL,
   `TrangThai` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Đang đổ dữ liệu cho bảng `danhgia`
---
-
-INSERT INTO `danhgia` (`MaDG`, `MaSP`, `TenDangNhap`, `SoSao`, `NoiDung`, `NgayDG`, `TrangThai`) VALUES
-(5, 2, 'nguyenducly2000@gmail.com', 5, 'Rất đáng mua', '2021-09-09', 1);
 
 -- --------------------------------------------------------
 
@@ -110,9 +91,9 @@ CREATE TABLE `danhmuc` (
 --
 
 INSERT INTO `danhmuc` (`MaDM`, `TenDM`, `TrangThai`) VALUES
-(1, 'Dầu xả', 1),
-(2, 'Sữa tắm', 1),
-(8, 'Dầu gội', 1);
+(1, 'Kem trị mụn ', 1),
+(2, 'Mỹ phẩm dưỡng da ', 1),
+(8, 'Thuốc trị sẹo', 1);
 
 -- --------------------------------------------------------
 
@@ -133,7 +114,7 @@ CREATE TABLE `hoadon` (
 --
 
 INSERT INTO `hoadon` (`TenDangNhap`, `MaHD`, `NgayHD`, `TrangThai`, `GhiChu`) VALUES
-('nguyenducly2000@gmail.com', 5, '2021-09-01', 'Chờ xét duyệt', NULL),
+('nguyenducly2000@gmail.com', 5, '2021-09-01', 'Đang giao', NULL),
 ('nguyenducly2000@gmail.com', 6, '2021-09-06', 'Đã giao', NULL);
 
 -- --------------------------------------------------------
@@ -156,7 +137,7 @@ CREATE TABLE `khuyenmai` (
 
 INSERT INTO `khuyenmai` (`MaKM`, `TenKM`, `TuNgay`, `DenNgay`, `TrangThai`) VALUES
 (6, 'ABC', '2021-09-17', '2021-09-18', 'Hết khuyến mãi'),
-(9, 'Tết', '2021-09-26', '2021-09-25', 'Hết khuyến mãi'),
+(9, 'Tết', '2021-10-02', '2021-10-04', 'Đang khuyến mãi'),
 (12, 'a', '2021-09-27', '2021-09-26', 'Hết khuyến mãi'),
 (13, 'aaaa', '2021-09-27', '2021-09-26', 'Hết khuyến mãi'),
 (14, 'rt', '2021-09-27', '2021-09-26', 'Hết khuyến mãi'),
@@ -203,16 +184,26 @@ CREATE TABLE `nhapxuat` (
 --
 
 INSERT INTO `nhapxuat` (`MaNhapXuat`, `MaSP`, `GiaNhap`, `GiaXuat`, `SoLuongNhap`, `NgayApDung`) VALUES
-(15, 2, '125000', '130000', 5, '2021-09-26'),
-(16, 3, '110000', '135000', 4, '2021-09-05'),
-(17, 4, '105000', '128000', 10, '2021-09-12'),
-(18, 5, '70000', '85000', 10, '2021-09-12'),
 (25, 6, '115000', '125000', 40, '2021-09-19'),
-(31, 7, '110000', '135000', 40, '2021-09-20'),
-(32, 7, '115000', '145000', 40, '2021-09-20'),
-(34, 8, '150000', '170000', 10, '2021-09-27'),
-(35, 9, '150000', '170000', 10, '2021-09-27'),
-(36, 10, '150000', '172000', 10, '2021-09-27');
+(38, 7, '800000', '850000', 10, '2021-10-02'),
+(39, 8, '120000', '125000', 10, '2021-10-02'),
+(40, 9, '330000', '370000', 10, '2021-10-02'),
+(41, 10, '700000', '750000', 10, '2021-10-02'),
+(42, 11, '900000', '950000', 10, '2021-10-02'),
+(43, 12, '500000', '560000', 10, '2021-10-02'),
+(44, 13, '1100000', '1200000', 10, '2021-10-02'),
+(45, 14, '120000000', '125000000', 10, '2021-10-02'),
+(46, 15, '600000', '650000', 10, '2021-10-02'),
+(47, 16, '250000', '300000', 10, '2021-10-02'),
+(48, 17, '320000', '400000', 10, '2021-10-02'),
+(49, 18, '350000', '380000', 10, '2021-10-02'),
+(50, 19, '360000', '400000', 10, '2021-10-02'),
+(51, 20, '200000', '250000', 10, '2021-10-02'),
+(52, 21, '350000', '380000', 10, '2021-10-02'),
+(53, 22, '550000', '600000', 10, '2021-10-02'),
+(54, 23, '350000', '370000', 10, '2021-10-02'),
+(55, 24, '330000', '370000', 10, '2021-10-02'),
+(56, 25, '1150000', '1200000', 10, '2021-10-02');
 
 -- --------------------------------------------------------
 
@@ -235,14 +226,25 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`MaSP`, `TenSP`, `DonGia`, `HinhAnh`, `MaDM`, `TrangThai`, `MoTa`) VALUES
-(2, 'Sữa tắm chiết xuất dừa', '130000', '2.png', 1, 1, 'Sự hiện diện của các chất béo bão hòa, Triglycerides, Vitamin E trong Dầu Dừa có tác dụng loại bỏ sự mất độ ẩm thông qua các lỗ chân lông trên da, làm giảm khô da, giữ cho làn da mịn màng và bảo vệ chống rạn nứt. Các Acid Capric, Caprylic, Lauric có trong Dầu Dừa có chất khử trùng mạnh và đặc tính kháng khuẩn. Việc sử dụng thường xuyên sản phẩm Coconut Oil Shower Gel có tác dụng làm sạch bụi bẩn bã nhờn, thẩm thấu các chất béo vào dưới da, do đó giữ cho da khỏe mạnh và mịn màng đồng thời ngăn ngừa được lão hóa sớm và nếp nhăn của da.'),
-(3, 'Sữa tắm dầu cám gội', '135000', '2.2.png', 2, 1, 'Sự hiện diện của các chất béo bão hòa, Triglycerides, Vitamin E trong Dầu Dừa có tác dụng loại bỏ sự mất độ ẩm thông qua các lỗ chân lông trên da, làm giảm khô da, giữ cho làn da mịn màng và bảo vệ chống rạn nứt. Các Acid Capric, Caprylic, Lauric có trong Dầu Dừa có chất khử trùng mạnh và đặc tính kháng khuẩn. Việc sử dụng thường xuyên sản phẩm Coconut Oil Shower Gel có tác dụng làm sạch bụi bẩn bã nhờn, thẩm thấu các chất béo vào dưới da, do đó giữ cho da khỏe mạnh và mịn màng đồng thời ngăn ngừa được lão hóa sớm và nếp nhăn của da.'),
-(4, 'Sữa tắm hoa hồng', '128000', '2.3.png', 2, 1, 'Sữa tắm HACHI® Velvety Rose là sự pha trộn độc đáo của các loại dầu tự nhiên kết hợp với chiết xuất Hoa Hồng Pháp, chiết xuất Mật Ong và được bổ sung Collagen giúp tái tạo, dưỡng ẩm sâu cho da, nuôi dưỡng làn da mềm mịn và trắng sáng. Mùi hương Hoa hồng dịu nhẹ, quý phái đem đến sự sảng khoái và tôn vinh vẻ đẹp của bạn.'),
-(5, 'Sữa tắm chiết xuất cám gạo', '85000', '2.1.png', 2, 1, 'Tinh chất mầm Đậu nành có chứa hàm lượng protein chất lượng cao và các Isoflavones – một loại hợp chất phytoestrogen đóng vai trò estrogen thực vật. Đậu nành có thể có tác động tích cực trên da, cải thiện sự xuất hiện của lão hóa da, giảm bớt các đường nhăn và nếp nhăn. Với sự kết hợp cùng AHA, sữa tắm loại\r\nbỏ các lớp da chết, kích thích da sản xuất tế bào mới và trả lại cho làn da vẻ tươi tắn mịn màng đồng thời kích thích việc sản xuất collagen và elastin trong da. Mùi hương dịu nhẹ từ những tinh dầu thiên nhiên đem đến sự sảng khoái sau khi sử dụng.'),
-(7, 'Dầu xả Oliu', '145000', '1.png', 1, 1, 'Dầu xả Hachi® Anti-Dandruff Conditioner là sự kết hợp của tinh dầu Jojoba, Olive có tác dụng cân bằng độ ẩm, cung cấp dưỡng chất, mang lại cho bạn mái tóc chắc khỏe, siêu mềm mượt. Đồng thời được tăng cường hoạt chất hỗ trợ bảo vệ tóc khỏi gàu, ngăn không cho gây gàu.'),
-(8, 'Dầu gội HACHI VIETNAM RELIVING - Hồng', '170000', '6.png', 1, 1, 'Phụ nữ Việt Nam xưa có bí quyết giữ mái tóc chắc khoẻ và bóng mượt bằng cách đun sôi vỏ bưởi để gội đầu. HACHI Reliving lưu giữ nét cổ truyền với tinh dầu vỏ bưởi the the, ngòn ngọt.'),
-(9, 'Dầu gội HACHI VIETNAM HERITAGE (SHAMPOO)– Xanh Lá', '170000', '7.png', 8, 1, 'Trà xanh vốn là một nét văn hoá rất đặc trưng của người Việt. Đất nước Việt Nam còn được xem là cái nôi cổ của nền văn hoá trà trên thế giới. HACHI Heritage muốn gìn giữ di sản thiên nhiên này và ứng dụng trong việc chăm sóc sắc đẹp từ những tinh chất thiên nhiên.'),
-(10, 'Dầu gội HACHI VIETNAM GOLDENRETREAT (SHAMPOO) – Vàng', '172000', '8.png', 8, 1, 'Tinh dầu Argan đã được sử dụng để chăm sóc sắc đẹp cách đây hơn 3500 năm và được mệnh danh là tinh chất “vàng lỏng” trong ngành mỹ phẩm. HACHI VIETNAM Golden Retreat đem sự tinh tuý của Argan từ sa mạc khô cằn để phát triển ra những sản phẩm làm đẹp tốt nhất.\r\nLà sự kết hợp tinh túy nhất từ 4 loại tinh dầu Argan, Olive, hướng Dương, mầm lúa mạch, và 6 loại tinh chất quý giá từ thiên nhiên mang đến quyền năng cải thiện toàn diện các vấn đề về tóc. Vẻ đẹp huyền bí đầy mộng mị ẩn chứa trong dòng dưỡng chất nuôi dưỡng, bao bọc tóc từ tế bào nhỏ nhất. Cho bạn một mái tóc bóng khỏe đủ để say lòng bất cứ ai.');
+(7, 'COMBO TRỊ MỤN SIÊU HIỆU QUẢ M.EN.L.Y', '850000', 'product_7.png', 1, 1, 'Đối với các bạn da nhờn, mụn, da sần sùi do mụn ẩn và mụn liti thì chúng ta nên dùng ngay bộ combo trị mụn siêu hiệu quả MENLY này . Vì sao?\r\nVì bộ combo này giúp da bạn sạch sâu từ bên trong, kìm nhờn tốt, cân bằng độ PH cho da, trị mụn đang có và ngừa mụn mới . Đặc biệt bộ sản phẩm này giúp giảm xưng viêm cho các bạn bị mụn bọc và luôn an toàn cho tất cả các loại da kể cả da nhạy cảm '),
+(8, 'COMBO MINI TRỊ MỤN SIÊU HIỆU QUẢ TRONG 7 NGÀY', '125000', 'product_8.png', 1, 1, 'Có Combo Mini Trị Mụn Siêu Hiệu Quả Trong 7 Ngày việc trị mụn trở nên đơn giản hơn . M.E.N.L.Y xin giới thiệu đến các bạn bộ Combo Mini Trị Mụn Siêu Hiệu Quả Chỉ Trong 7 Ngày được tách ra từ bộ trị mụn siêu quả với vóc dáng nhỏ bé, tiện lợi cho bạn khi mang theo bên người. Với thành phần 100% thiên nhiên an toàn cho da. M.E.N.L.Y tự hào là mỹ phẩm thiên nhiên đầu tiên tại Việt Nam '),
+(9, 'KEM TRỊ MỤN MENLY', '370000', 'product_5.png', 1, 1, 'Sản phẩm được làm 100% từ thiên nhiên được nhập khẩu từ Anh Và Pháp vì vậy không gây kích ứng da , rất phù hợp với từng loại da mặt . Với công dụng làm trị mụn bọc , cám , đầu đen ,... . \" KEM TRỊ MỤN MENLY \" sẽ giúp bạn lấy lại vẻ đẹp trai và tự tin mọi người người xung quanh '),
+(10, 'CẶP ĐÔI TRỊ MỤN BỌC - TRỨNG CÁ MENLY TỐT NHẤT', '750000', 'product_9.png', 1, 1, 'Mụn bọc hay trứng cá là vấn đề rất thường gặp ở nam và nữ tuổi trẻ và tuổi dậy thì. Mụn có thể từ mức độ nhẹ chỉ là mụn đầu đen đến những trường hợp mụn bọc, viêm tấy đỏ khắp mặt. Điều trị mụn không đơn giản, cần có sự tư vấn và điều trị từ các bác sĩ chuyên khoa da liễu. Ngoài ra, tuân thủ điều trị và kiên nhẫn cũng là một trong những yếu tố quan trọng góp phần mau lành bệnh. Mỹ phẩm cho nam xin giới thiệu với các bạn một đòng sản phẩm chuyên trị mụn bọc và mụn cám rất hiệu quả , đang được rất nhiều người sử dụng hiện nay .'),
+(11, 'BỘ TRỊ MỤN BỌC,TRỨNG CÁ XÓA THÂM MENLY', '950000', 'product_10.png', 1, 1, 'Đầu tiên, trước khi đọc bài viết này, Mỹ Phẩm Cho Nam xin có đôi điều với các bạn. Nếu bạn nào tự nghĩ rằng da mặt của mình là đẹp nhất quả đất rồi, da mặt mình lúc nào cũng căng mịn, chẳng bao giờ có mụn và chất nhờn, hay những vết sẹo mụn, sẹo thâm không tồn tại trên mặt. Nếu vậy THÌ các bạn không cần đọc bài viết này làm gì cả nhé. Vì nó không cần thiết.'),
+(12, 'COMBO SẠCH MỤN CÁM, ĐẦU ĐEN MENLY', '560000', 'product_6.png', 1, 1, 'Sản phẩm đầu tiên và cũng là sản phẩm không thể thiếu trong Combo này chính là Sữa Rửa Mặt MENLY. Đây là dòng sản phẩm được sản xuất với công thức độc quyền dành riêng cho làn da nam giới. Là dòng sữa rửa mặt KHÔNG BỌT đầu tiên cho nam giới tại Việt Nam với độ pH 6.0 đạt CHUẨN đảm bảo lấy sạch bụi bẩn, nhờn thừa nhưng vẫn tuyệt đối AN TOÀN cho da.\r\n\r\nSữa Rửa Mặt MENLY với các thành phần tinh túy kết hợp với nhau gồm: Tinh chất nha đam, Đất sét xanh Pháp, Tinh dầu trà xanh, Tinh dầu bạc hà và Tinh dầu vỏ bưởi…'),
+(13, 'COMBO DƯỠNG DA HOÀN HẢO TOÀN THÂN MENLY', '1200000', 'product_11.png', 2, 1, 'COMBO DƯỠNG DA HOÀN HẢO TOÀN THÂN M.E.N.L.Y tập hợp các sản phẩm dưỡng trắng cho mặt và cơ thể cực kỳ hiệu quả, 100% THIÊN NHIÊN nên an toàn cho mọi loại da.\r\n\r\nCung cấp dưỡng chất làm trắng da an toàn ( Anphal Arburin và AHA độc quyền) giúp nuôi dưỡng từ tế bào, giúp mang lại cho nam giới làn  trắng khỏe tự nhiên và nam tính nhất.\r\n\r\nKhông bắt nắng, không bào mòn da.'),
+(14, 'BỘ TỨ DƯỠNG DA SẠCH MỤN MENLY', '125000000', 'product_12.png', 2, 1, 'Sở hữu làn da trắng, sạch mụn không chỉ là mơ ước của riêng phái nữ. Hiểu được tâm lý này của các đấng mài râu, BỘ TỨ DƯỠNG DA SẠCH MỤN MENLY sẽ giúp anh em có được làn da như ý!\r\n\r\nSử dụng trọn bộ mỹ phẩm chăm sóc da bao gồm: Sữa rửa mặt MENY, Toner dưỡng ẩm MENLY, Serum dưỡng trắng MENLY và Kem trị mụn MENLY sẽ mang lại cho bạn những kết quả ngoài mức mong đợi. BỘ TỨ DƯỠNG TRẮNG DA SẠCH MỤN MENLY với chiết xuất từ thiên nhiên giúp làn da nam giới được nâng niu trọn vẹn. \r\n\r\nHãy nhanh tay đặt hàng để sở hữu cho mình BỘ TỨ DƯỠNG TRẮNG DA SẠCH MỤN MENLY - làn da sáng mịn trong tầm tay bạn!'),
+(15, 'COMBO DƯỠNG TRẮNG SẠCH DA MENLY', '650000', 'product_6.png', 2, 1, 'Mỗi ngày 2 lần sử dụng Sữa rửa mặt Menly, bạn sẽ cảm nhận làn da mềm mịn, sạch nhờn đồng thời nhờ đặc tính kháng khuẩn nên giúp ngừa mụn và làm giảm mụn hiệu quả.\r\n\r\nTiếp đó, Serum trắng da Menly sẽ làm mờ vết thâm sau khi mụn xẹp, ngăn ngừa viêm da và làm sáng da đều lên mỗi ngày.\r\n\r\nHãy nhanh tay đặt hàng để sở hữu cho mình COMBO DƯỠNG TRẮNG SẠCH MỤN MENLY - làn da sáng mịn trong tầm tay bạn!'),
+(16, 'SERUM DƯỠNG TRẮNG DA MENLY', '300000', 'product_3.png', 2, 1, 'Serum là dòng sản phẩm không còn xa lạ với chị em phụ nữ nữa. Tuy nhiên, ít người biết rằng, ngay cả nam giới cũng có thể sử dụng serum dưỡng trắng da cho nam để chăm sóc cho làn da của mình.\r\n\r\nChính vì thế mà sản phẩm Serum dưỡng trắng da MENLY dành riêng cho phái mạnh đã ra đời. Sản phẩm này không chỉ có thành phần hoạt chất tốt cho da mà còn có những công dụng vượt trội mà bạn không thể ngờ tới.\r\n\r\nSản phẩm serum này là một trong các sản phẩm đặc trưng của dòng mỹ phẩm thiên nhiên cao cấp đầu tiên cho nam tại Việt Nam, ưu việt vượt trội so với những dòng kem dưỡng trắng da cho nam giới hiện nay trên thị trường.\r\n\r\nTrong serum dưỡng trắng cho nam M.E.N.L.Y có chứa chủ yếu là Arbutin, Vitamin C-E. Đây đều là các hoạt chất giúp làm sáng da vô cùng an toàn. Không chỉ vậy, chúng còn có tác dụng làm mờ thâm nám, giúp da đều màu hơn và làm da trắng sáng một cách tự nhiên. Làn da của bạn sẽ được quan tâm và chăm sóc toàn diện, giúp các chàng trai có làn da trắng sáng khỏe mạnh, lấy lại tự tin khi giao tiếp cũng như gây ấn tượng với người đối diện.'),
+(17, 'SỮA TẮM THẢI ĐỘC MENLY ', '400000', 'product_2.png', 2, 1, 'Sữa tắm thải độc MENLY được chiết  xuất từ:\r\n\r\n- Aloe Vera Extract: cung cấp các Vitamin và dưỡng chất cần thiết cho da, duy trì độ ẩm, giúp da luôn mịn màng, mềm mại. \r\n- Calendula Hydrosol (Hydrosol từ Hoa Cúc Xu Xi): giàu flavonoids, giúp chống oxi hoa và ngăn ngừa lão hóa da, đồng thời Calendula Hydrosol còn chứa acid oleanolic giúp làm dịu da, chống kích ứng, giảm stress và bảo vệ da dưới tác hại của môi trường \r\n- Blend Tinh dầu Trị Liệu: kích thích tuần hoàn máu, hương thơm tự nhiên giúp thư giãn, giảm căng thẳng, mệt mỏi.\r\n- Khi sử dụng sản phẩm được 3 – 4 ngày, bạn sẽ có cảm giác như sạch da hơn, có mùi trà xanh và bạc hà thơm dễ chịu. Đặc biệt khi rửa xong da ko bị căng khô.'),
+(18, 'SỮA RỬA MẶT MENLY ', '380000', 'product_4.png', 2, 1, '- SỮA RỬA MẶT M.E.N.L.Y là dòng sản phẩm được sản xuất với công thức độc quyền danh riêng cho làn da nam giới. Đây là dòng sữa rửa mặt KHÔNG BỌT đầu tiên cho nam giới tại Việt Nam với độ pH 6.0 đạt CHUẨN đảm bảo lấy sạch bụi bẩn, nhờn thừa nhưng vẫn tuyệt đối AN TOÀN cho da\r\n- Với hương thơm tinh dầu nam tính vừa giúp làm sạch, vừa tạo cảm giác thư giãn trong quá trình massage, rửa mặt. Vì là sản phẩm hoàn toàn thiên nhiên nên bạn sẽ KHÔNG phải LO LẮNG về vấn đề ăn mòn da. Hàm lượng dưỡng chất và chiết xuất DỒI DÀO trong SỮA RỬA MẶT M.E.N.L.Y giúp nâng niu và bảo vệ làn da nam giới vượt trội.'),
+(19, 'KEM DƯỠNG TRẮNG BODY MENLY', '400000', 'product_1.png', 2, 1, '- Cải thiện sức khỏe làn da nam giới, giúp da mịn khỏe, săn chắc\r\n\r\n- Dưỡng da trắng sáng an toàn nhưng vẫn rất hiệu quả\r\n-  AHA : Hợp chất dưỡng trắng da cực kỳ hiệu quả. Tuy nhiên, hợp chất AHA của dòng sản phẩm MENLY đã được tinh chỉnh độc đáo để đảm bảo độ an toàn cao nhất và phù hợp nhất với làn da nam giới Việt.\r\n\r\n- Fermented Honey (Mật ong lên men): là hoạt chất có nguồn gốc hoàn toàn từ thiên nhiên, giúp tẩy tế bào chết nhẹ nhàng nhất, khiến da mềm mịn, gia tăng hiệu quả sản phẩm, cải thiện các khuyết điểm vốn có về màu da.\r\n\r\n- Hydrolyzed Collagen (Collagen Thủy phân): Là dòng Collagen cải tiến, có công dụng tuyệt vời giúp da khỏe mịn, tăng cường độ đàn hồi và kích thích tái tạo da mạnh mẽ.\r\n\r\n- Mulberry Extract (Chiết xuất dâu tằm): Giúp da mịn khỏe, là một trong 20 hợp chất thiên nhiên hiếm hoi được FDA Hoa Kỳ chứng nhận là đem lại công dụng sảng da khi sử dụng.'),
+(20, 'TONER SE KHÍT LỖ CHÂN LÔNG MENLY', '250000', 'product_13.png', 2, 1, 'Toner (xịt khoáng) được hiểu ở đây là thành phần nước có chứa các dưỡng chất hoặc các chất hoạt động, và tác dụng của toner phụ thuộc vào các loại dưỡng chất mà chúng chứa đựng. Toner được sử dụng sau khi rửa mặt, và được xem là yếu tố quyết định để bảo vệ và chăm sóc sâu cho làn da.\r\n\r\nDo đó, nếu bạn muốn se khít lỗ chân lông, hoặc kiểm soát lượng bã nhờn trên da, thì việc tạo cho mình một thói quen sử dụng toner là không thể bỏ qua. Bên cạnh đó, toner còn có tác dụng cân bằng độ ẩm sau khi rửa mặt, giúp da bạn trở nên rạng rỡ, và sáng khỏe. Sau khi sử dụng qua toner, da bạn sẽ được trả về với điều kiện lý tưởng nhất, để hấp thụ các dưỡng chất từ kem dưỡng, serum, hay thậm chí là tinh dầu mà bạn cần sử dụng sau đó.'),
+(21, 'KEM CHỐNG NẮNG NEUTROGENA SPF 55', '380000', 'product_14.png', 2, 1, '- Chống nắng hiệu quả nhất, bảo vệ bạn khỏi tia UVA UVB\r\n\r\n- Waterproof\r\n\r\n- Không bít lỗ chân lông'),
+(22, 'KEM DƯỠNG TRẮNG DA CAO CẤP VICTORIA', '600000', 'product_15.png', 2, 1, 'Loại bỏ những sắc tố đen.\r\nNgăn ngừa tia UV gây sạm da, chống nắng hiệu quả rất cao, làm phai vết nám mờ, tàn nhang đặc trị mụn, ngăn ngừa sự phát triển của mụn... làm mờ vết thâm do mụn để lại, làm se khít lỗ chân lông.\r\nLoại bỏ tế bào chết sản sinh tái tạo tế bào mới.\r\nLàm cho làn da săn chắc, chống lại hiện tượng da bị chảy xệ.\r\nPhục hồi làn da bị lão hóa, dưỡng ẩm giúp làm giảm vết nhăn, làm căng da mặt, làm da sạm trở nên trắng hồng tự nhiên, thích hợp làm kem lót nền trang điểm.'),
+(23, 'THUỐC TRỊ SẸO MỤN SCAR ESTHETIQUE', '370000', 'product_16.png', 8, 1, 'Kem trị sẹo Scar Esthetique tác dụng cải thiện và làm mờ với hầu hết các loại mới, dưới 5 năm, bao gồm: sẹo lõm, sẹo thâm do mụn, sẹo rỗ trên mặt.\r\n \r\nMỗi ngày bạn chỉ phải bỏ ra khoảng 5 phút và 2 lần thoa đều đặn để cải tạo làn da sẹo của mình. Nên nhớ, bạn chỉ nên dùng 1 lượng vừa đủ kem trị sẹo rồi thoa đều, mỏng lên vết sẹo, đồng thời nhẹ nhàng massage xung quanh vết sẹo. Bạn cũng có thể make up khi đang sử dụng kem trị sẹo Scar Esthetique.\r\n \r\nKem trị sẹo Scar Esthetique là dạng gel trong suốt, vì vậy nếu là sẹo trên mặt, bạn cũng không phải lo lắng vì vẫn có thể make up như bình thường. Sau khi thoa kem trị sẹo khoảng 30 phút, thời gian đủ để kem thẩm thấu vào vết sẹo và khô ráo, lúc này bạn có thể make up như bình thường được rồi đấy, yên tâm nhé.'),
+(24, 'THUỐC TRỊ SẸO REJUVASIL', '370000', 'product_17.png', 8, 1, 'Rejuvasil Có tác dụng ngừa sẹo sau phẫu thuật, sẹo bỏng, sẹo, thu nhỏ các vết sẹo cũ sẹo màu, sẹo phì đại.. mà Không cần đến sự can thiệp của các Bác Sỹ Phẫu thuật.'),
+(25, 'THUỐC TRỊ SẸO SCAR ESTHETIQUE 60ML', '1200000', 'product_18.png', 8, 1, '-  Công nghệ tiến bộ trong Scar Esthetique ngăn ngừa hiệu quả tối ưu với sẹo lõm, sẹo thâm do mụn …\r\n\r\n-  Kết quả nghiên cứu cho thấy Scar Esthetique đáp ứng tiêu chuẩn chất lượng TAQA.\r\n\r\n-  Không gây dị ứng.');
 
 -- --------------------------------------------------------
 
@@ -268,7 +270,7 @@ CREATE TABLE `taikhoan` (
 
 INSERT INTO `taikhoan` (`TenDangNhap`, `Email`, `MatKhau`, `MaLoai`, `TrangThai`, `HoTen`, `GioiTinh`, `SoDienThoai`, `DiaChi`) VALUES
 ('admin', '', '$2y$10$bsdiqHJ.g2QoWC/Gpee7Bua9/VCY5zwYLyol3Mex0GWIcHufEuTlO', 'AD', 1, 'Nguyễn Đức Lý', 1, '0963700285', 'Quảng Nam'),
-('nguyenducly2000@gmail.com', 'nguyenducly2000@gmail.com', '$2y$10$jGXjeHUgWFNJxLeDsIZQnuS0uDxXOCk2Z63iWBqs/Jr0dyY4WJ8YC', 'US', 0, 'Nguyễn Đức Lý', 1, '0963700285', '123 Hùng Vương'),
+('nguyenducly2000@gmail.com', 'nguyenducly2000@gmail.com', '$2y$10$jGXjeHUgWFNJxLeDsIZQnuS0uDxXOCk2Z63iWBqs/Jr0dyY4WJ8YC', 'US', 1, 'Nguyễn Đức Lý', 1, '0963700285', '123 Hùng Vương'),
 ('nguyenvanthedtu@gmail.com', 'nguyenvanthedtu@gmail.com', '$2y$10$El5qKsl6nDXA92nbvNPByOaXMQILSqj9tAJ4J4c2saiCM77X6ZUCq', 'US', 1, 'Nguyễn Văn Thế', 1, '0965720364', 'Huế');
 
 --
@@ -375,7 +377,7 @@ ALTER TABLE `khuyenmai`
 -- AUTO_INCREMENT cho bảng `nhapxuat`
 --
 ALTER TABLE `nhapxuat`
-  MODIFY `MaNhapXuat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `MaNhapXuat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
