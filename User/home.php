@@ -476,7 +476,7 @@
     <a href="../DangKy/dangky.php" class="nav-top-link nav-top-not-logged-in is-small"><span>Đăng ký</span></a>  
     <?php }else { ?>
     <a href="" class="nav-top-link nav-top-not-logged-in is-small"><span style="padding-right: 10px;">Xin chào, <?php echo $_SESSION["user"] ?></span></a>         
-    <a href="./dangxuat_user.php" class="nav-top-link nav-top-not-logged-in is-small"><span>Thoát</span></a>                         
+    <a href="./dangxuat.php" class="nav-top-link nav-top-not-logged-in is-small"><span>Thoát</span></a>                         
     <?php }?>
     <!-- .account-login-link -->
 
