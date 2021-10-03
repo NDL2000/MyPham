@@ -7,7 +7,9 @@ html {
 body {
     margin: 0
 }
-
+.woocommerce-Price-amount {
+    font-size: 12px !important;
+}
 article,
 aside,
 details,

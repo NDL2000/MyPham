@@ -1156,7 +1156,7 @@
 
 
                                                             <h3 class="txt-icon">Bảo mật</h3>
-                                                            <p>Chính sách bảo mật thông tin khi sử dụng website Hachi Việt Nam</p>
+                                                            <p>Chính sách bảo mật thông tin khi sử dụng website của chúng tôi</p>
 
                                                         </div>
                                                     </div>
@@ -1215,9 +1215,9 @@
 
                         <?php 
                            $qr = "SELECT km.MaKM,km.TrangThai,sp.HinhAnh,sp.MaSP,sp.TenSP,sp.DonGia,ct.TyLeKM FROM sanpham as sp,ctkhuyenmai as ct,khuyenmai as km WHERE sp.MaSP=ct.MaSP and ct.MaKM=km.MaKM and km.TrangThai='Đang khuyến mãi'";
-                           $result1 = mysqli_query($conn,$qr);
-                              if(mysqli_num_rows($result1)>0){
-                                 while($row1 = mysqli_fetch_array($result1)){                      
+                           $result = mysqli_query($conn,$qr);
+                              if(mysqli_num_rows($result)>0){
+                                 while($row = mysqli_fetch_array($result)){                      
                         ?>
 
                             <div class="col">
@@ -1225,14 +1225,14 @@
 
                                     <div class="badge-container absolute left top z-1">
                                         <div class="callout badge badge-circle">
-                                             <div class="badge-inner secondary on-sale"><span class="onsale"><?php echo $row1["TyLeKM"]." %" ?></span></div>
+                                             <div class="badge-inner secondary on-sale"><span class="onsale"><?php echo $row["TyLeKM"]." %" ?></span></div>
                                         </div>
                                     </div>
                                     <div class="product-small box has-hover box-normal box-text-bottom">
                                         <div class="box-image">
                                             <div class="">
                                             <a href="">
-                                                <img width="300" height="300" src="./assets/images/images_home/images_product/<?php echo $row1['HinhAnh'] ?>"/>
+                                                <img width="300" height="300" src="./assets/images/images_home/images_product/<?php echo $row['HinhAnh'] ?>"/>
                                             </a>
                                             </div>
                                             <div class="image-tools top right show-on-hover">
@@ -1244,11 +1244,11 @@
 
                                         <div class="box-text text-center">
                                             <div class="title-wrapper">
-                                                <p class="name product-title"><a href=""><?php echo $row1["TenSP"] ?></a></p>
+                                                <p class="name product-title"><a href=""><?php echo $row["TenSP"] ?></a></p>
                                             </div>
                                             <div class="price-wrapper">
-                                                <span class="price"><del><span class="woocommerce-Price-amount amount"><?php echo number_format($row1["DonGia"],"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span></span>
-                                                </del> <ins><span class="woocommerce-Price-amount amount"><?php echo number_format($row1["DonGia"]-($row1["DonGia"]*$row1["TyLeKM"]/100),"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span></span></ins></span>
+                                                <span class="price"><del><span class="woocommerce-Price-amount amount" style="font-size: 12px !important;"><?php echo number_format($row["DonGia"],"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span></span>
+                                                </del> <ins><span class="woocommerce-Price-amount amount" style="font-size: 17px !important;"><?php echo number_format($row["DonGia"]-($row["DonGia"]*$row["TyLeKM"]/100),"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span></span></ins></span>
                                             </div>
                                         </div>
                                         <!-- box-text -->
@@ -1599,7 +1599,7 @@
                                                 <p class="name product-title"><a href=""><?php echo $row["TenSP"] ?></a></p>
                                             </div>
                                             <div class="price-wrapper">
-                                                <span class="price"><span class="woocommerce-Price-amount amount"><?php echo number_format($row["DonGia"],"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span></span>
+                                                <span class="price"><span class="woocommerce-Price-amount amount" style="font-size: 17px !important;"><?php echo number_format($row["DonGia"],"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span></span>
                                                 </span>
                                             </div>
                                         </div>
