@@ -30,7 +30,7 @@
             $result = mail($to_email,$subject,$body,$headers);
 
             $pass_hash = password_hash($MatKhau,PASSWORD_DEFAULT);
-            $sql = "update TAIKHOAN set MatKhau='$pass_hash' where TenDangNhap='$username'";
+            $sql = "update TAIKHOAN set MatKhau='$pass_hash' where TenDangNhap='$email'";
             mysqli_query($conn,$sql);
             header("Location:../DangNhap/dangnhap.php?m=99");
            
