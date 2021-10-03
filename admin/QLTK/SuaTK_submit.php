@@ -56,7 +56,7 @@
             $sql1="update taikhoan set Email = '$email' , MaLoai = '$maloai' , TrangThai = '$trangthai' , HoTen = '$hoten' , GioiTinh = '$sex' , SoDienThoai = '$sodienthoai' where TenDangNhap = '$tendangnhap'";
             $old1=mysqli_query($conn,$sql1);
             if( $old1>0){
-                header("location:./index.php?url=QlTK&kq=2&page=1");
+                echo "<script>window.location.href='./index.php?url=QlTK&kq=2&page=1'</script>";
             }
         }      
     }

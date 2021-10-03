@@ -40,7 +40,6 @@
             $old = mysqli_query($conn,$sql);
             $row = mysqli_fetch_row($old);
             $matkhaucu1 = $row[2];
-
             if(password_verify($matkhaucu,$matkhaucu1)){
                 
                 $errors['matkhaucu'] = 'Mật khẩu cũ chưa đúng !!!'; 
@@ -93,8 +92,7 @@
             $old1=mysqli_query($conn,$sql1);
 
             if($old1 > 0){
-
-                header("location:./index.php?url=QlTK&kq=4&page=1");
+                echo "<script>window.location.href='./index.php?url=QlTK&kq=4&page=1'</script>";
             }
         }
     }
