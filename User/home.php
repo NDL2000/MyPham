@@ -1201,101 +1201,71 @@
 
                     </div>
                     <!-- .section-bg -->
+                <div class="section-content relative">
 
-                    <div class="section-content relative">
+
+                        <div class="txt-all-tieude">
+                            <h2 class="txt-tieude">Sản phẩm khuyến mãi</h2>
+                            <p>Các sản phẩm đang được khuyến mãi của nhiều loại sản phẩm</p>
+                        </div>
 
 
-                        <div class="row" id="row-800145545">
+                        <div class="row large-columns-5 medium-columns-3 small-columns-2 row-small has-shadow row-box-shadow-2-hover slider row-slider slider-nav-simple slider-nav-push" data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}'>
 
-                            <div class="col small-12 large-12">
+
+                        <?php 
+                           $qr = "SELECT km.MaKM,km.TrangThai,sp.HinhAnh,sp.MaSP,sp.TenSP,sp.DonGia,ct.TyLeKM FROM sanpham as sp,ctkhuyenmai as ct,khuyenmai as km WHERE sp.MaSP=ct.MaSP and ct.MaKM=km.MaKM and km.TrangThai='Đang khuyến mãi'";
+                           $result1 = mysqli_query($conn,$qr);
+                              if(mysqli_num_rows($result1)>0){
+                                 while($row1 = mysqli_fetch_array($result1)){                      
+                        ?>
+
+                            <div class="col">
                                 <div class="col-inner">
 
-                                    <div id="gap-550969650" class="gap-element clearfix" style="display:block; height:auto;">
-
-                                        <style scope="scope">
-                                            #gap-550969650 {
-                                                padding-top: 50px;
-                                            }
-                                        </style>
+                                    <div class="badge-container absolute left top z-1">
+                                        <div class="callout badge badge-circle">
+                                             <div class="badge-inner secondary on-sale"><span class="onsale"><?php echo $row1["TyLeKM"]." %" ?></span></div>
+                                        </div>
                                     </div>
-
-
-                                    <div class="txt-all-tieude">
-                                        <h2 class="txt-tieude">Sản phẩm khuyến mãi</h2>
-                                        <p>Các sản phẩm đang được khuyến mãi của nhiều loại sản phẩm</p>
-                                    </div>
-
-                                    <div class="tabbed-content tab-product">
-
-                                        <!-- <ul class="nav nav-simple nav-uppercase nav-size-normal nav-center">
-                                       
-                                        <li class="tab has-icon"><a href=""><span></span></a></li>
-                                        
-                                        </ul> -->
-                                        <div class="tab-panels">
-                                            <div class="panel active entry-content" id="tab_dầu-gội">
-
-
-
-                                                <div class="row large-columns-5 medium-columns-3 small-columns-2 row-small has-shadow row-box-shadow-2-hover">
-                                                <?php 
-                                                            $sql = "SELECT * FROM sanpham ORDER BY MaSP DESC LIMIT 10";
-                                                            $result = mysqli_query($conn,$sql);
-                                                            if(mysqli_num_rows($result)>0){
-                                                            while($row = mysqli_fetch_array($result)){
-                                                               include "./xlkhuyenmai.php";
-                                                               if(mysqli_num_rows($result1)>0){
-                                                                  while($row1 = mysqli_fetch_array($result1)){
-                                                                      if($row1["MaSP"]==$row["MaSP"]){
-
-                                                        ?>
-                                                    
-                                                    <div class="col" data-animate="bounceInUp">
-                                                        <div class="col-inner">
-
-                                                        <div class="badge-container absolute left top z-1">
-                                                                <div class="callout badge badge-circle">
-                                                                    <div class="badge-inner secondary on-sale"><span class="onsale"><?php echo $row1["TyLeKM"]." %" ?></span></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-small box has-hover box-normal box-text-bottom">
-                                                                <div class="box-image">
-                                                                    <div class="">
-                                                                        <a href="">
-                                                                            <img width="300" height="300" src="./assets/images/images_home/images_product/<?php echo $row['HinhAnh'] ?>"/>
-                                                                        </a>
-                                                                        <!-- <a href="">
-										<img width="300" height="300" src="./assets/images/images_home/logo_ciel.png" class="show-on-hover absolute fill hide-for-small back-image" alt="" /></a> -->
-                                                                    </div>
-                                                                    <div class="image-tools top right show-on-hover">
-                                                                    </div>
-                                                                    <div class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
-                                                                    </div>
-                                                                </div>
-                                                                <!-- box-image -->
-
-                                                                <div class="box-text text-center">
-                                                                    <div class="title-wrapper">
-                                                                        <p class="name product-title"><a href=""><?php echo $row1["TenSP"]?></a></p>
-                                                                    </div>
-                                                                    <div class="price-wrapper">
-                                                                        <span class="price"><del><span class="woocommerce-Price-amount amount"><?php echo number_format($row1["DonGia"],"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span></span>
-                                                                        </del> <ins><span class="woocommerce-Price-amount amount"><?php echo number_format($row1["DonGia"]-($row1["DonGia"]*$row1["TyLeKM"]/100),"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span></span></ins></span>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- box-text -->
-                                                            </div>
-                                                            <!-- box -->
-                                                        </div>
-                                                        <!-- .col-inner -->
-                                                    </div>
-                                                    <!-- col -->
-                                                <?php }}}}}?>
-                                                 
-                                                    
-
+                                    <div class="product-small box has-hover box-normal box-text-bottom">
+                                        <div class="box-image">
+                                            <div class="">
+                                            <a href="">
+                                                <img width="300" height="300" src="./assets/images/images_home/images_product/<?php echo $row1['HinhAnh'] ?>"/>
+                                            </a>
                                             </div>
-                                        </div>   
+                                            <div class="image-tools top right show-on-hover">
+                                            </div>
+                                            <div class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+                                            </div>
+                                        </div>
+                                        <!-- box-image -->
+
+                                        <div class="box-text text-center">
+                                            <div class="title-wrapper">
+                                                <p class="name product-title"><a href=""><?php echo $row1["TenSP"] ?></a></p>
+                                            </div>
+                                            <div class="price-wrapper">
+                                                <span class="price"><del><span class="woocommerce-Price-amount amount"><?php echo number_format($row1["DonGia"],"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span></span>
+                                                </del> <ins><span class="woocommerce-Price-amount amount"><?php echo number_format($row1["DonGia"]-($row1["DonGia"]*$row1["TyLeKM"]/100),"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span></span></ins></span>
+                                            </div>
+                                        </div>
+                                        <!-- box-text -->
+                                    </div>
+                                    <!-- box -->
+                                </div>
+                                <!-- .col-inner -->
+                            </div>
+                            <!-- col -->
+                        <?php }}?>
+
+                            
+                        </div>
+
+
+                    </div>
+                                                            
                     <!-- .section-content -->
 
 
@@ -1599,7 +1569,7 @@
 
 
                         <?php 
-                            $sql = "SELECT * FROM sanpham ORDER BY MaSP DESC LIMIT 10";
+                            $sql = "SELECT sp1.MaSP,sp1.TenSP,sp1.HinhAnh,sp1.DonGia FROM sanpham as sp1 WHERE not EXISTS (SELECT sp.MaSP FROM sanpham as sp,ctkhuyenmai as ct,khuyenmai as km WHERE sp.MaSP=ct.MaSP and ct.MaKM=km.MaKM and km.TrangThai='Đang khuyến mãi' and sp1.MaSP=sp.MaSP) ORDER BY MaSP DESC LIMIT 10";
                                 $result = mysqli_query($conn,$sql);
                                 if(mysqli_num_rows($result)>0){
                                     while($row = mysqli_fetch_array($result)){                       
