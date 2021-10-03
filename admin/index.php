@@ -4,9 +4,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limontesweetalert2/7.2.0/sweetalert2.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
-<link rel="icon" href="./assets/images/images_home/favicon.PNG" sizes="32x32" />
-<link rel="icon" href="./assets/images/images_home/favicon.PNG" sizes="192x192" />
-<link rel="apple-touch-icon-precomposed" href="./assets/images/images_home/favicon.PNG" />
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,6 +17,8 @@
       <script src="https://kit.fontawesome.com/c52f7154f4.js" crossorigin="anonymous"></script>
 	  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <link rel="stylesheet" href="./assets/css/index.css"/>
+	  <link rel="icon" href="../User/assets/images/images_home/favicon.PNG" sizes="32x32" type="image/png"/>
+	<link rel="icon" href="../User/assets/images/images_home/favicon.PNG" sizes="192x192" type="image/png"/>
     </head>
     
     <body>

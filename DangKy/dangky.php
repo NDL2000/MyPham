@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limontesweetalert2/7.2.0/sweetalert2.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <link rel="icon" href="../User/assets/images/images_home/favicon.PNG" sizes="32x32" type="image/png"/>
+	  <link rel="icon" href="../User/assets/images/images_home/favicon.PNG" sizes="192x192" type="image/png"/>
     <title>Đăng ký</title>
 </head>
 <body>

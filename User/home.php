@@ -4,14 +4,6 @@
 
 <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="profile" href="https://gmpg.org/xfn/11" />
-    <link rel="pingback" href="http://mauweb.monamedia.net/hachi/xmlrpc.php" /> -->
-
-    <!-- <script>
-        (function(html) {
-            html.className = html.className.replace(/\bno-js\b/, 'js')
-        })(document.documentElement);
-    </script> -->
     <title>Menly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link rel='dns-prefetch' href='//mauweb.monamedia.net' />
@@ -20,10 +12,6 @@
     <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="alternate" type="application/rss+xml" title="Dòng thông tin Hachi Mona &raquo;" href="http://mauweb.monamedia.net/hachi/feed/" />
     <link rel="stylesheet" href="./assets/css/home.css">
-    
-
-
-
     
     <style type="text/css">
         img.wp-smiley,
@@ -75,11 +63,10 @@
             opacity: 1;
         }
     </style>
-    <!--[if IE]><link rel="stylesheet" type="text/css" href="http://mauweb.monamedia.net/hachi/wp-content/themes/flatsome/assets/css/ie-fallback.css"><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"></script><script>var head = document.getElementsByTagName('head')[0],style = document.createElement('style');style.type = 'text/css';style.styleSheet.cssText = ':before,:after{content:none !important';head.appendChild(style);setTimeout(function(){head.removeChild(style);}, 0);</script><script src="http://mauweb.monamedia.net/hachi/wp-content/themes/flatsome/assets/libs/ie-flexibility.js"></script><![endif]--><noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+  
     <!-- Set favicon website -->
     <link rel="icon" href="./assets/images/images_home/favicon.PNG" sizes="32x32" />
     <link rel="icon" href="./assets/images/images_home/favicon.PNG" sizes="192x192" />
-    <link rel="apple-touch-icon-precomposed" href="./assets/images/images_home/favicon.PNG" />
     <meta name="msapplication-TileImage" content="http://mauweb.monamedia.net/hachi/wp-content/uploads/2019/12/cropped-icon-mona-01-270x270.png" />
     <style id="custom-css" type="text/css">
         :root {
@@ -2003,7 +1990,7 @@
                                     <div class="icon-box-img" style="width: 20px">
                                         <div class="icon">
                                             <div class="icon-inner">
-                                                <?xml version="1.0" encoding="iso-8859-1"?>
+                                                <?xml version ="1.0" encoding="iso-8859-1"?>
                                                 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                                                 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
                                                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="612px" height="612px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
