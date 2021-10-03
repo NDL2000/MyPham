@@ -1,4 +1,4 @@
 <?php
     unset($_SESSION['admin']);
-    header('Location:../DangNhap/dangnhap.php');
+    echo "<script>window.location.href='../DangNhap/dangnhap.php'</script>"
 ?>

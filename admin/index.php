@@ -31,7 +31,7 @@
 			<div id="jquery-accordion-menu" class="jquery-accordion-menu" style="width: 20%;">
 				<div class="jquery-accordion-menu-header">    
                     <img src="./assets/images/profile.png" alt="./assets/images/profile.png" width="80" class="mr-3 rounded-circle image-profile">      
-                    <p class="name"><?php if(isset($_SESSION['user'])) echo $_SESSION['user'];?></p>	
+                    <p class="name"><?php if(isset($_SESSION['admin'])) echo $_SESSION['admin'];?></p>	
                 </div>	
 				<ul class="active1">
 					<li><a href="./index.php?url=QlTK"><i class="far fa-user" id="icon"></i>Quản lý tài khoản </a></li>
@@ -136,8 +136,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
         <script src="./assets/js/index.js"></script>
 		<script src="./assets/js/date.js"></script>
-		<?php if(isset($_SESSION['user']) && isset($_GET['ad']) && $_GET['ad']==1) {?>
-			<script>swal("","Xin chào,"+ " <?php echo $_SESSION['user'] ?> chào mừng bạn đến với trang quản trị viên của chúng tôi!","success");</script>
+		<?php if(isset($_SESSION['admin']) && isset($_GET['ad']) && $_GET['ad']==1) {?>
+			<script>swal("","Xin chào,"+ " <?php echo $_SESSION['admin'] ?> chào mừng bạn đến với trang quản trị viên của chúng tôi!","success");</script>
 		<?php } ?>	
     </body>
 </html>
