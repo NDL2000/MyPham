@@ -262,75 +262,96 @@ img.emoji {
 				</li>
 					<li class="reviews_tab " id="tab-title-reviews" role="tab" aria-controls="tab-reviews">
 					<a href="#tab-reviews">
-						Đánh giá (0)					</a>
+						Đánh giá <?php if(isset($_GET['id'])){
+	$MaSP = $_GET["id"];
+	$qr = "select * from danhgia where MaSP='$MaSP' and TrangThai='1'";
+	$result = mysqli_query($conn,$qr);
+	echo "(".mysqli_num_rows($result).")";}  ?>				</a>
 				</li>
 									</ul>
 		<div class="tab-panels">
 							<div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content active" id="tab-description" role="tabpanel" aria-labelledby="tab-title-description">
 										
+<?php if(isset($_GET['id'])){
+	$MaSP = $_GET["id"];
+	$qr = "select * from sanpham where MaSP='$MaSP'";
+	$result = mysqli_query($conn,$qr);
+	if(mysqli_num_rows($result)>0){
+		while($row = mysqli_fetch_array($result)){ 
+?>
+<p><?php echo $row["MoTa"]; ?></p>
+<?php }}}?>
 
-<p>Dầu xả Hachi® Anti-Dandruff Conditioner là sự kết hợp của tinh dầu Jojoba, Olive có tác dụng cân bằng độ ẩm, cung cấp dưỡng chất, mang lại cho bạn mái tóc chắc khỏe, siêu mềm mượt. Đồng thời được tăng cường hoạt chất hỗ trợ bảo vệ tóc khỏi gàu, ngăn không cho gây gàu.</p>
-<p><strong>Nguyên liệu</strong></p>
-<p>Cetyl Alcohol, Lactic Acid, TEA-Dodecylbenzensulfonate,<br />
-Stearamidopropyl Dimethylamine, Stearyl Alcohol, Guar Hydroxypropyltrimonium<br />
-Chloride, Hydrogenate Polydecence, Dimethiconol, Laureth-23, DMDM Hydantoin,<br />
-Amodimethicone, Laureth-4, Pantothenyl Ethyl Ether, Tocopherol, Allantoin,<br />
-Perfume, Niacinamide, Ethylenediaminetetraacetic acid disodium salt, Citric Acid,<br />
-Sodium Lactate, Polyquaternium-10, Glycerin, Glycereth-26,<br />
-Salycilic Acid, Zinc Pyrithione, Phenoxyethanol.</p>
-<p><strong>Thành phần chính</strong></p>
-<p>PhytoKeratin, Panthenol, Pure Jojoba Oil, Hydrolyzed Collagen,<br />
-Grapefruit Hydroglycolic Extract, Olea Europaea (Olive) Fruit Oil</p>
 				</div>
-											<div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--additional_information panel entry-content " id="tab-additional_information" role="tabpanel" aria-labelledby="tab-title-additional_information">
-										
 
-<table class="woocommerce-product-attributes shop_attributes">
-			<tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_pa_dung-tich">
-			<th class="woocommerce-product-attributes-item__label">Dung tích</th>
-			<td class="woocommerce-product-attributes-item__value"><p>350ml, 500ml, 800ml</p>
-</td>
-		</tr>
-	</table>
-				</div>
 											<div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--reviews panel entry-content " id="tab-reviews" role="tabpanel" aria-labelledby="tab-title-reviews">
 										<div id="reviews" class="woocommerce-Reviews row">
 	<div id="comments" class="col large-12">
 		<h3 class="woocommerce-Reviews-title normal">
 			Đánh giá		</h3>
-
-					<p class="woocommerce-noreviews">Chưa có đánh giá nào.</p>
+			<?php if(isset($_GET['id'])){
+	$MaSP = $_GET["id"];
+	$qr = "select * from danhgia where MaSP='$MaSP' and TrangThai='1'";
+	$result = mysqli_query($conn,$qr);
+	if(mysqli_num_rows($result)<1){  ?>	
+					<p class="woocommerce-noreviews">Chưa có đánh giá nào.</p>		
+	<?php } else { 
+		while($row = mysqli_fetch_array($result)){?>
+		<p class="woocommerce-noreviews" style="font-weight:bold;"><?php echo $row["TenDangNhap"]; ?><i class="fas fa-check-circle" style="margin-left:20px;color:#2ba832;"> Đã mua tại Menly</i></p>
+		<p><?php for($i=1;$i<=$row["SoSao"];$i++){ ?><i class="fas fa-star" style="color:#fb6e2f;margin-right: 5px;"></i><?php } 
+		for($i=1;$i<=5-$row["SoSao"];$i++){ ?><i class="far fa-star" style="color:#fb6e2f"></i><?php } ?></p>
+		<p class="woocommerce-noreviews" style="border-bottom: 2px solid #f1f1f1;padding-bottom: 25px;"><?php echo $row["NoiDung"]; ?></p>
+			<?php }}}?>
 			</div>
-
-	
+	<?php if(isset($_SESSION["user"])!=null){ ?>		
 		<div id="review_form_wrapper" class="large-12 col">
 			<div id="review_form" class="col-inner">
 				<div class="review-form-inner has-border">
 					<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Hãy là người đầu tiên nhận xét &ldquo;ANTI-DANDRUFF CONDITIONER &#8211; DẦU XẢ OLIU DÀNH CHO TÓC GÀU&rdquo; <small><a rel="nofollow" id="cancel-comment-reply-link" href="/hachi/s%E1%BA%A3n%20ph%E1%BA%A9m/anti-dandruff-conditioner-dau-xa-oliu-danh-cho-toc-gau/#respond" style="display:none;">Hủy</a></small></h3><form action="http://mauweb.monamedia.net/hachi/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><div class="comment-form-rating"><label for="rating">Đánh giá của bạn</label><select name="rating" id="rating" required>
-						<option value="">Xếp hạng&hellip;</option>
-						<option value="5">Rất tốt</option>
-						<option value="4">Tốt</option>
-						<option value="3">Trung bình</option>
-						<option value="2">Không tệ</option>
-						<option value="1">Rất tệ</option>
-					</select></div><p class="comment-form-comment"><label for="comment">Nhận xét của bạn&nbsp;<span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" required></textarea></p><p class="comment-form-author"><label for="author">Tên&nbsp;<span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" required /></p>
-<p class="comment-form-email"><label for="email">Email&nbsp;<span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" required /></p>
-<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Lưu tên của tôi, email, và trang web trong trình duyệt này cho lần bình luận kế tiếp của tôi.</label></p>
+	<?php if(isset($_GET['id'])){
+	$MaSP = $_GET["id"];
+	$qr = "select * from sanpham where MaSP='$MaSP' and TrangThai='1'";
+	$result = mysqli_query($conn,$qr);
+	if(mysqli_num_rows($result)>0){
+		while($row = mysqli_fetch_array($result)){  
+		?>
+		<h3 id="reply-title" class="comment-reply-title">Đánh giá sản phẩm <?php echo '"'.$row["TenSP"].'"'; ?><small><a rel="nofollow" id="cancel-comment-reply-link" href="" style="display:none;">Hủy</a></small></h3><?php }}}?>
+		<form action="" method="post" id="commentform" class="comment-form" novalidate><div class="comment-form-rating"><label for="rating">Đánh giá của bạn</label>
+			<select name="rating" required>
+						<option value="5" selected>5 sao</option>
+						<option value="4">4 sao</option>
+						<option value="3">3 sao</option>
+						<option value="2">2 sao</option>
+						<option value="1">1 sao</option>
+					</select>
+</div><p class="comment-form-comment"><label for="comment">Nhận xét của bạn&nbsp;<span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" required></textarea></p>
 <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Gửi đi" /> <input type='hidden' name='comment_post_ID' value='306' id='comment_post_ID' />
 <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
 </p></form>	</div><!-- #respond -->
 					</div>
 			</div>
 		</div>
-
+		<?php }?>	
 	
 </div>
 				</div>
-							
+						
 					</div><!-- .tab-panels -->
 	</div><!-- .tabbed-content -->
 
+<!-- Code danh gia san pham -->
+<?php 
+	if(isset($_POST["submit"])&&isset($_SESSION["user"])){
+		$MaSP = $_GET["id"];
+		$TenDangNhap = $_SESSION["user"];
+		$SoSao = $_POST["rating"];
+		$NoiDung = $_POST["comment"];
+		$NgayDG = date("Y-m-d");
+		$qr = "insert into danhgia(MaSP,TenDangNhap,SoSao,NoiDung,NgayDG,TrangThai) values('$MaSP','$TenDangNhap','$SoSao','$NoiDung','$NgayDG','0')";
+		$result = mysqli_query($conn, $qr);
+		if($result>0) echo "<script>alert('Đánh giá thành công!')</script>";
+	}
+?>
 
 	<div class="related related-products-wrapper product-section">
 
