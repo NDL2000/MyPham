@@ -1,0 +1,28 @@
+.user {
+    width: 50%;
+    margin: 40px 25%;
+}
+.btn-doimk {
+    margin-top: 30px;
+    margin-left: 43%;
+}
+.bill {
+    width: 30%;
+    margin-left: 38%;
+}
+#bill {
+    margin: 40px 100px;
+}
+.title-table,.status>td {
+    text-align: center;
+}
+.cthoadon {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 50px;
+}
+.table_cthoadon {
+    width: 70% !important;
+    margin-left: 12% !important;
+}
+

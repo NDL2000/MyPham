@@ -12,7 +12,6 @@
     <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="alternate" type="application/rss+xml" title="Dòng thông tin Hachi Mona &raquo;" href="http://mauweb.monamedia.net/hachi/feed/" />
     <link rel="stylesheet" href="./assets/css/home.css">
-    
     <style type="text/css">
         img.wp-smiley,
         img.emoji {
@@ -475,7 +474,7 @@
     <a href="../DangNhap/dangnhap.php" class="nav-top-link nav-top-not-logged-in is-small"><span style="padding-right: 10px;">Đăng nhập</span></a>
     <a href="../DangKy/dangky.php" class="nav-top-link nav-top-not-logged-in is-small"><span>Đăng ký</span></a>  
     <?php }else { ?>
-    <a href="" class="nav-top-link nav-top-not-logged-in is-small"><span style="padding-right: 10px;">Xin chào, <?php echo $_SESSION["user"] ?></span></a>         
+    <a href="./user.php" class="nav-top-link nav-top-not-logged-in is-small"><span style="padding-right: 10px;">Xin chào, <?php $user=$_SESSION["user"]; $qr="select * from taikhoan where TenDangNhap='$user'";$result=mysqli_query($conn,$qr);while ($row = mysqli_fetch_array($result)) echo $row['HoTen'];?></span></a>         
     <a href="./dangxuat.php" class="nav-top-link nav-top-not-logged-in is-small"><span>Thoát</span></a>                         
     <?php }?>
     <!-- .account-login-link -->
@@ -515,7 +514,7 @@
                                 <li class="nav-icon has-icon">
                                     <a href="#" data-open="#main-menu" data-pos="left" data-bg="main-menu-overlay" data-color="" class="is-small" aria-label="Menu" aria-controls="main-menu" aria-expanded="false">
 		
-		  <i class="icon-menu" ></i>
+                                    <i class="fas fa-bars"></i>
 		  		</a>
                                 </li>
                             </ul>
@@ -600,7 +599,7 @@
 <span class="header-cart-title">
    Giỏ hàng     </span>
 
-  <span class="image-icon header-cart-icon" data-icon-label="6">
+  <span class="image-icon header-cart-icon" data-icon-label="0">
     <img class="cart-img-icon" alt="Giỏ hàng" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon_cart.png"/>
   </span><!-- .cart-img-inner -->
 </a>
@@ -747,7 +746,7 @@
             "lazyLoad": 1,
             "freeScroll": false,
             "wrapAround": true,
-            "autoPlay": 3000,
+            "autoPlay": 4000,
             "pauseAutoPlayOnHover" : true,
             "prevNextButtons": true,
             "contain" : true,
@@ -2316,7 +2315,7 @@
                             <form role="search" method="get" class="searchform" action="http://mauweb.monamedia.net/hachi/">
                                 <div class="flex-row relative">
                                     <div class="flex-col search-form-categories">
-                                        <select class="search_categories resize-select mb-0" name="product_cat"><option value="" selected='selected'>All</option><option value="cham-soc-da">Chăm sóc da</option><option value="cham-soc-toc">Chăm sóc tóc</option></select>                                        </div>
+                                        <select class="search_categories resize-select mb-0" name="product_cat"><option value="" selected='selected'>All</option><option value="cham-soc-da">Chăm sóc da</option><option value="cham-soc-toc"></option></select>                                        </div>
                                     <!-- .flex-col -->
                                     <div class="flex-col flex-grow">
                                         <label class="screen-reader-text" for="woocommerce-product-search-field-1">Tìm kiếm:</label>
@@ -2326,7 +2325,7 @@
                                     <!-- .flex-col -->
                                     <div class="flex-col">
                                         <button type="submit" value="Tìm kiếm" class="ux-search-submit submit-button secondary button icon mb-0">
-				<i class="icon-search" ></i>			</button>
+                                        <i class="fas fa-search"></i></button>
                                     </div>
                                     <!-- .flex-col -->
                                 </div>
@@ -2339,29 +2338,15 @@
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-6 current_page_item menu-item-34"><a href="" class="nav-top-link"><span class='menu-image-hover-wrapper'><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon1.png" class="menu-image menu-image-title-below" alt="" /><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon_hover1.png" class="hovered-image menu-image-title-below" alt="" style="margin-left: -34px;" /></span><span class="menu-image-title-below menu-image-title">Trang chủ</span></a></li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-106"><a href="" class="nav-top-link"><span class='menu-image-hover-wrapper'><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon_hover123434.png" class="menu-image menu-image-title-below" alt="" /><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon_hover222222222222.png" class="hovered-image menu-image-title-below" alt="" style="margin-left: -34px;" /></span><span class="menu-image-title-below menu-image-title">Sản phẩm</span></a>
                     <ul class=children>
-                        <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-229"><a href="">Chăm sóc tóc</a>
-                            <ul class=nav-sidebar-ul>
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-232"><a href="">Dầu xả</a></li>
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-231"><a href="">Dầu gội</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-230"><a href="">Chăm sóc da</a>
-                            <ul class=nav-sidebar-ul>
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-233"><a href="">Sữa tắm</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-234"><a href="">Nam giới</a>
-                            <ul class=nav-sidebar-ul>
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-235"><a href="">Chăm sóc tóc cho nam</a></li>
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-236"><a href="">Tắm và Dưỡng thể cho Nam</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-237"><a href="">Trẻ em</a>
-                            <ul class=nav-sidebar-ul>
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-238"><a href="">2-in-1 cho Trẻ em</a></li>
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-239"><a href="">Dầu gội cho Trẻ em</a></li>
-                            </ul>
-                        </li>
+                    <?php  
+                                        $sql = "SELECT * FROM danhmuc where TrangThai='1'";
+                                        $result = mysqli_query($conn,$sql);
+                                        while ($row = mysqli_fetch_array($result)){
+                                            
+                                    ?>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-229"><a href=""><?php echo $row["TenDM"] ?></a></li>
+                                    <?php }?>
+                       
                     </ul>
                 </li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-207"><a href="" class="nav-top-link"><span class='menu-image-hover-wrapper'><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon3.png" class="menu-image menu-image-title-below" alt="" /><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon_hover3.png" class="hovered-image menu-image-title-below" alt="" style="margin-left: -34px;" /></span><span class="menu-image-title-below menu-image-title">Về Hachi</span></a>

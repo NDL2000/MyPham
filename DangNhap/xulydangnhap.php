@@ -40,7 +40,7 @@
         $username = $_POST["username"];
         $password = $_POST["password"];
         // Login Admin
-        $sql = "SELECT MatKhau,HoTen,TrangThai,MaLoai from taikhoan where TenDangNhap='$username'";
+        $sql = "SELECT TenDangNhap,MatKhau,HoTen,TrangThai,MaLoai from taikhoan where TenDangNhap='$username'";
         $kq = mysqli_query($conn,$sql);
         if(mysqli_num_rows($kq)>0){
             while($row = mysqli_fetch_array($kq)){
@@ -52,7 +52,7 @@
                         header("Location:../admin/index.php?ad=1");
                     }
                     else {
-                        $_SESSION["user"] = $row["HoTen"];
+                        $_SESSION["user"] = $row["TenDangNhap"];
                         header("Location:../index.php");
                     }
                 }
