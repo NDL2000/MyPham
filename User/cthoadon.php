@@ -65,7 +65,7 @@
                 $tongtien +=  $row['SoLuongMua']*$row['GiaGoc']-($row['SoLuongMua']*$row['GiaGoc']*$row['TyLeKM'])/100;
                 
     ?>
-      <tr>
+      <tr class="status">
       <td style="font-weight: bold"><?php echo $count?></td>
       <td><?php echo $row['TenSP'];?></td>
       <td><?php echo number_format($row['GiaGoc'],0,",",".")." VNĐ";?></td>
@@ -75,7 +75,7 @@
     </tr>
     <?php }}?>
   </tbody>
-    <tr>
+    <tr class="status">
            <td class="title-cthd" colspan="5" style="text-align: right;padding-right:5%;font-size: 20px;">Tổng tiền</td><td class="content-cthd" style="font-weight: bold  ;color:red;font-size: 20px;"><?php if(isset($tongtien)&&$tongtien!=null) echo number_format($tongtien,0,",",".")." VNĐ"; ?></td>
     </tr>
 </table>

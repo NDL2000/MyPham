@@ -130,6 +130,13 @@
   </div>
 </div>
 <?php 
+  if(isset($_GET["rs"])){
+    switch($_GET["rs"]){
+      case "1": echo "<script>alert('Xóa thành công')</script>";break;
+      case "2": echo "<script>alert('Cập nhật thành công')</script>";break;
+      default: return 0;
+    }
+  }
 ?>
 <!-- Tabs content -->
 

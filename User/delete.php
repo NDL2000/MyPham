@@ -3,5 +3,5 @@
     $id=$_GET['id'];
     $sql="Delete From hoadon where MaHD='$id'";
     $query=mysqli_query($conn,$sql);
-    header('Location: ./user.php');
+    header('Location: ./user.php?rs=1');
 ?>

@@ -21,7 +21,7 @@
             $sql ="update taikhoan set MatKhau = '$matkhaumoi' where TenDangNhap = '$tendangnhap' ";
             $result=mysqli_query($conn,$sql);
             if($result > 0){
-                echo "<script>window.location.href='./user.php#ex3-tabs-2'</script>";
+                echo "<script>window.location.href='./user.php?rs=2'</script>";
             }
          }   
     }
