@@ -617,7 +617,7 @@
                                 </li>
                                 <li class="cart-item has-icon has-dropdown">
 
-                                    <a href="" title="Giỏ hàng" class="header-cart-link is-small">
+                                <a href="./list_cart.php" title="Giỏ hàng" class="header-cart-link is-small">
 
 
 <span class="header-cart-title">

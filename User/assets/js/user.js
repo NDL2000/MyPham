@@ -41,6 +41,5 @@ $(document).ready(function(){
         $("#bill").load("./trangthaidon.php",{"status":status});
     });
   
-
 });
 

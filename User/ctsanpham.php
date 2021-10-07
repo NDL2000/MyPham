@@ -7,16 +7,16 @@
 	<meta charset="UTF-8" />
 	<link rel="profile" href="https://gmpg.org/xfn/11" />
 	<link rel="pingback" href="http://mauweb.monamedia.net/hachi/xmlrpc.php" />
-
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
-<title>ANTI-DANDRUFF CONDITIONER &#8211; DẦU XẢ OLIU DÀNH CHO TÓC GÀU &#8211; Hachi Mona</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /><link rel='dns-prefetch' href='//mauweb.monamedia.net' />
 <link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
 <link rel="alternate" type="application/rss+xml" title="Dòng thông tin Hachi Mona &raquo;" href="http://mauweb.monamedia.net/hachi/feed/" />
 <link rel="alternate" type="application/rss+xml" title="Dòng phản hồi Hachi Mona &raquo;" href="http://mauweb.monamedia.net/hachi/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="Hachi Mona &raquo; ANTI-DANDRUFF CONDITIONER &#8211; DẦU XẢ OLIU DÀNH CHO TÓC GÀU Dòng phản hồi" href="http://mauweb.monamedia.net/hachi/sản%20phẩm/anti-dandruff-conditioner-dau-xa-oliu-danh-cho-toc-gau/feed/" />
+
 		<script type="text/javascript">
 			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/mauweb.monamedia.net\/hachi\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.3.4"}};
 			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
@@ -123,11 +123,8 @@ img.emoji {
               "contain": true
           }'
     >       
-	   <div class="col is-nav-selected first">
-        <a>
-          <img src="" alt="" width="300" height="300" class="attachment-woocommerce_thumbnai" />        </a>
-      </div>
-    <div class="col"><a><img src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__olive_oil_shampoo_350_master-300x300.png" alt="" width="300" height="300"  class="attachment-woocommerce_thumbnail" /></a></div><div class="col"><a><img src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/anti_drandruf_back_shampoo_master-300x300.png" alt="" width="300" height="300"  class="attachment-woocommerce_thumbnail" /></a></div>  </div><!-- .product-thumbnails -->
+	   
+    <div class="col"></div>  </div><!-- .product-thumbnails -->
   
 			</div>
 
@@ -151,23 +148,6 @@ img.emoji {
 					<h1 class="product-title product_title entry-title"></h1>
 
 	<div class="is-divider small"></div>
-<ul class="next-prev-thumbs is-small show-for-medium">         <li class="prod-dropdown has-dropdown">
-               <a href="http://mauweb.monamedia.net/hachi/sản phẩm/dau-xa-hachi-vietnam-cascade-480g-conditioner-xanh-ngoc/"  rel="next" class="button icon is-outline circle">
-                  <i class="icon-angle-left" ></i>              </a>
-              <div class="nav-dropdown">
-                <a title="DẦU XẢ HACHI VIETNAM CASCADE 480G (CONDITIONER) &#8211; XANH NGỌC" href="http://mauweb.monamedia.net/hachi/sản phẩm/dau-xa-hachi-vietnam-cascade-480g-conditioner-xanh-ngoc/">
-                <img width="100" height="100" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-100x100.png" class="attachment-woocommerce_gallery_thumbnail size-woocommerce_gallery_thumbnail wp-post-image" alt="" srcset="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-100x100.png 100w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-300x300.png 300w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-150x150.png 150w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-768x768.png 768w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-24x24.png 24w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-36x36.png 36w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-48x48.png 48w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-50x50.png 50w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-600x600.png 600w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master.png 900w" sizes="(max-width: 100px) 100vw, 100px" /></a>
-              </div>
-          </li>
-               <li class="prod-dropdown has-dropdown">
-               <a href="http://mauweb.monamedia.net/hachi/sản phẩm/dau-goi-hachi-vietnam-reliving-500g-shampoo-hong/" rel="next" class="button icon is-outline circle">
-                  <i class="icon-angle-right" ></i>              </a>
-              <div class="nav-dropdown">
-                  <a title="DẦU GỘI HACHI VIETNAM RELIVING 500G (SHAMPOO) &#8211; HỒNG" href="http://mauweb.monamedia.net/hachi/sản phẩm/dau-goi-hachi-vietnam-reliving-500g-shampoo-hong/">
-                  <img width="100" height="100" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/reliving_goi-front_4c8f1db0902d447396f497a8a603f49a_master-100x100.jpg" class="attachment-woocommerce_gallery_thumbnail size-woocommerce_gallery_thumbnail wp-post-image" alt="" srcset="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/reliving_goi-front_4c8f1db0902d447396f497a8a603f49a_master-100x100.jpg 100w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/reliving_goi-front_4c8f1db0902d447396f497a8a603f49a_master-300x300.jpg 300w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/reliving_goi-front_4c8f1db0902d447396f497a8a603f49a_master-150x150.jpg 150w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/reliving_goi-front_4c8f1db0902d447396f497a8a603f49a_master-768x768.jpg 768w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/reliving_goi-front_4c8f1db0902d447396f497a8a603f49a_master-24x24.jpg 24w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/reliving_goi-front_4c8f1db0902d447396f497a8a603f49a_master-36x36.jpg 36w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/reliving_goi-front_4c8f1db0902d447396f497a8a603f49a_master-48x48.jpg 48w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/reliving_goi-front_4c8f1db0902d447396f497a8a603f49a_master-50x50.jpg 50w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/reliving_goi-front_4c8f1db0902d447396f497a8a603f49a_master-600x600.jpg 600w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/reliving_goi-front_4c8f1db0902d447396f497a8a603f49a_master.jpg 900w" sizes="(max-width: 100px) 100vw, 100px" /></a>
-              </div>
-          </li>
-      </ul>
 	  <?php 
                               if(isset($_GET["id"])){
                                 
@@ -228,13 +208,12 @@ img.emoji {
 	<div class="woocommerce-variation-add-to-cart variations_button woocommerce-variation-add-to-cart-disabled">
 	
 	<div class="quantity buttons_added">
-	<input type="button" value="-" class="minus button is-form">		<label class="screen-reader-text" for="quantity_615ae1e42cf4e">VELVETY ROSE - SỮA TẮM HOA HỒNG số lượng</label>
-	<input type="number" id="quantity_615ae1e42cf4e" class="input-text qty text" step="1" min="1" max="50" name="quantity" value="1" title="SL" size="4" inputmode="numeric">
-	<input type="button" value="+" class="plus button is-form">	</div>
+	<input type="button" value="-" class="minus button is-form" id="minus_quantity">		
+	<input type="number" id="quantity" class="input-text qty text" value=1 min="1" max="50" name="quantity" title="SL" size="4" inputmode="numeric">
+	<input type="button" value="+" class="plus button is-form" id="plus_quantity">	</div>
 
-<button class="single_add_to_cart_button " style="color:#ffff">Mua hàng</button>
-
-
+<input type="button" value="Mua hàng" class="single_add_to_cart_button" id="add_cart" style="background:#797c11;color:white">
+<p id="alert"></p>
 <input type="hidden" name="add-to-cart" value="323">
 <input type="hidden" name="product_id" value="323">
 <input type="hidden" name="variation_id" class="variation_id" value="0">
@@ -318,7 +297,7 @@ img.emoji {
 		<h3 id="reply-title" class="comment-reply-title">Đánh giá sản phẩm <?php echo '"'.$row["TenSP"].'"'; ?><small><a rel="nofollow" id="cancel-comment-reply-link" href="" style="display:none;">Hủy</a></small></h3><?php }}}?>
 		<form action="" method="post" id="commentform" class="comment-form" novalidate><div class="comment-form-rating"><label for="rating">Đánh giá của bạn</label>
 			<select name="rating" required>
-						<option value="5" selected>5 sao</option>
+						<option value="5">5 sao</option>
 						<option value="4">4 sao</option>
 						<option value="3">3 sao</option>
 						<option value="2">2 sao</option>
@@ -509,6 +488,6 @@ var wc_password_strength_meter_params = {"min_password_strength":"3","stop_check
 /* ]]> */
 </script>
 <script type='text/javascript' src='http://mauweb.monamedia.net/hachi/wp-content/plugins/woocommerce/assets/js/frontend/password-strength-meter.min.js?ver=3.9.2'></script>
-
+<script src="./assets/js/muahang.js"></script>
 </body>
 </html>

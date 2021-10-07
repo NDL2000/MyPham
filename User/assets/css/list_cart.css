@@ -1,0 +1,28 @@
+#title {
+    color: #797c11;
+    margin: 20px;
+}
+.table_cart {
+    margin: 10px 50px;
+    width: 60%;
+
+}
+tr>td {
+    text-align: center;
+}
+#quantity {
+    width: 30%;
+    text-align: center;
+}
+#title_table {
+    font-weight: bold;
+    font-size: 20px;
+}
+.button_cart {
+    display: flex;
+    margin-left: 60px;
+}
+.button-continue-shopping {
+    height: 10px !important;
+    width: 30% !important;
+}
