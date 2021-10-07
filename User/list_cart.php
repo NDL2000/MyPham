@@ -27,7 +27,7 @@
         $tongtien=$tongtien+$thanhtien;
         $thanhtien=number_format($thanhtien,'0',',','.')."&#8363;";       
         echo "<td>".$thanhtien."</td>";
-        echo "<td><a href='deletecart.php?id=".$list['id']."'>Xóa</a></td>";
+        echo "<td><input type='submit' id='".$list['id']."' value='Xóa' class='delete'></input></td>";
         echo "</tr>";
         } 
          $tt=number_format($tongtien,'0',',','.')."&#8363;";
@@ -89,6 +89,10 @@
     }
     include './footer.php';
 ?>
-
+<script>
+    function xoa(){
+        return confirm("Bạn có muốn xóa sản phẩm này khỏi giỏ hàng");
+    }
+</script>
 <script src="./assets/js/muahang.js"></script>
 

@@ -1,6 +1,6 @@
 <?php
  session_start();
- $gid= $_GET["id"];
+ $gid= $_POST["id"];
  unset($_SESSION['cart'][$gid]);
- header("location:./list_cart.php");
+ echo "Xóa thành công";
 ?>

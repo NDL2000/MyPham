@@ -35,6 +35,24 @@ $(document).ready(function(){
             }
         })
     });
+    // Delete cart
+    $(".delete").click(function(){
+        var kq = confirm("Bạn có muốn xóa sản phẩm này khỏi giỏ hàng");
+        console.log(kq);
+        if(kq==true) {
+            $.ajax({
+                type: "POST",
+                url: "../User/deletecart.php",
+                data: {
+                    "id":$(".delete").attr("id"),
+                },
+                success: function(data) {
+                    alert(data); 
+                }
+            })
+        }
+       
+    });
     // Update cart
     $("#quantity").keyup(function(){
         if($("#quantity").val()<=0) {
