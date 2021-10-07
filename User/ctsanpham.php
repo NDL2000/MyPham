@@ -66,6 +66,7 @@ img.emoji {
 
 
 		<!-- /.container -->
+		
 
 	<div class="col large-9">
 		<div class="row">
@@ -108,7 +109,6 @@ img.emoji {
 
  <?php }}?>
 </div>
-
   <div class="product-thumbnails thumbnails slider-no-arrows slider row row-small row-slider slider-nav-small small-columns-4"
     data-flickity-options='{
               "cellAlign": "left",
@@ -213,7 +213,12 @@ img.emoji {
 	<input type="button" value="+" class="plus button is-form" id="plus_quantity">	</div>
 
 <input type="button" value="Mua hàng" class="single_add_to_cart_button" id="add_cart" style="background:#797c11;color:white">
-<p id="alert"></p>
+<div id="alert" style="color: #056935;
+    font-weight: bold;
+    box-shadow: 0 1px 10px #056935;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;display:none"><p id="alert_content" style="margin-top: 5px;"></p></div>
 <input type="hidden" name="add-to-cart" value="323">
 <input type="hidden" name="product_id" value="323">
 <input type="hidden" name="variation_id" class="variation_id" value="0">
@@ -404,14 +409,12 @@ img.emoji {
 
 		
 	</div><!-- shop container -->
-
+	
 </main><!-- #main -->
 
 	
 	
-<script type="text/template" id="tmpl-unavailable-variation-template">
-	<p>Rất tiếc, sản phẩm này hiện không tồn tại. Hãy chọn một phương thức kết hợp khác.</p>
-</script>
+
 <script type='text/javascript'>
 /* <![CDATA[ */
 var wpcf7 = {"apiSettings":{"root":"http:\/\/mauweb.monamedia.net\/hachi\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};

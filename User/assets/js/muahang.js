@@ -31,7 +31,8 @@ $(document).ready(function(){
                 "quantity":$("#quantity").val()
             },
             success: function(data) {
-                alert(data); 
+                $("#alert").fadeIn("slow");
+                $("#alert_content").html(data);
             }
         })
     });

@@ -14,6 +14,7 @@
         echo "<td>Tên sản phẩm</td>";
         echo "<td>Đơn giá</td>";
         echo "<td>Số lượng</td>";
+        echo "<td>Tỷ lệ KM</td>";
         echo "<td>Thành tiền</td>";
         echo "</tr>";
         foreach ($_SESSION['cart'] as $list) {         
@@ -22,8 +23,9 @@
         echo "<td>".$list['name']."</td>";        
         $gia=number_format($list['price'],'0',',','.')."&#8363;";
         echo "<td>".$gia."</td>";        
-        echo "<td><input type='number' min='1' id='quantity' name='soluong[".$list['id']."]' value='".$list['sl']."'></td>";        
-        $thanhtien=$list['price']*$list['sl'];
+        echo "<td><input type='number' min='1' id='quantity' name='soluong[".$list['id']."]' value='".$list['sl']."'></td>";   
+        echo "<td>".$list['tylekm']." %"."</td>";     
+        $thanhtien=$list['price']*$list['sl']-($list['price']*$list['tylekm']/100);
         $tongtien=$tongtien+$thanhtien;
         $thanhtien=number_format($thanhtien,'0',',','.')."&#8363;";       
         echo "<td>".$thanhtien."</td>";
@@ -58,7 +60,7 @@
 	</tbody></table>";
     if(isset($_SESSION["user"])){
 	echo "<div class='wc-proceed-to-checkout'>		
-    <a class='button-continue-shopping button primary is-outline' href='' style='width: 100% !important;'>
+    <a class='button-continue-shopping button primary is-outline' href='./thanhtoan.php' style='width: 100% !important;'>
     Tiến hành thanh toán	</a>
 	</div>";}else{
         echo "<div class='wc-proceed-to-checkout'>		
