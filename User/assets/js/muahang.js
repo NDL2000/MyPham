@@ -39,7 +39,6 @@ $(document).ready(function(){
     // Delete cart
     $(".delete").click(function(){
         var kq = confirm("Bạn có muốn xóa sản phẩm này khỏi giỏ hàng");
-        console.log(kq);
         if(kq==true) {
             $.ajax({
                 type: "POST",
