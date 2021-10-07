@@ -31,7 +31,7 @@ $(document).ready(function(){
                 "quantity":$("#quantity").val()
             },
             success: function(data) {
-                $("#alert").html(data);   
+                alert(data); 
             }
         })
     });

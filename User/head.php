@@ -623,7 +623,7 @@
 <span class="header-cart-title">
    Giỏ hàng     </span>
 
-  <span class="image-icon header-cart-icon" data-icon-label="0">
+   <span class="image-icon header-cart-icon" data-icon-label="<?php if(isset($_SESSION['cart']) && $_SESSION['cart']!=null ){ echo count($_SESSION['cart']);}?>">
     <img class="cart-img-icon" alt="Giỏ hàng" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon_cart.png"/>
   </span><!-- .cart-img-inner -->
 </a>

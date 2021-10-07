@@ -11,7 +11,7 @@
           {  if(array_key_exists($gid, $_SESSION['cart']))              
              { 
                  $_SESSION['cart'][$gid]=array(
-                  "id"=>$gid,"name"=>$row_sp['TenSP'],"sl"=>(int) $_SESSION['cart'][$gid]['sl'] +1,"price"=> 
+                  "id"=>$gid,"name"=>$row_sp['TenSP'],"sl"=>(int) $_SESSION['cart'][$gid]['sl'] +$_POST["quantity"],"price"=> 
                    $row_sp['DonGia']
                   );
                  echo 'Đã thêm sản phẩm vào giỏ';
@@ -21,7 +21,7 @@
               else
                {
                   $_SESSION['cart'][$gid]=array(
-                  "id"=>$gid,"name"=>$row_sp['TenSP'],"sl"=>1,"price"=> 
+                  "id"=>$gid,"name"=>$row_sp['TenSP'],"sl"=>$_POST["quantity"],"price"=> 
                    $row_sp['DonGia']
                 );
                 echo 'Đã thêm sản phẩm vào giỏ';
@@ -32,7 +32,7 @@
           else
               {
                 $_SESSION['cart'][$gid]=array(
-                  "id"=>$gid,"name"=>$row_sp['TenSP'],"sl"=>1,"price"=> 
+                  "id"=>$gid,"name"=>$row_sp['TenSP'],"sl"=>$_POST["quantity"],"price"=> 
                    $row_sp['DonGia']
                 );
                 echo 'Đã thêm sản phẩm vào giỏ';
@@ -41,7 +41,7 @@
        }
      else
          {
-           header("location:./header.php?url=sanpham&id=$gid");
+           header("location:./header.php?url=sanpham");
          }
    
 ?>
