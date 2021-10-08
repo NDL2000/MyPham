@@ -24,7 +24,7 @@
         $gia=number_format($list['price'],'0',',','.')."&#8363;";
         echo "<td>".$gia."</td>";        
         echo "<td><input type='number' min='1' id='quantity' name='soluong[".$list['id']."]' value='".$list['sl']."'></td>";   
-        echo "<td>".$list['tylekm']." %"."</td>";     
+        echo "<td>".$list['tylekm']." &percnt;"."</td>";     
         $thanhtien=$list['price']*$list['sl']-($list['price']*$list['tylekm']/100);
         $tongtien=$tongtien+$thanhtien;
         $thanhtien=number_format($thanhtien,'0',',','.')."&#8363;";       

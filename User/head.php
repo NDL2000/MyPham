@@ -458,13 +458,7 @@
 <?php include "../admin/connect.php";include './update_Date.php';?>
 
 <body class="home page-template page-template-page-blank page-template-page-blank-php page page-id-6 theme-flatsome woocommerce-no-js header-shadow lightbox">
-
-
-    
-
     <div id="wrapper">
-
-
         <header id="header" class="header has-sticky sticky-jump">
             <div class="header-wrapper">
                 <div id="top-bar" class="header-top hide-for-sticky">
@@ -502,9 +496,6 @@
     <a href="./dangxuat.php" class="nav-top-link nav-top-not-logged-in is-small"><span>Thoát</span></a>                         
     <?php }?>
     <!-- .account-login-link -->
-
-
-
                                 </li>
                             </ul>
                         </div>

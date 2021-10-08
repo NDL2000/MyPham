@@ -27,6 +27,7 @@
                     <th>SẢN PHẨM</th>
                     <th>SỐ LƯỢNG</th>
                     <th>ĐƠN GIÁ</th>
+                    <th>TỶ LỆ KM</th>
                     <th>TẠM TÍNH</th>
                 </tr>
             </thead>
@@ -36,7 +37,8 @@
                         <td><?php echo $list['name']?></td>
                         <td><?php echo $list['sl']?></td>
                         <td><?php echo number_format($list['price'],'0',',','.')."&#8363;"?></td>
-                        <?php   $thanhtien=$list['price']*$list['sl'];
+                        <td><?php echo $list['tylekm']." &percnt;"?></td>
+                        <?php   $thanhtien=$list['price']*$list['sl']-($list['price']*$list['tylekm']/100);
                                 $tongtien=$tongtien+$thanhtien;
                                 $thanhtien=number_format($thanhtien,'0',',','.')."&#8363;";  ?>
                         <td class="order_tt"><?php echo $thanhtien ?></td> 
@@ -45,11 +47,11 @@
             </tbody>    
             <tfoot>  
                     <tr>
-                        <td class="order_tt">Tạm tính</td> <td></td><td></td>
+                        <td class="order_tt">Tạm tính</td> <td></td><td></td><td></td>
                         <td class="order_total"><?php echo number_format($tongtien,'0',',','.')."&#8363;"; ?></td>
                     </tr>
                     <tr>
-                        <td class="order_tt">Tổng</td> <td></td><td></td>
+                        <td class="order_tt">Tổng</td> <td></td><td></td><td></td>
                         <td class="order_total"><?php echo number_format($tongtien,'0',',','.')."&#8363;"; ?></td>
                     </tr>
             </tfoot>
@@ -84,6 +86,7 @@
             mysqli_query($conn,$sql);
         }
         unset($_SESSION['cart']);
+        echo "<script>alert('Đặt hàng thành công')</script>";
         echo "<script>window.location.href='./list_cart.php'</script>";
     }
 ?>
