@@ -557,10 +557,10 @@
 
                                 <!-- <li id="menu-item-207" class="has-icon-left menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-207 has-dropdown"><a href="" class="nav-top-link"><i class="icon-hachi" ></i><span class='menu-image-hover-wrapper'><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon3.png" class="menu-image menu-image-title-below" alt="" /><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon_hover3.png" class="hovered-image menu-image-title-below" alt="" style="margin-left: -34px;" /></span><span class="menu-image-title-below menu-image-title">Tin Tức</span><i class="icon-angle-down" ></i></a> -->
                                     <ul class='nav-dropdown nav-dropdown-simple'>
-                                        <li id="menu-item-206" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-206"><a href=""> Về chúng tôi</a></li>
-                                        <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-205"><a href="">Tầm nhìn – Sứ mệnh – Giá trị cốt lõi</a></li>
-                                        <li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-36"><a href="">Liên hệ</a></li>
-                                        <li id="menu-item-204" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-204"><a href="">Hệ thống phân phối và bán lẻ</a></li>
+                                    <li id="menu-item-206" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-206"><a href="./vechungtoi.php"> Về chúng tôi</a></li>
+                                        <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-205"><a href="./tamnhin_cotloi.php">Tầm nhìn – Sứ mệnh – Giá trị cốt lõi</a></li>
+                                        <li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-36"><a href="./lienhe.php">Liên hệ</a></li>
+                                        <li id="menu-item-204" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-204"><a href="./hethongpp_banle.php">Hệ thống phân phối và bán lẻ</a></li>
                                     </ul>
                                 </li>
                                 <li id="menu-item-207" class="has-icon-left menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-207 has-dropdown"><a href="" class="nav-top-link"><span class='menu-image-hover-wrapper'><i class="fab fa-cotton-bureau" id="icon-icon"></i></span><span class="menu-image-title-below menu-image-title">Về Menly</span><i class="icon-angle-down" ></i></a>

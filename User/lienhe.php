@@ -11,8 +11,10 @@
     <link rel='dns-prefetch' href='//fonts.googleapis.com' />
     <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="alternate" type="application/rss+xml" title="Dòng thông tin Hachi Mona &raquo;" href="http://mauweb.monamedia.net/hachi/feed/" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
     <link rel="stylesheet" href="./assets/css/home.css">
-    
+    <link href="../assets/css/lienhe.css" rel="stylesheet" type="text/css"/>
+    <script src="https://maps.google.com/maps/api/js?key="></script>
     <style type="text/css">
         img.wp-smiley,
         img.emoji {
@@ -525,7 +527,7 @@
                         <div class="flex-col hide-for-medium flex-left
             flex-grow">
                             <ul class="header-nav header-nav-main nav nav-left  nav-uppercase">
-                            <li id="menu-item-207" class="has-icon-left menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-207 has-dropdown"><a href="home.php" class="nav-top-link"><span class='menu-image-hover-wrapper'><i class="fas fa-home" id="icon-icon"></i></span><span class="menu-image-title-below menu-image-title">Trang Chủ</span><i class="icon-angle-down" ></i></a>
+                                <li id="menu-item-207" class="has-icon-left menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-207 has-dropdown"><a href="home.php" class="nav-top-link"><span class='menu-image-hover-wrapper'><i class="fas fa-home" id="icon-icon"></i></span><span class="menu-image-title-below menu-image-title">Trang Chủ</span><i class="icon-angle-down" ></i></a>
                             <li id="menu-item-207" class="has-icon-left menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-207 has-dropdown"><a href="./header.php?url=sanpham" class="nav-top-link"><span class='menu-image-hover-wrapper'><i class="fas fa-air-freshener" id="icon-icon"></i></span><span class="menu-image-title-below menu-image-title">Sản Phẩm</span><i class="icon-angle-down" ></i></a>
                             
                                      <ul class='nav-dropdown nav-dropdown-simple'>
@@ -535,7 +537,7 @@
                                         while ($row = mysqli_fetch_array($result)){
                                             
                                     ?>
-                                    <li id="menu-item-206" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-206"><a href="./header.php?url=sanpham&dm=<?php echo $row["MaDM"] ?>"><?php echo $row["TenDM"];?></a></li>
+                                    <li id="menu-item-206" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-206"><a href=""><?php echo $row["TenDM"];?></a></li>
                                     <?php }?>
                                 </ul>
                                 </li>
@@ -543,10 +545,10 @@
 
                                 <!-- <li id="menu-item-207" class="has-icon-left menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-207 has-dropdown"><a href="" class="nav-top-link"><i class="icon-hachi" ></i><span class='menu-image-hover-wrapper'><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon3.png" class="menu-image menu-image-title-below" alt="" /><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon_hover3.png" class="hovered-image menu-image-title-below" alt="" style="margin-left: -34px;" /></span><span class="menu-image-title-below menu-image-title">Tin Tức</span><i class="icon-angle-down" ></i></a> -->
                                     <ul class='nav-dropdown nav-dropdown-simple'>
-                                    <li id="menu-item-206" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-206"><a href="./vechungtoi.php"> Về chúng tôi</a></li>
-                                        <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-205"><a href="./tamnhin_cotloi.php">Tầm nhìn – Sứ mệnh – Giá trị cốt lõi</a></li>
-                                        <li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-36"><a href="./lienhe.php">Liên hệ</a></li>
-                                        <li id="menu-item-204" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-204"><a href="./hethongpp_banle.php">Hệ thống phân phối và bán lẻ</a></li>
+                                        <li id="menu-item-206" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-206"><a href="vechungtoi.php"> Về chúng tôi</a></li>
+                                        <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-205"><a href="tamnhin_cotloi.php">Tầm nhìn – Sứ mệnh – Giá trị cốt lõi</a></li>
+                                        <li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-36"><a href="">Liên hệ</a></li>
+                                        <li id="menu-item-204" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-204"><a href="hethongpp_banle.php">Hệ thống phân phối và bán lẻ</a></li>
                                     </ul>
                                 </li>
                                 <li id="menu-item-207" class="has-icon-left menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-207 has-dropdown"><a href="" class="nav-top-link"><span class='menu-image-hover-wrapper'><i class="fab fa-cotton-bureau" id="icon-icon"></i></span><span class="menu-image-title-below menu-image-title">Về Menly</span><i class="icon-angle-down" ></i></a>
@@ -594,247 +596,190 @@
                                 </li>
                                 <li class="cart-item has-icon has-dropdown">
 
-                                    <a href="./list_cart.php" title="Giỏ hàng" class="header-cart-link is-small">
+                                <a href="./list_cart.php" title="Giỏ hàng" class="header-cart-link is-small">
 
 
 <span class="header-cart-title">
    Giỏ hàng     </span>
-                                        
    <span class="image-icon header-cart-icon" data-icon-label="<?php if(isset($_SESSION['cart']) && $_SESSION['cart']!=null ){ echo count($_SESSION['cart']);}?>">
     <img class="cart-img-icon" alt="Giỏ hàng" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon_cart.png"/>
   </span><!-- .cart-img-inner -->
 </a>
-
-                                    <!-- <ul class="nav-dropdown nav-dropdown-simple">
-                                        <li class="html widget_shopping_cart">
-                                            <div class="widget_shopping_cart_content">
-
-
-                                                <ul class="woocommerce-mini-cart cart_list product_list_widget ">
-                                                    <li class="woocommerce-mini-cart-item mini_cart_item">
-                                                        <a href="" class="remove remove_from_cart_button" aria-label="Xóa sản phẩm này" data-product_id="284" data-cart_item_key="04374b674c70129a2da21f12d0dd0276"
-                                                            data-product_sku="">&times;</a> <a href="">
-							<img width="300" height="300" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-300x300.png" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-300x300.png 300w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-150x150.png 150w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-768x768.png 768w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-24x24.png 24w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-36x36.png 36w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-48x48.png 48w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-50x50.png 50w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-600x600.png 600w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-100x100.png 100w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master.png 900w" sizes="(max-width: 300px) 100vw, 300px" />DẦU GỘI HACHI VIETNAM CASCADE 500G (SHAMPOO) - XANH NGỌC						</a>
-                                                        <dl class="variation">
-                                                            <dt class="variation-Dungtch">Dung tích:</dt>
-                                                            <dd class="variation-Dungtch">
-                                                                <p>350ml</p>
-                                                            </dd>
-                                                        </dl>
-                                                        <span class="quantity">6 &times; <span class="woocommerce-Price-amount amount">170,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></span>
-                                                        </span>
-                                                    </li>
-                                                </ul>
-
-                                                <p class="woocommerce-mini-cart__total total">
-                                                    <strong>Tạm tính:</strong> <span class="woocommerce-Price-amount amount">1,020,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></span>
-                                                </p>
-
-
-                                                <p class="woocommerce-mini-cart__buttons buttons"><a href="" class="button wc-forward">Xem giỏ hàng</a><a href="" class="button checkout wc-forward">Thanh toán</a></p>
-
-
-
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    
-
-                                </li>
-                            </ul> -->
-                        </div>
-
-                        <!-- Mobile Right Elements -->
-                        <!-- <div class="flex-col show-for-medium flex-right">
-                            <ul class="mobile-nav nav nav-right ">
-                                <li class="cart-item has-icon">
-
-                                    <a href="" class="header-cart-link off-canvas-toggle nav-top-link is-small" data-open="#cart-popup" data-class="off-canvas-cart" title="Giỏ hàng" data-pos="right">
-  
-  <span class="image-icon header-cart-icon" data-icon-label="6">
-    <img class="cart-img-icon" alt="Giỏ hàng" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon_cart.png"/>
-  </span>
-</a>
-
-
-                                    
-                                    <div id="cart-popup" class="mfp-hide widget_shopping_cart">
-                                        <div class="cart-popup-inner inner-padding">
-                                            <div class="cart-popup-title text-center">
-                                                <h4 class="uppercase">Giỏ hàng</h4>
-                                                <div class="is-divider"></div>
-                                            </div>
-                                            <div class="widget_shopping_cart_content">
-
-
-                                                <ul class="woocommerce-mini-cart cart_list product_list_widget ">
-                                                    <li class="woocommerce-mini-cart-item mini_cart_item">
-                                                        <a href="" class="remove remove_from_cart_button" aria-label="Xóa sản phẩm này" data-product_id="284" data-cart_item_key="04374b674c70129a2da21f12d0dd0276"
-                                                            data-product_sku="">&times;</a> <a href="">
-							<img width="300" height="300" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-300x300.png" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-300x300.png 300w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-150x150.png 150w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-768x768.png 768w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-24x24.png 24w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-36x36.png 36w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-48x48.png 48w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-50x50.png 50w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-600x600.png 600w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master-100x100.png 100w, http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/AnyConv.com__cascade_goi-front_3dab04d198d64f5fbd1b821b6fc8e085_master.png 900w" sizes="(max-width: 300px) 100vw, 300px" />DẦU GỘI HACHI VIETNAM CASCADE 500G (SHAMPOO) - XANH NGỌC						</a>
-                                                        <dl class="variation">
-                                                            <dt class="variation-Dungtch">Dung tích:</dt>
-                                                            <dd class="variation-Dungtch">
-                                                                <p>350ml</p>
-                                                            </dd>
-                                                        </dl>
-                                                        <span class="quantity">6 &times; <span class="woocommerce-Price-amount amount">170,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></span>
-                                                        </span>
-                                                    </li>
-                                                </ul>
-
-                                                <p class="woocommerce-mini-cart__total total">
-                                                    <strong>Tạm tính:</strong> <span class="woocommerce-Price-amount amount">1,020,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></span>
-                                                </p>
-
-
-                                                <p class="woocommerce-mini-cart__buttons buttons"><a href="" class="button wc-forward">Xem giỏ hàng</a><a href="" class="button checkout wc-forward">Thanh toán</a></p>
-
-
-
-                                            </div>
-                                            <div class="cart-sidebar-content relative"></div>
-                                        </div>
-                                    </div>
-
-                                </li>
-                            </ul>
-                        </div> -->
-
-                    </div>
-                    <!-- .header-inner -->
-
-                    <!-- Header divider -->
-                    <div class="container">
-                        <div class="top-divider full-width"></div>
-                    </div>
-                </div>
-                <!-- .header-main -->
-                <div class="header-bg-container fill">
-                    <div class="header-bg-image fill"></div>
-                    <div class="header-bg-color fill"></div>
-                </div>
-                <!-- .header-bg-container -->
-            </div>
-            <!-- header-wrapper-->
-        </header>
-        <div id="wrapper">
-        <div class="shop-page-title category-page-title page-title ">
-                <div class="page-title-inner flex-row  medium-flex-wrap container">
-                    <div class="flex-col flex-grow medium-text-center">
-                        <div class="is-large">
-                            <nav class="woocommerce-breadcrumb breadcrumbs uppercase">
-                                <a href="http://mauweb.monamedia.net/hachi">Trang chủ</a>
-                                <span class="divider">&#47;</span>
-                                Cửa hàng
-                            </nav>
-                        </div>
-                        <div class="category-filtering category-filter-row show-for-medium">
-                            <a href="#" data-open="#shop-sidebar" data-visible-after="true" data-pos="left" class="filter-button uppercase plain">
-                                <i class="icon-menu"></i>
-                                <strong>Lọc</strong>
-                            </a>
-                            <div class="inline-block"></div>
-                        </div>
-                    </div>
-                    <!-- .flex-left -->
-                    <div class="flex-col medium-text-center">
-                        <p class="woocommerce-result-count hide-for-medium">Showing 1 &ndash;12 of 13 results</p>
-                        <form class="woocommerce-ordering" method="get">
-                            <select name="orderby" class="orderby" aria-label="Đơn hàng của cửa hàng">
-                                <option value="menu_order" selected='selected'>Thứ tự mặc định</option>
-                                <option value="popularity">Thứ tự theo mức độ phổ biến</option>
-                                <option value="rating">Thứ tự theo điểm đánh giá</option>
-                                <option value="date">Mới nhất</option>
-                                <option value="price">Thứ tự theo giá: thấp đến cao</option>
-                                <option value="price-desc">Thứ tự theo giá: cao xuống thấp</option>
-                            </select>
-                            <input type="hidden" name="paged" value="1"/>
-                        </form>
-                    </div>
-                    <!-- .flex-right -->
-                </div>
-                <!-- flex-row -->
-            </div>
-
-       <main id="main" class="">
-      
-       <div class="row category-page-row">
-                    <div class="col large-3 hide-for-medium ">
-                        <div id="shop-sidebar" class="sidebar-inner col-inner">
-                            <aside id="search-3" class="widget widget_search">
-                                <form method="get" class="searchform" action="http://mauweb.monamedia.net/hachi/" role="search">
-                                    <div class="flex-row relative">
-                                        <div class="flex-col flex-grow">
-                                            <input type="search" class="search-field mb-0" name="s" value="" id="s" placeholder="Tìm kiếm"/>
-                                        </div>
-                                        <!-- .flex-col -->
-                                        <div class="flex-col">
-                                            <button type="submit" class="ux-search-submit submit-button secondary button icon mb-0" aria-label="Submit">
-                                            <i class="fas fa-search"></i>
-                                            </button>
-                                        </div>
-                                        <!-- .flex-col -->
-                                    </div>
-                                    <!-- .flex-row -->
-                                    <div class="live-search-results text-left z-top"></div>
-                                </form>
-                            </aside>
-                            <aside id="nav_menu-3" class="widget widget_nav_menu">
-                                <span class="widget-title shop-sidebar">Danh mục sản phẩm</span>
-                                <div class="is-divider small"></div>
-                                <div class="menu-menu-danh-muc-san-pham-container">
-                                    <ul id="menu-menu-danh-muc-san-pham" class="menu">
-                                    <?php  
-                                        $sql = "SELECT * FROM danhmuc where TrangThai='1'";
-                                        $result = mysqli_query($conn,$sql);
-                                        while ($row = mysqli_fetch_array($result)){
-                                            
-                                    ?>
-                                        <li id="menu-item-404" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-404">
-                                            <a href="./header.php?url=sanpham&dm=<?php echo $row["MaDM"] ?>"><?php echo $row['TenDM'] ?></a>
-                                        </li>
-                                        <?php }?>
-                                    </ul>
-                                </div>
-                            </aside>
+                                   
+                                    </header>
+       
+        <div class="main">
+                <div class="banner">
+                    <h3>LIÊN HỆ</h3>
+                    <img src=http://mauweb.monamedia.net/hachi/wp-content/uploads/2019/12/waves.jpg">
+                    <div class="right" style="display:flex">
+                        <div class="right_lienhe"> 
                            
-                            
-                        </div>
-                        <!-- .sidebar-inner -->
-                    </div>
-            
-                    
-       <?php
-			   if(isset($_GET['url'])){
-				switch($_GET['url']){
-					 case 'sanpham': include'./sanpham.php';break;
-					 case 'ctsanpham': include'./ctsanpham.php'; break;
-					 
-				}
-			}
-			?>
-            
-        </main>
-    
-        <!-- #main -->
+                            <div class="lienhe">
+                                <ul>
+                                    <li> 
+                                        <i class="fas fa-map-marker-alt">     931 Đ. Trần Hưng Đạo, Phường 1, Quận 5, Thành phố Hồ Chí Minh</i>
 
-        <footer id="footer" class="footer-wrapper">
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-phone">   1900633648</i>
+                                      
+                                    </li>
+                                    <li>
+                                          <i class="far fa-envelope">     menly@gmail.com</i>
+                                         
+                                    </li>
+                                    <li>
+                                        <i class="fab fa-youtube">     demonhunterp</i>
+                                        
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="hotline-phone-ring-wrap">
+	<div class="hotline-phone-ring">
+		<div class="hotline-phone-ring-circle"></div>
+		<div class="hotline-phone-ring-circle-fill"></div>
+		<div class="hotline-phone-ring-img-circle">
+		<a href="tel:1900636648" class="pps-btn-img">
+			<img src="https://nguyenhung.net/wp-content/uploads/2019/05/icon-call-nh.png" alt="Gọi điện thoại" width="50">
+		</a>
+		</div>
+	</div>
+	
+</div>
+                            <div class="lienhe_vct">
+                                <p>LIÊN HỆ VỚI CHÚNG TÔI</p>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td> <input type="type" name="name" placeholder="HỌ VÀ TÊN"></td>
+                                            <td><input type="type" name="name" placeholder="EMAIL"></td>
+                                        </tr>
+                                         <tr>
+                                            <td> <input type="type" name="name" placeholder="SỐ ĐIỆN THOẠI"></td>
+                                            <td><input type="type" name="name" placeholder="ĐỊA CHỈ"></td>
+                                             
+                                        </tr>
+                                        <tr>
+                                            <td> <input type="type"  name="name" placeholder="LỜI NHẮN"></td>
+                                            <td>  <button  style="padding-left: 150px;;  padding-right: 180px;height: 30px; color: white; border-radius: 5px;"  type="submit" name="submit" value="submit" class="btn" >LIÊN HỆ</button></td>
+                                        </tr>
+     
+                                                     
+                                    </tbody>
+                                </table>      
+                            </div>
+                           
+                        </div>
+                        <div id="map"  style="width:850px;height:450px; padding-left: 13px;">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1959.8764002654043!2d106.6733294!3d10.7535252!3m2!1i1024!2i768! 4f13.1!3m3!1m2!1s0x31752efc2fa97409%3A0x54da553142caa729!2zOTMxIMSQxrDhu51uZyB UcuG6p24gSMawbmcgxJDhuqFvLCBQaMaw4budbmcgNywgUXXhuq1uIDUsIEjhu5MgQ2jDr SBNaW5o!5e0!3m2!1svi!2s!4v1545088896955" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+                
+                </div>
+        </div>
+        
+        <style>
+            .right{
+                background-color: white;
+            }
+            .banner img:hover{
+                opacity: 0.5;
+                filter: alpha(opacity=100);
+            }
+           
+            .banner h3{
+                text-align: center;
+                color: #fff;
+                position: absolute;
+                margin-top: 80px;
+                font-weight: bold;
+            }
+            .left_map{
+                float: left;
+              
+                
+            }
+            .right_lienhe{
+                float: right;
+                width: 59%;
+                height: 650px;
+                background-color: white;
+                margin-top:8%;
+            }
+            .right_lienhe .logo{
+                width: 350%;
+                height: 100px;
+                padding-left: 50px;
+                padding-top: 10px;
+            }
+            .right_lienhe .lienhe{
+                float: right;
+                margin-top: 5px;
+            }
+            .right_lienhe .lienhe ul {
+                
+                margin-top: -90px;
+               margin-right: 50px;
+               list-style-type: none;
+              
+            }
+             .right_lienhe .lienhe ul li i{
+                 padding: 10px 5px;;
+             }
+             .right_lienhe .lienhe ul li i:hover{
+                 color:#049372;
+             }
+             .right_lienhe .lienhe_vct p{
+                margin-top: 110px;
+                font-size: 30px;
+                font-family:sans-serif;
+                font-weight: bold;
+                text-align: center;
+             }
+             .right_lienhe .lienhe_vct table tbody tr td{
+                 font-size: 17px;
+               text-align: center;
+               border:none;
+               
+             }
+             .right_lienhe .lienhe_vct table tbody tr td input{
+                  border:none;
+             }
+             
+             
+        </style>
+        
+        
+         <footer id="footer" class="footer-wrapper">
 
             <section class="section" id="section_328236419">
                 <div class="bg section-bg fill bg-fill  bg-loaded">
+
+
+
+
+
                 </div>
                 <!-- .section-bg -->
+
                 <div class="section-content relative">
+
+
                     <div id="gap-647088397" class="gap-element clearfix" style="display:block; height:auto;">
+
                         <style scope="scope">
                             #gap-647088397 {
                                 padding-top: 0px;
                             }
                         </style>
                     </div>
+
+
+
                 </div>
                 <!-- .section-content -->
+
+
                 <style scope="scope">
                     #section_328236419 {
                         padding-top: 30px;
@@ -846,31 +791,48 @@
 
             <section class="section sec-footer dark" id="section_343530008">
                 <div class="bg section-bg fill bg-fill  bg-loaded">
+
+
+
+
+
                 </div>
                 <!-- .section-bg -->
+
                 <div class="section-content relative">
+
+
                     <div id="gap-270070949" class="gap-element clearfix" style="display:block; height:auto;">
+
                         <style scope="scope">
                             #gap-270070949 {
                                 padding-top: 40px;
                             }
                         </style>
                     </div>
+
+
                     <div class="row align-center row-footer" id="row-353601431">
+
                         <div class="col medium-6 small-12 large-3">
                             <div class="col-inner">
+
                                 <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1384115679">
                                     <div class="img-inner dark">
                                         <img width="900" height="195" src="./assets/images/images_home/logo_ciel.png"
                                             sizes="(max-width: 900px) 100vw, 900px" />
                                     </div>
+
                                     <style scope="scope">
                                         #image_1384115679 {
                                             width: 75%;
                                         }
                                     </style>
                                 </div>
-                                 <div class="icon-box featured-box icon-box-left text-left">
+
+
+
+                                <div class="icon-box featured-box icon-box-left text-left">
                                     <div class="icon-box-img" style="width: 20px">
                                         <div class="icon">
                                             <div class="icon-inner">
@@ -1114,10 +1076,10 @@
                                     <div class="mona-sidebar-footer">
                                         <div class="menu-menu-ve-chung-toi-container">
                                             <ul id="menu-menu-ve-chung-toi" class="menu">
-                                                <li id="menu-item-256" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-256"><a href="">Giới thiệu</a></li>
-                                                <li id="menu-item-254" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-254"><a href="">Hệ thống phân phối</a></li>
-                                                <li id="menu-item-255" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-255"><a href="">Tầm nhìn – Sứ mệnh – Giá trị cốt lõi</a></li>
-                                                <li id="menu-item-257" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-257"><a href="">Liên hệ</a></li>
+                                                <li id="menu-item-256" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-256"><a href="vechungtoi.php">Giới thiệu</a></li>
+                                                <li id="menu-item-254" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-254"><a href="hethongpp_banle.php">Hệ thống phân phối</a></li>
+                                                <li id="menu-item-255" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-255"><a href="tamnhin_cotloi.php">Tầm nhìn – Sứ mệnh – Giá trị cốt lõi</a></li>
+                                                <li id="menu-item-257" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-257"><a href="lienhe.php">Liên hệ</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -1244,7 +1206,7 @@
                 </li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-6 current_page_item menu-item-34"><a href="" class="nav-top-link"><span class='menu-image-hover-wrapper'><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon1.png" class="menu-image menu-image-title-below" alt="" /><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon_hover1.png" class="hovered-image menu-image-title-below" alt="" style="margin-left: -34px;" /></span><span class="menu-image-title-below menu-image-title">Trang chủ</span></a></li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-106"><a href="./header.php?url=sanpham" class="nav-top-link"><span class='menu-image-hover-wrapper'><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon_hover123434.png" class="menu-image menu-image-title-below" alt="" /><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon_hover222222222222.png" class="hovered-image menu-image-title-below" alt="" style="margin-left: -34px;" /></span><span class="menu-image-title-below menu-image-title">Sản phẩm</span></a>
-                    <ul class=children>
+                <ul class=children>
                         <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-229"><a href="">Chăm sóc tóc</a>
                             <ul class=nav-sidebar-ul>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-232"><a href="">Dầu xả</a></li>
@@ -1272,10 +1234,10 @@
                 </li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-207"><a href="" class="nav-top-link"><span class='menu-image-hover-wrapper'><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon3.png" class="menu-image menu-image-title-below" alt="" /><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon_hover3.png" class="hovered-image menu-image-title-below" alt="" style="margin-left: -34px;" /></span><span class="menu-image-title-below menu-image-title">Về Hachi</span></a>
                     <ul class=children>
-                    <li id="menu-item-206" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-206"><a href="./vechungtoi.php"> Về chúng tôi</a></li>
-                                        <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-205"><a href="./tamnhin_cotloi.php">Tầm nhìn – Sứ mệnh – Giá trị cốt lõi</a></li>
-                                        <li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-36"><a href="./lienhe.php">Liên hệ</a></li>
-                                        <li id="menu-item-204" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-204"><a href="./hethongpp_banle.php">Hệ thống phân phối và bán lẻ</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-206"><a href="">Về chúng tôi</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205"><a href="">Tầm nhìn – Sứ mệnh – Giá trị cốt lõi</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36"><a href="">Liên hệ</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-204"><a href="">Hệ thống phân phối và bán lẻ</a></li>
                     </ul>
                 </li>
                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-37"><a href="" class="nav-top-link"><span class='menu-image-hover-wrapper'><img width="42" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon4.png" class="menu-image menu-image-title-below" alt="" /><img width="42" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon4.png" class="hovered-image menu-image-title-below" alt="" style="margin-left: -42px;" /></span><span class="menu-image-title-below menu-image-title">Tin tức</span></a>
@@ -1467,6 +1429,7 @@
     </script>
     <script type='text/javascript' src='http://mauweb.monamedia.net/hachi/wp-content/plugins/woocommerce/assets/js/frontend/password-strength-meter.min.js?ver=3.9.2'></script>
 
-</body>
-
-</html>
+                                     </div>
+                                
+            </body>
+            </html>
