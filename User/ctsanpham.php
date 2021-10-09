@@ -163,16 +163,22 @@ img.emoji {
                         ?>
 	  						<div class="price-wrapper">
                                                     <span class="price">
+													<?php if($row["TyLeKM"]<=0){ ?>
+                                                            <span class="woocommerce-Price-amount amount" style="font-size: 17px !important;">
+                                                            <?php echo number_format($row["DonGia"],"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                            </span>
+                                                            <?php }else{?>
                                                         <del>
                                                             <span class="woocommerce-Price-amount amount" style="font-size: 12px !important;">
                                                             <?php echo number_format($row["DonGia"],"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                             </span>
                                                         </del>
                                                         <ins>
-                                                            <span class="woocommerce-Price-amount amount" style="font-size: 20px !important;">
+                                                            <span class="woocommerce-Price-amount amount" style="font-size: 17px !important;">
                                                             <?php echo number_format($row["DonGia"]-($row["DonGia"]*$row["TyLeKM"]/100),"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                             </span>
                                                         </ins>
+                                                        <?php }?>
                                                     </span>
                                                 </div>		
 
@@ -209,10 +215,36 @@ img.emoji {
 	
 	<div class="quantity buttons_added">
 	<input type="button" value="-" class="minus button is-form" id="minus_quantity">		
-	<input type="number" id="quantity" class="input-text qty text" value=1 min="1" max="50" name="quantity" title="SL" size="4" inputmode="numeric">
+	<input type="number" id="quantity" class="input-text qty text" value=1 min="1" max="<?php if(isset($_GET["id"])){
+		$MaSP = $_GET["id"];
+		$qr = "SELECT SoLuongTon from sanpham where MaSP='$MaSP'";
+		$result = mysqli_query($conn,$qr);
+		$row = mysqli_fetch_array($result);
+		if($row['SoLuongTon']>0) echo $row['SoLuongTon'];
+	} ?>" name="quantity" title="SL" size="4" inputmode="numeric">
 	<input type="button" value="+" class="plus button is-form" id="plus_quantity">	</div>
-
+<?php 
+	if(isset($_GET["id"])){
+	$MaSP = $_GET["id"];
+	$qr = "SELECT SoLuongTon from sanpham where MaSP='$MaSP'";
+	$result = mysqli_query($conn,$qr);
+	$row = mysqli_fetch_array($result);
+	if($row['SoLuongTon']>0) {
+?>
 <input type="button" value="Mua hàng" class="single_add_to_cart_button" id="add_cart" style="background:#797c11;color:white">
+<?php }else{?>
+	<input type="button" value="Hết hàng" class="single_add_to_cart_button" id="add_cart" style="background: #797c11;color: white;opacity: 0.3;cursor: not-allowed;" disabled="disabled">
+<?php }}?>
+<p id="total_quantity" style="font-weight:bold;color:#0f703e">
+<?php 
+	if(isset($_GET["id"])){
+		$MaSP = $_GET["id"];
+		$qr = "SELECT SoLuongTon from sanpham where MaSP='$MaSP'";
+		$result = mysqli_query($conn,$qr);
+		$row = mysqli_fetch_array($result);
+		if($row['SoLuongTon']>0) echo "Còn: ".$row['SoLuongTon']." sản phẩm";
+	}
+?></p>
 <div id="alert" style="color: #056935;
     font-weight: bold;
     box-shadow: 0 1px 10px #056935;

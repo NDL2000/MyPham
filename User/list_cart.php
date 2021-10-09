@@ -22,8 +22,13 @@
         echo "<td>".$list['id']."</td>";
         echo "<td>".$list['name']."</td>";        
         $gia=number_format($list['price'],'0',',','.')."&#8363;";
-        echo "<td>".$gia."</td>";        
-        echo "<td><input type='number' min='1' id='quantity' name='soluong[".$list['id']."]' value='".$list['sl']."'></td>";   
+        echo "<td>".$gia."</td>"; 
+            $MaSP = $list["id"];
+            $qr = "SELECT SoLuongTon from sanpham where MaSP='$MaSP'";
+            $result = mysqli_query($conn,$qr);
+            $row = mysqli_fetch_array($result);
+            if($row['SoLuongTon']>0){      
+        echo "<td><input type='number' min='1' max='".$row['SoLuongTon']."' id='quantity' name='soluong[".$list['id']."]' value='".$list['sl']."'></td>";}
         echo "<td>".$list['tylekm']." &percnt;"."</td>";     
         $thanhtien=$list['price']*$list['sl']-($list['price']*$list['tylekm']/100);
         $tongtien=$tongtien+$thanhtien;

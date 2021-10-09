@@ -420,9 +420,11 @@
                                     <div class="col-inner">
                                         <div class="badge-container absolute left top z-1">
                                             <div class="callout badge badge-circle">
+                                                <?php if($row["TyLeKM"]>0){ ?>
                                                 <div class="badge-inner secondary on-sale">
                                                     <span class="onsale"><?php echo $row["TyLeKM"]." %" ?></span>
                                                 </div>
+                                                <?php }?>
                                             </div>
                                         </div>
                                         <div class="product-small box ">
@@ -446,6 +448,11 @@
                                                 </div>
                                                 <div class="price-wrapper">
                                                     <span class="price">
+                                                        <?php if($row["TyLeKM"]<=0){ ?>
+                                                            <span class="woocommerce-Price-amount amount" style="font-size: 17px !important;">
+                                                            <?php echo number_format($row["DonGia"],"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                            </span>
+                                                            <?php }else{?>
                                                         <del>
                                                             <span class="woocommerce-Price-amount amount" style="font-size: 12px !important;">
                                                             <?php echo number_format($row["DonGia"],"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
@@ -456,6 +463,7 @@
                                                             <?php echo number_format($row["DonGia"]-($row["DonGia"]*$row["TyLeKM"]/100),"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                             </span>
                                                         </ins>
+                                                        <?php }?>
                                                     </span>
                                                 </div>
                                             </div>
@@ -527,7 +535,7 @@
                                 <?php }}?>
                                 
                             <!-- row -->
-                            <div class="container">
+                            <!-- <div class="container">
                                 <nav class="woocommerce-pagination">
                                     <ul class="page-numbers nav-pagination links text-center">
                                         <li>
@@ -543,7 +551,7 @@
                                         </li>
                                     </ul>
                                 </nav>
-                            </div>
+                            </div> -->
                         </div>
                         <!-- shop container -->
                     </div>

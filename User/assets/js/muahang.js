@@ -55,14 +55,39 @@ $(document).ready(function(){
     });
     // Update cart
     $("#quantity").keyup(function(){
+        var max = parseInt($("#quantity").attr("max"));
         if($("#quantity").val()<=0) {
             $("#update_cart").attr("disabled",true);
             $("#update_cart").css({"cursor":"not-allowed","opacity":0.3});
+        }
+        else if($("#quantity").val()>max) {
+            $("#update_cart").attr("disabled",true);
+            $("#update_cart").css({"cursor":"not-allowed","opacity":0.3});  
+        }
+        else if(0<$("#quantity").val()<=max) {
+            $("#update_cart").attr("disabled",false);
+            $("#update_cart").css({"cursor":"pointer","opacity":1});
         }
         else {
             $("#update_cart").attr("disabled",false);
             $("#update_cart").css({"cursor":"pointer","opacity":1});
         }
+        if($("#quantity").val()<=0) {
+            $("#add_cart").attr("disabled",true);
+            $("#add_cart").css({"cursor":"not-allowed","opacity":0.3});
+        }
+        else if($("#quantity").val()>max) {
+            $("#add_cart").attr("disabled",true);
+            $("#add_cart").css({"cursor":"not-allowed","opacity":0.3});  
+        }
+        else if(0<$("#quantity").val()<=max) {
+            $("#add_cart").attr("disabled",false);
+            $("#add_cart").css({"cursor":"pointer","opacity":1});
+        }
+        else {
+            $("#add_cart").attr("disabled",false);
+            $("#add_cart").css({"cursor":"pointer","opacity":1});
+        }
     });
-   
+    
 });

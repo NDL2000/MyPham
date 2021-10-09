@@ -30,7 +30,6 @@
                       );
                   }
                  echo 'Đã thêm sản phẩm vào giỏ';
-                 echo print_r($_SESSION['cart']);
                   
               }
               else

@@ -83,7 +83,13 @@
             $TyLeKM = $list['tylekm'];
             $Sl = $list['sl'];
             $sql = "insert into cthoadon (MaHD,MaSP,TenKH,GiaGoc,TyLeKM,SoLuongMua) values('$MaHD','$MaSP','$TenKH','$GiaGoc','$TyLeKM','$Sl')";
+            $sql1 = "update sanpham set SoLuongTon=SoLuongTon-'$Sl' where MaSP='$MaSP'";
+            $sql2 = "update ctkhuyenmai set SoLuongKM=SoLuongKM-'$Sl' where MaSP='$MaSP'";
+            $sql3 = "update ctkhuyenmai set TyLeKM='0' where MaSP='$MaSP' and SoLuongKM<=0";
             mysqli_query($conn,$sql);
+            mysqli_query($conn,$sql1);
+            mysqli_query($conn,$sql2);
+            mysqli_query($conn,$sql3);
         }
         unset($_SESSION['cart']);
         echo "<script>alert('Đặt hàng thành công')</script>";
