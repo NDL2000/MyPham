@@ -19,4 +19,10 @@ $(document).ready(function() {
     $("#view").click(function() {
         $("#view").css("display", "none");
     });
+
+    // Tim kiem san pham
+    $("#search_product").blur(function(){
+        $("#no_search").css("display", "none");
+        $("#main").load("../User/search.php",{"search":$("#search_product").val()});
+    });
 });

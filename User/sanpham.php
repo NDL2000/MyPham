@@ -7,6 +7,7 @@
     <head>
         <meta charset="UTF-8"/>
         <link rel="profile" href="https://gmpg.org/xfn/11"/>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link rel="pingback" href="http://mauweb.monamedia.net/hachi/xmlrpc.php"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <script>
@@ -397,7 +398,7 @@
           
                 
                     <!-- #shop-sidebar -->
-                   <div class="col large-9">
+                   <div class="col large-9" id="no_search">
                         <div class="shop-container">
                             <div class="woocommerce-notices-wrapper"></div>
                             <div class="products row row-small large-columns-3 medium-columns-3 small-columns-2 has-shadow row-box-shadow-2 row-box-shadow-3-hover">
@@ -411,6 +412,7 @@
                             else{
                            $qr = "SELECT km.MaKM,km.TrangThai,sp.HinhAnh,sp.MaSP,sp.TenSP,sp.DonGia,ct.TyLeKM FROM sanpham as sp,ctkhuyenmai as ct,khuyenmai as km WHERE sp.MaSP=ct.MaSP and ct.MaKM=km.MaKM and km.TrangThai='Đang khuyến mãi'";
                             }
+                           
                            $result = mysqli_query($conn,$qr);
                            
                               if(mysqli_num_rows($result)>0){
@@ -668,5 +670,6 @@
             /* ]]> */
         </script>
         <script type='text/javascript' src='http://mauweb.monamedia.net/hachi/wp-content/plugins/woocommerce/assets/js/frontend/password-strength-meter.min.js?ver=3.9.2'></script>
+        <script src="../User/assets/js/modal.js"></script>
     </body>
 </html>

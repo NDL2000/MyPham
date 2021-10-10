@@ -3,21 +3,17 @@
 <form method="post" action="">
 <div class="order_group">
     <div class="order_info">
-        <h3>THÔNG TIN THANH TOÁN</h3>
-        <?php if(isset($_SESSION["user"])){
-            $tendangnhap = $_SESSION["user"]; $qr = "select * from taikhoan where TenDangNhap='$tendangnhap'";
-            $result = mysqli_query($conn,$qr);
-            $row = mysqli_fetch_array($result);
-        ?>
+        <h3>THÔNG TIN NGƯỜI NHẬN</h3>
+       
         <label>Họ Tên</label>
-        <input type="text" name="name" required value="<?php echo $row["HoTen"]?>">
+        <input type="text" name="name" required>
         <label>Địa chỉ</label>
-        <input type="text" name="address" required value="<?php echo $row["DiaChi"]?>">
+        <input type="text" name="address" required>
         <label>Số điện thoại</label>
-        <input type="text" name="phone" required value="<?php echo $row["SoDienThoai"]?>">
+        <input type="text" name="phone" required>
         <label>Ghi chú</label>
         <textarea name="comment" cols="45" rows="8"></textarea>
-        <?php }?>
+      
     </div>
     <div class="order_product">
         <h3>ĐƠN HÀNG CỦA BẠN</h3>
@@ -69,9 +65,7 @@
         $TenKH = $_POST['name'];
         $SoDienThoai = $_POST['phone'];
         $DiaChi = $_POST['address'];
-        $query = "update taikhoan set HoTen='$TenKH',SoDienThoai='$SoDienThoai',DiaChi='$DiaChi' where TenDangNhap = '$tendangnhap'";
-        mysqli_query($conn, $query);
-        $qr = "insert into hoadon(TenDangNhap,NgayHD,TrangThai,GhiChu) values('$tendangnhap','$NgayHD','Chờ xét duyệt','$GhiChu')";
+        $qr = "insert into hoadon(TenDangNhap,NgayHD,TrangThai,GhiChu,HoTenNN,SoDienThoaiNN,DiaChiNN) values('$tendangnhap','$NgayHD','Chờ xét duyệt','$GhiChu','$TenKH','$SoDienThoai','$DiaChi')";
         mysqli_query($conn,$qr);
         $qr1 = "select MaHD from hoadon order by MaHD desc limit 1";
         $kq = mysqli_query($conn,$qr1);

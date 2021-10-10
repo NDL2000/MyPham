@@ -738,7 +738,7 @@
                         </div>
                     </div>
                     <!-- .flex-left -->
-                    <div class="flex-col medium-text-center">
+                    <!-- <div class="flex-col medium-text-center">
                         <p class="woocommerce-result-count hide-for-medium">Showing 1 &ndash;12 of 13 results</p>
                         <form class="woocommerce-ordering" method="get">
                             <select name="orderby" class="orderby" aria-label="Đơn hàng của cửa hàng">
@@ -751,12 +751,12 @@
                             </select>
                             <input type="hidden" name="paged" value="1"/>
                         </form>
-                    </div>
+                    </div> -->
                     <!-- .flex-right -->
                 </div>
                 <!-- flex-row -->
             </div>
-
+        
        <main id="main" class="">
       
        <div class="row category-page-row">
@@ -766,14 +766,10 @@
                                 <form method="get" class="searchform" action="http://mauweb.monamedia.net/hachi/" role="search">
                                     <div class="flex-row relative">
                                         <div class="flex-col flex-grow">
-                                            <input type="search" class="search-field mb-0" name="s" value="" id="s" placeholder="Tìm kiếm"/>
+                                            <input type="search" id="search_product" class="search-field mb-0" name="s" value="" id="s" placeholder="Tìm kiếm"/>
                                         </div>
                                         <!-- .flex-col -->
-                                        <div class="flex-col">
-                                            <button type="submit" class="ux-search-submit submit-button secondary button icon mb-0" aria-label="Submit">
-                                            <i class="fas fa-search"></i>
-                                            </button>
-                                        </div>
+                                       
                                         <!-- .flex-col -->
                                     </div>
                                     <!-- .flex-row -->
@@ -1219,21 +1215,21 @@
                 <li class="header-search-form search-form html relative has-icon">
                     <div class="header-search-form-wrapper">
                         <div class="searchform-wrapper ux-search-box relative form-flat is-normal">
-                            <form role="search" method="get" class="searchform" action="http://mauweb.monamedia.net/hachi/">
+                            <form  method="get" class="searchform" action="">
                                 <div class="flex-row relative">
                                     <div class="flex-col search-form-categories">
                                         <select class="search_categories resize-select mb-0" name="product_cat"><option value="" selected='selected'>All</option><option value="cham-soc-da">Chăm sóc da</option><option value="cham-soc-toc">Chăm sóc tóc</option></select>                                        </div>
                                     <!-- .flex-col -->
                                     <div class="flex-col flex-grow">
                                         <label class="screen-reader-text" for="woocommerce-product-search-field-1">Tìm kiếm:</label>
-                                        <input type="search" id="woocommerce-product-search-field-1" class="search-field mb-0" placeholder="Tìm kiếm" value="" name="s" />
+                                        <input type="search" id="search" class="search-field mb-0" placeholder="Tìm kiếm" value="" name="s" />
                                         <input type="hidden" name="post_type" value="product" />
                                     </div>
                                     <!-- .flex-col -->
-                                    <div class="flex-col">
+                                    <!-- <div class="flex-col">
                                         <button type="submit" value="Tìm kiếm" class="ux-search-submit submit-button secondary button icon mb-0">
 				<i class="icon-search" ></i>			</button>
-                                    </div>
+                                    </div> -->
                                     <!-- .flex-col -->
                                 </div>
                                 <!-- .flex-row -->
