@@ -8,6 +8,7 @@ $(document).ready(function(){
             $("#add_cart").attr("disabled",false);
             $("#add_cart").css({"cursor":"pointer","opacity":1});
         }
+        
     });
     $("#minus_quantity,#plus_quantity").click(function(e){
         e.preventDefault();
@@ -19,7 +20,6 @@ $(document).ready(function(){
             $("#add_cart").attr("disabled",false);
             $("#add_cart").css({"cursor":"pointer","opacity":1});
         }
-        
     });
     $("#add_cart").click(function(){
         link = window.location.href.split('='); 
@@ -53,9 +53,10 @@ $(document).ready(function(){
         }
        
     });
-    // Update cart
+    // Event button update/add cart
     $("#quantity").keyup(function(){
         var max = parseInt($("#quantity").attr("max"));
+        // Update_cart
         if($("#quantity").val()<=0) {
             $("#update_cart").attr("disabled",true);
             $("#update_cart").css({"cursor":"not-allowed","opacity":0.3});
@@ -72,6 +73,7 @@ $(document).ready(function(){
             $("#update_cart").attr("disabled",false);
             $("#update_cart").css({"cursor":"pointer","opacity":1});
         }
+        // Add_cart
         if($("#quantity").val()<=0) {
             $("#add_cart").attr("disabled",true);
             $("#add_cart").css({"cursor":"not-allowed","opacity":0.3});

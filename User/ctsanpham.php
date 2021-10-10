@@ -251,9 +251,6 @@ img.emoji {
     padding: 5px;
     text-align: center;
     border-radius: 10px;display:none"><p id="alert_content" style="margin-top: 5px;"></p></div>
-<input type="hidden" name="add-to-cart" value="323">
-<input type="hidden" name="product_id" value="323">
-<input type="hidden" name="variation_id" class="variation_id" value="0">
 </div>
 
 </div>

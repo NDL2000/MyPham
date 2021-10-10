@@ -126,7 +126,8 @@
                 <option value="Đã giao" >Đã giao</>
                 <option value="Đã hủy" >Đã hủy</>
     </select></td> 
-  <div id="bill"></div>            
+  <div id="bill"></div>     
+  <div id="view"></div>          
   </div>
 </div>
 <?php 

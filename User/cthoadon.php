@@ -1,9 +1,11 @@
-<?php include("./head.php") ?>
+<script src="../User/assets/js/modal.js"></script>
+<div class="cthoadon_modal">
     <table class="cthoadon">
+        <h2 style="text-align:center;margin:20px 0px;color:#046935">CHI TIẾT HÓA ĐƠN</h2>
     <!-- TT HOA DON -->
     <?php 
         include '../admin/connect.php'; 
-        $qr = "SELECT * FROM hoadon where MaHD='".$_GET['id']."'";
+        $qr = "SELECT * FROM hoadon where MaHD='".$_POST['id']."'";
         $result = mysqli_query($conn, $qr);
         if(mysqli_num_rows($result)>0){
             while($row = mysqli_fetch_array($result)){
@@ -23,7 +25,7 @@
         <?php }}?>
     <!-- TT TAIKHOAN -->
     <?php 
-        $qr = "SELECT TenDangNhap FROM hoadon where MaHD='".$_GET['id']."'";
+        $qr = "SELECT TenDangNhap FROM hoadon where MaHD='".$_POST['id']."'";
         $result = mysqli_query($conn, $qr);
         if(mysqli_num_rows($result)>0){
             while($row = mysqli_fetch_array($result))
@@ -55,7 +57,7 @@
   </thead>
   <tbody>
     <?php 
-        $qr = "SELECT ct.MaSP,TenSP,HinhAnh,ct.GiaGoc,ct.TyLeKM,ct.SoLuongMua FROM cthoadon ct, sanpham sp where ct.MaSP=sp.MaSP and MaHD='".$_GET['id']."'";
+        $qr = "SELECT ct.MaSP,TenSP,HinhAnh,ct.GiaGoc,ct.TyLeKM,ct.SoLuongMua FROM cthoadon ct, sanpham sp where ct.MaSP=sp.MaSP and MaHD='".$_POST['id']."'";
         $result = mysqli_query($conn, $qr);
         if(mysqli_num_rows($result)>0){
             $count =0;
@@ -68,16 +70,15 @@
       <tr class="status">
       <td style="font-weight: bold"><?php echo $count?></td>
       <td><?php echo $row['TenSP'];?></td>
-      <td><?php echo number_format($row['GiaGoc'],0,",",".")." VNĐ";?></td>
+      <td><?php echo number_format($row['GiaGoc'],0,",",".")."&#8363;";?></td>
       <td><?php echo $row['TyLeKM']." %";?></td>
       <td><?php echo $row['SoLuongMua'];?></td>
-      <td><?php echo number_format($row['SoLuongMua']*$row['GiaGoc']-($row['SoLuongMua']*$row['GiaGoc']*$row['TyLeKM'])/100,0,",",".")." VNĐ";?></td>  
+      <td><?php echo number_format($row['SoLuongMua']*$row['GiaGoc']-($row['SoLuongMua']*$row['GiaGoc']*$row['TyLeKM'])/100,0,",",".")."&#8363;";?></td>  
     </tr>
     <?php }}?>
   </tbody>
     <tr class="status">
-           <td class="title-cthd" colspan="5" style="text-align: right;padding-right:5%;font-size: 20px;">Tổng tiền</td><td class="content-cthd" style="font-weight: bold  ;color:red;font-size: 20px;"><?php if(isset($tongtien)&&$tongtien!=null) echo number_format($tongtien,0,",",".")." VNĐ"; ?></td>
+           <td class="title-cthd" colspan="5" style="text-align: right;padding-right:5%;font-size: 20px;">Tổng tiền</td><td class="content-cthd" style="font-weight: bold  ;color:red;font-size: 20px;"><?php if(isset($tongtien)&&$tongtien!=null) echo number_format($tongtien,0,",",".")."&#8363;"; ?></td>
     </tr>
 </table>
-<button onclick="window.location.href='./user.php'" name="submit" class="btn btn-primary" style="margin-left:45%">Quay về</button>
-<?php include("./footer.php") ?>
+</div>
