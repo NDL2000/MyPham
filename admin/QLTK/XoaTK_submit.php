@@ -4,7 +4,7 @@
         $sql="Delete from taikhoan where TenDangNhap = '$id'";
         $old=mysqli_query($conn,$sql);
         if($old>0){
-            header("location:./index.php?url=QlTK&kq=3&page=1");
+            echo "<script>window.location.href='./index.php?url=QlTK&kq=3&page=1'</script>";
         }
         
     

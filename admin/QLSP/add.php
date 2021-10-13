@@ -14,7 +14,7 @@
     $datetime = date_create()->format('Y-m-d H:i:s');
 
     
-
+  
     $image_tmp=$_FILES['image']['tmp_name'];
     $image1=$_FILES['image']['name'];
     $category_id=$_POST['category_id'];
@@ -48,8 +48,10 @@
     else {
     $sql_input_output ="INSERT INTO nhapxuat (MaSP,GiaNhap,GiaXuat,NgayApDung, SoLuongNhap)  VALUES('$prd_id','$price_input','$price_output','$datetime','$input_quality')";
     $sql_QLSP="INSERT INTO sanpham(MaSP,TenSP,DonGia,HinhAnh,MaDM,TrangThai,MoTa) VALUES ('$prd_id','$prd_name','$price_output','$image1','$category_id','$status1','$description')";
+    $sql_slton = "UPDATE sanpham SET SoLuongTon=SoLuongTon+'$input_quality' where MaSP='$id'";
     $query_input_output=mysqli_query($conn,$sql_input_output);
     $query_QLSP=mysqli_query($conn,$sql_QLSP);
+    mysqli_query($conn, $sql_slton);
     move_uploaded_file($image_tmp,'./assets/images/images_product/'.$image1);
     header("Location: ./index.php?url=qlsanpham&kq=".$query_QLSP."&page=1");
     }
@@ -91,7 +93,7 @@
            </div>
            <div class="form-group">
              <label for="">Số lượng nhập</label>
-             <input type="text" name="input_quality"class="form-control"required >
+             <input type="text" name="input_quality"class="form-control" required >
            </div>
            <div class="form-group">
              <label for="">Ngày Áp Dụng</label>

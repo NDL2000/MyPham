@@ -12,16 +12,16 @@
 <body>
     <?php include './connect.php'; 
      //Xu ly Pagination
-     $sql = "SELECT * FROM hoadon where TrangThai= 'Đã hủy' limit $page,$rows";
+     $sql = "SELECT * FROM hoadon where TrangThai= 'Đã hủy'";
      $kq = mysqli_query($conn,$sql);
      $num_rows = mysqli_num_rows($kq); //So rows trong database
      $rows = 5;  //So rows muon hien thi
      if(isset($_GET['page'])&&$_GET['page']>0){
        $page = ($_GET['page']-1)*$rows;  //Vi tri record 
      }
-     else {$page = 1;echo "<script>window.location.href='./index.php?url=hddagiao&page=1'</script>"; }
+     else {$page = 1;echo "<script>window.location.href='./index.php?url=hddahuy&page=1'</script>"; }
      
-          $qr = "SELECT * FROM hoadon where TrangThai = 'Đã hủy'";
+          $qr = "SELECT * FROM hoadon where TrangThai = 'Đã hủy' limit $page,$rows";
           $result = mysqli_query($conn, $qr);
     ?>
     <h1 class="title">Hóa đơn đã hủy</h1>
