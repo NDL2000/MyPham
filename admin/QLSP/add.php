@@ -37,23 +37,21 @@
        while($row = mysqli_fetch_array($res)){
          $masp = $row['MaSP'];
         $sql_input_output ="INSERT INTO nhapxuat (MaSP,GiaNhap,GiaXuat,NgayApDung, SoLuongNhap)  VALUES('$masp','$price_input','$price_output','$datetime','$input_quality')";
-        $sql_QLSP= "UPDATE SANPHAM SET DonGia='$price_output',HinhAnh='$image1',MaDM='$category_id',TrangThai='$status1',MoTa='$description' where MaSP='$masp'";
+        $sql_QLSP= "UPDATE SANPHAM SET DonGia='$price_output',HinhAnh='$image1',MaDM='$category_id',TrangThai='$status1',MoTa='$description',SoLuongTon=SoLuongTon+'$input_quality' where MaSP='$masp'";
         $query_input_output=mysqli_query($conn,$sql_input_output);
         $query_QLSP=mysqli_query($conn,$sql_QLSP);
         move_uploaded_file($image_tmp,'./assets/images/images_product/'.$image1);
-        header("Location: ./index.php?url=qlsanpham&page=1&kq=".$query_QLSP);
+        echo "<script>window.location.href='./index.php?url=qlsanpham&page=1&kq=$query_QLSP'</script>";
       }
     }
     //-------------------------------------------------------------------------
     else {
     $sql_input_output ="INSERT INTO nhapxuat (MaSP,GiaNhap,GiaXuat,NgayApDung, SoLuongNhap)  VALUES('$prd_id','$price_input','$price_output','$datetime','$input_quality')";
-    $sql_QLSP="INSERT INTO sanpham(MaSP,TenSP,DonGia,HinhAnh,MaDM,TrangThai,MoTa) VALUES ('$prd_id','$prd_name','$price_output','$image1','$category_id','$status1','$description')";
-    $sql_slton = "UPDATE sanpham SET SoLuongTon=SoLuongTon+'$input_quality' where MaSP='$id'";
+    $sql_QLSP="INSERT INTO sanpham(MaSP,TenSP,DonGia,HinhAnh,MaDM,TrangThai,MoTa,SoLuongTon) VALUES ('$prd_id','$prd_name','$price_output','$image1','$category_id','$status1','$description','$input_quality')";
     $query_input_output=mysqli_query($conn,$sql_input_output);
     $query_QLSP=mysqli_query($conn,$sql_QLSP);
-    mysqli_query($conn, $sql_slton);
     move_uploaded_file($image_tmp,'./assets/images/images_product/'.$image1);
-    header("Location: ./index.php?url=qlsanpham&kq=".$query_QLSP."&page=1");
+    echo "<script>window.location.href='./index.php?url=qlsanpham&&page=1&kq=$query_QLSP'</script>";
     }
   }
 ?>

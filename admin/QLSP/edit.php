@@ -31,7 +31,7 @@
     $description=$_POST['description'];
     
     $sql_input_output_update ="UPDATE nhapxuat SET GiaNhap = '$price_input', GiaXuat = '$price_output', NgayApDung = '$date', SoLuongNhap = '$input_quality' where MaSP='$id'";
-    $sql_QLSP_update = "UPDATE sanpham SET TenSP = '$prd_name', DonGia= '$price_output', HinhAnh = '$image1', MaDM= '$category_id', TrangThai= '$status1',MoTa='$description' where MaSP='$id'";
+    $sql_QLSP_update = "UPDATE sanpham SET TenSP = '$prd_name', DonGia= '$price_output', HinhAnh = '$image1', MaDM= '$category_id', TrangThai= '$status1',MoTa='$description',SoLuongTon='$input_quality' where MaSP='$id'";
     $query_input_output_update=mysqli_query($conn,$sql_input_output_update);
     $query_QLSP_update=mysqli_query($conn,$sql_QLSP_update);
     echo "<script>window.location.href='./index.php?url=qlsanpham&page=1&kq1=$query_QLSP_update'</script>";

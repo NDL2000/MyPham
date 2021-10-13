@@ -18,7 +18,7 @@
               //  }
            // }
             mysqli_query($conn, $qr);
-        }
+        } 
     }
     $query=mysqli_query($conn,$sql);
     header('Location: ./user.php?rs=1');
