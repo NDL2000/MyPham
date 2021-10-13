@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 13, 2021 lúc 06:22 AM
+-- Thời gian đã tạo: Th10 13, 2021 lúc 07:02 AM
 -- Phiên bản máy phục vụ: 10.4.20-MariaDB
 -- Phiên bản PHP: 8.0.8
 
@@ -63,7 +63,6 @@ CREATE TABLE `ctkhuyenmai` (
 --
 
 INSERT INTO `ctkhuyenmai` (`MaKM`, `MaSP`, `TyLeKM`, `GhiChu`, `SoLuongKM`) VALUES
-(9, 7, 10, NULL, 10),
 (9, 8, 10, NULL, 10),
 (9, 11, 5, NULL, 10),
 (9, 14, 5, NULL, 10),
@@ -197,7 +196,7 @@ CREATE TABLE `nhapxuat` (
 
 INSERT INTO `nhapxuat` (`MaNhapXuat`, `MaSP`, `GiaNhap`, `GiaXuat`, `SoLuongNhap`, `NgayApDung`) VALUES
 (25, 6, '115000', '125000', 10, '2021-09-19'),
-(38, 7, '800000', '850000', 10, '2021-10-02'),
+(38, 7, '800000', '850000', 8, '2021-10-13'),
 (39, 8, '120000', '125000', 10, '2021-10-02'),
 (40, 9, '330000', '370000', 10, '2021-10-02'),
 (41, 10, '700000', '750000', 10, '2021-10-02'),
@@ -215,7 +214,8 @@ INSERT INTO `nhapxuat` (`MaNhapXuat`, `MaSP`, `GiaNhap`, `GiaXuat`, `SoLuongNhap
 (53, 22, '550000', '600000', 10, '2021-10-02'),
 (54, 23, '350000', '370000', 10, '2021-10-02'),
 (55, 24, '330000', '370000', 10, '2021-10-02'),
-(56, 25, '1150000', '1200000', 10, '2021-10-02');
+(56, 25, '1150000', '1200000', 10, '2021-10-02'),
+(58, 26, '1000000', '1150000', 10, '2021-10-13');
 
 -- --------------------------------------------------------
 
@@ -239,7 +239,6 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`MaSP`, `TenSP`, `DonGia`, `HinhAnh`, `MaDM`, `TrangThai`, `MoTa`, `SoLuongTon`) VALUES
-(7, 'COMBO TRỊ MỤN SIÊU HIỆU QUẢ M.EN.L.Y', '850000', 'product_7.png', 1, 1, 'Đối với các bạn da nhờn, mụn, da sần sùi do mụn ẩn và mụn liti thì chúng ta nên dùng ngay bộ combo trị mụn siêu hiệu quả MENLY này . Vì sao?\r\nVì bộ combo này giúp da bạn sạch sâu từ bên trong, kìm nhờn tốt, cân bằng độ PH cho da, trị mụn đang có và ngừa mụn mới . Đặc biệt bộ sản phẩm này giúp giảm xưng viêm cho các bạn bị mụn bọc và luôn an toàn cho tất cả các loại da kể cả da nhạy cảm ', 10),
 (8, 'COMBO MINI TRỊ MỤN SIÊU HIỆU QUẢ TRONG 7 NGÀY', '125000', 'product_8.png', 1, 1, 'Có Combo Mini Trị Mụn Siêu Hiệu Quả Trong 7 Ngày việc trị mụn trở nên đơn giản hơn . M.E.N.L.Y xin giới thiệu đến các bạn bộ Combo Mini Trị Mụn Siêu Hiệu Quả Chỉ Trong 7 Ngày được tách ra từ bộ trị mụn siêu quả với vóc dáng nhỏ bé, tiện lợi cho bạn khi mang theo bên người. Với thành phần 100% thiên nhiên an toàn cho da. M.E.N.L.Y tự hào là mỹ phẩm thiên nhiên đầu tiên tại Việt Nam ', 10),
 (9, 'KEM TRỊ MỤN MENLY', '370000', 'product_5.png', 1, 1, 'Sản phẩm được làm 100% từ thiên nhiên được nhập khẩu từ Anh Và Pháp vì vậy không gây kích ứng da , rất phù hợp với từng loại da mặt . Với công dụng làm trị mụn bọc , cám , đầu đen ,... . \" KEM TRỊ MỤN MENLY \" sẽ giúp bạn lấy lại vẻ đẹp trai và tự tin mọi người người xung quanh ', 10),
 (10, 'CẶP ĐÔI TRỊ MỤN BỌC - TRỨNG CÁ MENLY TỐT NHẤT', '750000', 'product_9.png', 1, 1, 'Mụn bọc hay trứng cá là vấn đề rất thường gặp ở nam và nữ tuổi trẻ và tuổi dậy thì. Mụn có thể từ mức độ nhẹ chỉ là mụn đầu đen đến những trường hợp mụn bọc, viêm tấy đỏ khắp mặt. Điều trị mụn không đơn giản, cần có sự tư vấn và điều trị từ các bác sĩ chuyên khoa da liễu. Ngoài ra, tuân thủ điều trị và kiên nhẫn cũng là một trong những yếu tố quan trọng góp phần mau lành bệnh. Mỹ phẩm cho nam xin giới thiệu với các bạn một đòng sản phẩm chuyên trị mụn bọc và mụn cám rất hiệu quả , đang được rất nhiều người sử dụng hiện nay .', 10),
@@ -257,7 +256,8 @@ INSERT INTO `sanpham` (`MaSP`, `TenSP`, `DonGia`, `HinhAnh`, `MaDM`, `TrangThai`
 (22, 'KEM DƯỠNG TRẮNG DA CAO CẤP VICTORIA', '600000', 'product_15.png', 2, 1, 'Loại bỏ những sắc tố đen.\r\nNgăn ngừa tia UV gây sạm da, chống nắng hiệu quả rất cao, làm phai vết nám mờ, tàn nhang đặc trị mụn, ngăn ngừa sự phát triển của mụn... làm mờ vết thâm do mụn để lại, làm se khít lỗ chân lông.\r\nLoại bỏ tế bào chết sản sinh tái tạo tế bào mới.\r\nLàm cho làn da săn chắc, chống lại hiện tượng da bị chảy xệ.\r\nPhục hồi làn da bị lão hóa, dưỡng ẩm giúp làm giảm vết nhăn, làm căng da mặt, làm da sạm trở nên trắng hồng tự nhiên, thích hợp làm kem lót nền trang điểm.', 10),
 (23, 'THUỐC TRỊ SẸO MỤN SCAR ESTHETIQUE', '370000', 'product_16.png', 8, 1, 'Kem trị sẹo Scar Esthetique tác dụng cải thiện và làm mờ với hầu hết các loại mới, dưới 5 năm, bao gồm: sẹo lõm, sẹo thâm do mụn, sẹo rỗ trên mặt.\r\n \r\nMỗi ngày bạn chỉ phải bỏ ra khoảng 5 phút và 2 lần thoa đều đặn để cải tạo làn da sẹo của mình. Nên nhớ, bạn chỉ nên dùng 1 lượng vừa đủ kem trị sẹo rồi thoa đều, mỏng lên vết sẹo, đồng thời nhẹ nhàng massage xung quanh vết sẹo. Bạn cũng có thể make up khi đang sử dụng kem trị sẹo Scar Esthetique.\r\n \r\nKem trị sẹo Scar Esthetique là dạng gel trong suốt, vì vậy nếu là sẹo trên mặt, bạn cũng không phải lo lắng vì vẫn có thể make up như bình thường. Sau khi thoa kem trị sẹo khoảng 30 phút, thời gian đủ để kem thẩm thấu vào vết sẹo và khô ráo, lúc này bạn có thể make up như bình thường được rồi đấy, yên tâm nhé.', 10),
 (24, 'THUỐC TRỊ SẸO REJUVASIL', '370000', 'product_17.png', 8, 1, 'Rejuvasil Có tác dụng ngừa sẹo sau phẫu thuật, sẹo bỏng, sẹo, thu nhỏ các vết sẹo cũ sẹo màu, sẹo phì đại.. mà Không cần đến sự can thiệp của các Bác Sỹ Phẫu thuật.', 10),
-(25, 'THUỐC TRỊ SẸO SCAR ESTHETIQUE 60ML', '1200000', 'product_18.png', 8, 1, '-  Công nghệ tiến bộ trong Scar Esthetique ngăn ngừa hiệu quả tối ưu với sẹo lõm, sẹo thâm do mụn …\r\n\r\n-  Kết quả nghiên cứu cho thấy Scar Esthetique đáp ứng tiêu chuẩn chất lượng TAQA.\r\n\r\n-  Không gây dị ứng.', 10);
+(25, 'THUỐC TRỊ SẸO SCAR ESTHETIQUE 60ML', '1200000', 'product_18.png', 8, 1, '-  Công nghệ tiến bộ trong Scar Esthetique ngăn ngừa hiệu quả tối ưu với sẹo lõm, sẹo thâm do mụn …\r\n\r\n-  Kết quả nghiên cứu cho thấy Scar Esthetique đáp ứng tiêu chuẩn chất lượng TAQA.\r\n\r\n-  Không gây dị ứng.', 10),
+(26, 'COMBO TRỊ MỤN SIÊU HIỆU QUẢ MENLY ', '1150000', 'product_7.png', 1, 1, 'Sản phẩm đầu tiên và cũng là sản phẩm không thể thiếu trong Combo này chính là Sữa Rửa Mặt MENLY. Đây là dòng sản phẩm được sản xuất với công thức độc quyền dành riêng cho làn da nam giới. Là dòng sữa rửa mặt KHÔNG BỌT đầu tiên cho nam giới tại Việt Nam với độ pH 6.0 đạt CHUẨN đảm bảo lấy sạch bụi bẩn, nhờn thừa nhưng vẫn tuyệt đối AN TOÀN cho da.\r\n\r\nSữa Rửa Mặt MENLY với các thành phần tinh túy kết hợp với nhau gồm: Tinh chất nha đam, Đất sét xanh Pháp, Tinh dầu trà xanh, Tinh dầu bạc hà và Tinh dầu vỏ bưởi…', 10);
 
 -- --------------------------------------------------------
 
@@ -389,7 +389,7 @@ ALTER TABLE `khuyenmai`
 -- AUTO_INCREMENT cho bảng `nhapxuat`
 --
 ALTER TABLE `nhapxuat`
-  MODIFY `MaNhapXuat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `MaNhapXuat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
