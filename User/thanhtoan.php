@@ -1,4 +1,5 @@
 <?php include './head.php' ?>
+<?php if(isset($_SESSION['user'])==null) echo "<script>window.location.href='../User/list_cart.php'</script>";?>
 <link rel="stylesheet" href="./assets/css/thanhtoan.css">
 <form method="post" action="">
 <div class="order_group">

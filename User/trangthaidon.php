@@ -32,7 +32,7 @@
       <td><?php echo $row['NgayHD'];?></td>
       <td><div class="status st1"><?php echo $row['TrangThai'];?></div></td>
       <td>
-      <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['MaHD']; ?>" id="getID" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-eye-open"></i> View</button>
+      <a data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['MaHD']; ?>" id="getID" class="btn btn-info"><i class="far fa-eye"></i></a>
         <?php if($row["TrangThai"]=="Chờ xét duyệt") { ?>
         <a class="btn btn-danger" onclick="return confirm('Bạn có muốn hủy đơn này?')" href="./delete.php?id=<?php echo $row["MaHD"]?>"><i class="fas fa-times"></i></a>
        <?php } ?>
