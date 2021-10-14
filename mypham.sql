@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 13, 2021 lúc 07:02 AM
+-- Thời gian đã tạo: Th10 14, 2021 lúc 07:13 AM
 -- Phiên bản máy phục vụ: 10.4.20-MariaDB
 -- Phiên bản PHP: 8.0.8
 
@@ -41,8 +41,7 @@ CREATE TABLE `cthoadon` (
 --
 
 INSERT INTO `cthoadon` (`MaHD`, `MaSP`, `TenKH`, `GiaGoc`, `TyLeKM`, `SoLuongMua`) VALUES
-(5, 13, 'Nguyễn Đức Lý', '1200000', 5, 1),
-(6, 11, 'Nguyễn Đức Lý', '950000', 5, 1);
+(16, 9, 'Nguyễn Đức Lý', '370000', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -85,6 +84,13 @@ CREATE TABLE `danhgia` (
   `TrangThai` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `danhgia`
+--
+
+INSERT INTO `danhgia` (`MaDG`, `MaSP`, `TenDangNhap`, `SoSao`, `NoiDung`, `NgayDG`, `TrangThai`) VALUES
+(6, 8, 'nguyenducly2000@gmail.com', 5, 'Sản phẩm tuyệt vời', '2021-10-14', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -117,16 +123,18 @@ CREATE TABLE `hoadon` (
   `MaHD` int(11) NOT NULL,
   `NgayHD` date NOT NULL,
   `TrangThai` varchar(100) NOT NULL,
-  `GhiChu` varchar(256) DEFAULT NULL
+  `GhiChu` varchar(256) DEFAULT NULL,
+  `HoTenNN` varchar(255) NOT NULL,
+  `SoDienThoaiNN` varchar(20) NOT NULL,
+  `DiaChiNN` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `hoadon`
 --
 
-INSERT INTO `hoadon` (`TenDangNhap`, `MaHD`, `NgayHD`, `TrangThai`, `GhiChu`) VALUES
-('nguyenducly2000@gmail.com', 5, '2021-09-01', 'Đang giao', NULL),
-('nguyenducly2000@gmail.com', 6, '2021-09-06', 'Đã giao', NULL);
+INSERT INTO `hoadon` (`TenDangNhap`, `MaHD`, `NgayHD`, `TrangThai`, `GhiChu`, `HoTenNN`, `SoDienThoaiNN`, `DiaChiNN`) VALUES
+('nguyenducly2000@gmail.com', 16, '2021-10-14', 'Chờ xét duyệt', '', 'Nguyễn Đức Lý', '0963700285', 'Hùng Vương');
 
 -- --------------------------------------------------------
 
@@ -240,7 +248,7 @@ CREATE TABLE `sanpham` (
 
 INSERT INTO `sanpham` (`MaSP`, `TenSP`, `DonGia`, `HinhAnh`, `MaDM`, `TrangThai`, `MoTa`, `SoLuongTon`) VALUES
 (8, 'COMBO MINI TRỊ MỤN SIÊU HIỆU QUẢ TRONG 7 NGÀY', '125000', 'product_8.png', 1, 1, 'Có Combo Mini Trị Mụn Siêu Hiệu Quả Trong 7 Ngày việc trị mụn trở nên đơn giản hơn . M.E.N.L.Y xin giới thiệu đến các bạn bộ Combo Mini Trị Mụn Siêu Hiệu Quả Chỉ Trong 7 Ngày được tách ra từ bộ trị mụn siêu quả với vóc dáng nhỏ bé, tiện lợi cho bạn khi mang theo bên người. Với thành phần 100% thiên nhiên an toàn cho da. M.E.N.L.Y tự hào là mỹ phẩm thiên nhiên đầu tiên tại Việt Nam ', 10),
-(9, 'KEM TRỊ MỤN MENLY', '370000', 'product_5.png', 1, 1, 'Sản phẩm được làm 100% từ thiên nhiên được nhập khẩu từ Anh Và Pháp vì vậy không gây kích ứng da , rất phù hợp với từng loại da mặt . Với công dụng làm trị mụn bọc , cám , đầu đen ,... . \" KEM TRỊ MỤN MENLY \" sẽ giúp bạn lấy lại vẻ đẹp trai và tự tin mọi người người xung quanh ', 10),
+(9, 'KEM TRỊ MỤN MENLY', '370000', 'product_5.png', 1, 1, 'Sản phẩm được làm 100% từ thiên nhiên được nhập khẩu từ Anh Và Pháp vì vậy không gây kích ứng da , rất phù hợp với từng loại da mặt . Với công dụng làm trị mụn bọc , cám , đầu đen ,... . \" KEM TRỊ MỤN MENLY \" sẽ giúp bạn lấy lại vẻ đẹp trai và tự tin mọi người người xung quanh ', 8),
 (10, 'CẶP ĐÔI TRỊ MỤN BỌC - TRỨNG CÁ MENLY TỐT NHẤT', '750000', 'product_9.png', 1, 1, 'Mụn bọc hay trứng cá là vấn đề rất thường gặp ở nam và nữ tuổi trẻ và tuổi dậy thì. Mụn có thể từ mức độ nhẹ chỉ là mụn đầu đen đến những trường hợp mụn bọc, viêm tấy đỏ khắp mặt. Điều trị mụn không đơn giản, cần có sự tư vấn và điều trị từ các bác sĩ chuyên khoa da liễu. Ngoài ra, tuân thủ điều trị và kiên nhẫn cũng là một trong những yếu tố quan trọng góp phần mau lành bệnh. Mỹ phẩm cho nam xin giới thiệu với các bạn một đòng sản phẩm chuyên trị mụn bọc và mụn cám rất hiệu quả , đang được rất nhiều người sử dụng hiện nay .', 10),
 (11, 'BỘ TRỊ MỤN BỌC,TRỨNG CÁ XÓA THÂM MENLY', '950000', 'product_10.png', 1, 1, 'Đầu tiên, trước khi đọc bài viết này, Mỹ Phẩm Cho Nam xin có đôi điều với các bạn. Nếu bạn nào tự nghĩ rằng da mặt của mình là đẹp nhất quả đất rồi, da mặt mình lúc nào cũng căng mịn, chẳng bao giờ có mụn và chất nhờn, hay những vết sẹo mụn, sẹo thâm không tồn tại trên mặt. Nếu vậy THÌ các bạn không cần đọc bài viết này làm gì cả nhé. Vì nó không cần thiết.', 10),
 (12, 'COMBO SẠCH MỤN CÁM, ĐẦU ĐEN MENLY', '560000', 'product_6.png', 1, 1, 'Sản phẩm đầu tiên và cũng là sản phẩm không thể thiếu trong Combo này chính là Sữa Rửa Mặt MENLY. Đây là dòng sản phẩm được sản xuất với công thức độc quyền dành riêng cho làn da nam giới. Là dòng sữa rửa mặt KHÔNG BỌT đầu tiên cho nam giới tại Việt Nam với độ pH 6.0 đạt CHUẨN đảm bảo lấy sạch bụi bẩn, nhờn thừa nhưng vẫn tuyệt đối AN TOÀN cho da.\r\n\r\nSữa Rửa Mặt MENLY với các thành phần tinh túy kết hợp với nhau gồm: Tinh chất nha đam, Đất sét xanh Pháp, Tinh dầu trà xanh, Tinh dầu bạc hà và Tinh dầu vỏ bưởi…', 10),
@@ -365,7 +373,7 @@ ALTER TABLE `taikhoan`
 -- AUTO_INCREMENT cho bảng `danhgia`
 --
 ALTER TABLE `danhgia`
-  MODIFY `MaDG` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `MaDG` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `danhmuc`
@@ -377,7 +385,7 @@ ALTER TABLE `danhmuc`
 -- AUTO_INCREMENT cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `MaHD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `MaHD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT cho bảng `khuyenmai`
