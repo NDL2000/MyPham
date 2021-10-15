@@ -526,7 +526,7 @@
             flex-grow">
                             <ul class="header-nav header-nav-main nav nav-left  nav-uppercase">
                             <li id="menu-item-207" class="has-icon-left menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-207 has-dropdown"><a href="home.php" class="nav-top-link"><span class='menu-image-hover-wrapper'><i class="fas fa-home" id="icon-icon"></i></span><span class="menu-image-title-below menu-image-title">Trang Chủ</span><i class="icon-angle-down" ></i></a>
-                            <li id="menu-item-207" class="has-icon-left menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-207 has-dropdown"><a href="./header.php?url=sanpham" class="nav-top-link"><span class='menu-image-hover-wrapper'><i class="fas fa-air-freshener" id="icon-icon"></i></span><span class="menu-image-title-below menu-image-title">Sản Phẩm</span><i class="icon-angle-down" ></i></a>
+                            <li id="menu-item-207" class="has-icon-left menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-207 has-dropdown"><a href="./header.php?url=sanpham&page=1" class="nav-top-link"><span class='menu-image-hover-wrapper'><i class="fas fa-air-freshener" id="icon-icon"></i></span><span class="menu-image-title-below menu-image-title">Sản Phẩm</span><i class="icon-angle-down" ></i></a>
                             
                                      <ul class='nav-dropdown nav-dropdown-simple'>
                                      <?php  
@@ -535,7 +535,7 @@
                                         while ($row = mysqli_fetch_array($result)){
                                             
                                     ?>
-                                    <li id="menu-item-206" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-206"><a href="./header.php?url=sanpham&dm=<?php echo $row["MaDM"] ?>"><?php echo $row["TenDM"];?></a></li>
+                                    <li id="menu-item-206" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-206"><a href="./header.php?url=sanpham&page=1&dm=<?php echo $row["MaDM"] ?>"><?php echo $row["TenDM"];?></a></li>
                                     <?php }?>
                                 </ul>
                                 </li>
@@ -788,7 +788,7 @@
                                             
                                     ?>
                                         <li id="menu-item-404" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-404">
-                                            <a href="./header.php?url=sanpham&dm=<?php echo $row["MaDM"] ?>"><?php echo $row['TenDM'] ?></a>
+                                            <a href="./header.php?url=sanpham&page=1&dm=<?php echo $row["MaDM"] ?>"><?php echo $row['TenDM'] ?></a>
                                         </li>
                                         <?php }?>
                                     </ul>
@@ -806,6 +806,7 @@
 				switch($_GET['url']){
 					 case 'sanpham': include'./sanpham.php';break;
 					 case 'ctsanpham': include'./ctsanpham.php'; break;
+                     case 'cotloi' : include'./tamnhin_cotloi.php'; break;
 					 
 				}
 			}
@@ -1239,7 +1240,7 @@
                     </div>
                 </li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-6 current_page_item menu-item-34"><a href="" class="nav-top-link"><span class='menu-image-hover-wrapper'><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon1.png" class="menu-image menu-image-title-below" alt="" /><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon_hover1.png" class="hovered-image menu-image-title-below" alt="" style="margin-left: -34px;" /></span><span class="menu-image-title-below menu-image-title">Trang chủ</span></a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-106"><a href="./header.php?url=sanpham" class="nav-top-link"><span class='menu-image-hover-wrapper'><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon_hover123434.png" class="menu-image menu-image-title-below" alt="" /><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon_hover222222222222.png" class="hovered-image menu-image-title-below" alt="" style="margin-left: -34px;" /></span><span class="menu-image-title-below menu-image-title">Sản phẩm</span></a>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-106"><a href="./header.php?url=sanpham&page=1" class="nav-top-link"><span class='menu-image-hover-wrapper'><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon_hover123434.png" class="menu-image menu-image-title-below" alt="" /><img width="34" height="34" src="http://mauweb.monamedia.net/hachi/wp-content/uploads/2020/05/hd_mainmenu_icon_hover222222222222.png" class="hovered-image menu-image-title-below" alt="" style="margin-left: -34px;" /></span><span class="menu-image-title-below menu-image-title">Sản phẩm</span></a>
                     <ul class=children>
                         <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-229"><a href="">Chăm sóc tóc</a>
                             <ul class=nav-sidebar-ul>
