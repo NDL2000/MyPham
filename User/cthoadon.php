@@ -29,16 +29,19 @@
         $result = mysqli_query($conn, $qr);
         if(mysqli_num_rows($result)>0){
             while($row = mysqli_fetch_array($result))
-        $qr1 = "SELECT * FROM taikhoan where TenDangNhap='".$row['TenDangNhap']."'";}
+        $qr1 = "SELECT * FROM hoadon where TenDangNhap='".$row['TenDangNhap']."'";}
         $result1 = mysqli_query($conn, $qr1);
         if(mysqli_num_rows($result1)>0){
             while($row1 = mysqli_fetch_array($result1)){
     ?>
         <tr>
-            <td class="title-cthd">Khách hàng</td><td class="content-cthd"><?php echo $row1['HoTen']; ?></td>
+            <td class="title-cthd">Họ tên người nhận</td><td class="content-cthd"><?php echo $row1['HoTenNN']; ?></td>
         </tr>
         <tr>
-            <td class="title-cthd">Địa chỉ</td><td class="content-cthd"><?php echo $row1['DiaChi']; ?></td>
+            <td class="title-cthd">Số điện thoại</td><td class="content-cthd"><?php echo $row1['SoDienThoaiNN']; ?></td>
+        </tr>
+        <tr>
+            <td class="title-cthd">Địa chỉ</td><td class="content-cthd"><?php echo $row1['DiaChiNN']; ?></td>
         </tr>
     <?php }}?>
     <!-- San pham trong hoa don -->

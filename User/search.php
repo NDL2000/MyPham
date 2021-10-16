@@ -49,7 +49,7 @@
                       
                         if(isset($_POST["search"])){
                         $search = $_POST['search'];
-                           $qr="SELECT km.MaKM,km.TrangThai,sp.HinhAnh,sp.MaSP,sp.TenSP,sp.DonGia,ct.TyLeKM FROM sanpham as sp,ctkhuyenmai as ct,khuyenmai as km WHERE sp.MaSP=ct.MaSP and ct.MaKM=km.MaKM and km.TrangThai='Đang khuyến mãi' and sp.TenSP LIKE '%$search%'";
+                           $qr="SELECT sp.MaSP,sp.TenSP,sp.DonGia,sp.HinhAnh,ct.TyLeKM FROM sanpham as sp LEFT JOIN ctkhuyenmai as ct on sp.MaSP=ct.MaSP WHERE sp.TenSP LIKE '%$search%'";
                            
                         }
                            $result = mysqli_query($conn,$qr);
