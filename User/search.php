@@ -49,7 +49,7 @@
                       
                         if(isset($_POST["search"])){
                         $search = $_POST['search'];
-                           $qr="SELECT sp.MaSP,sp.TenSP,sp.DonGia,sp.HinhAnh,ct.TyLeKM FROM sanpham as sp LEFT JOIN ctkhuyenmai as ct on sp.MaSP=ct.MaSP WHERE sp.TenSP LIKE '%$search%'";
+                           $qr="SELECT sp.MaSP,sp.TenSP,sp.HinhAnh,sp.DonGia,ct.TyLeKM,km.TrangThai FROM sanpham as sp LEFT JOIN ctkhuyenmai as ct on sp.MaSP=ct.MaSP LEFT JOIN khuyenmai as km on km.MaKM=ct.MaKM WHERE sp.TenSP LIKE '%$search%'";
                            
                         }
                            $result = mysqli_query($conn,$qr);
@@ -61,7 +61,7 @@
                                     <div class="col-inner">
                                         <div class="badge-container absolute left top z-1">
                                             <div class="callout badge badge-circle">
-                                                <?php if($row["TyLeKM"]>0){ ?>
+                                                <?php if($row["TyLeKM"]>0&&$row["TrangThai"]=="Đang khuyến mãi"){ ?>
                                                 <div class="badge-inner secondary on-sale">
                                                     <span class="onsale"><?php echo $row["TyLeKM"]." %" ?></span>
                                                 </div>
@@ -89,11 +89,7 @@
                                                 </div>
                                                 <div class="price-wrapper">
                                                     <span class="price">
-                                                        <?php if($row["TyLeKM"]<=0){ ?>
-                                                            <span class="woocommerce-Price-amount amount" style="font-size: 17px !important;">
-                                                            <?php echo number_format($row["DonGia"],"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
-                                                            </span>
-                                                            <?php }else{?>
+                                                    <?php if($row["TyLeKM"]>0&&$row["TrangThai"]=="Đang khuyến mãi"){ ?>
                                                         <del>
                                                             <span class="woocommerce-Price-amount amount" style="font-size: 12px !important;">
                                                             <?php echo number_format($row["DonGia"],"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
@@ -104,6 +100,11 @@
                                                             <?php echo number_format($row["DonGia"]-($row["DonGia"]*$row["TyLeKM"]/100),"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                             </span>
                                                         </ins>
+                                                           
+                                                            <?php }else{?>
+<span class="woocommerce-Price-amount amount" style="font-size: 17px !important;">
+                                                            <?php echo number_format($row["DonGia"],"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                            </span>
                                                         <?php }?>
                                                     </span>
                                                 </div>

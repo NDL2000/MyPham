@@ -25,11 +25,11 @@
         <?php }}?>
     <!-- TT TAIKHOAN -->
     <?php 
-        $qr = "SELECT TenDangNhap FROM hoadon where MaHD='".$_POST['id']."'";
-        $result = mysqli_query($conn, $qr);
-        if(mysqli_num_rows($result)>0){
-            while($row = mysqli_fetch_array($result))
-        $qr1 = "SELECT * FROM hoadon where TenDangNhap='".$row['TenDangNhap']."'";}
+        // $qr = "SELECT TenDangNhap FROM hoadon where MaHD='".$_POST['id']."'";
+        // $result = mysqli_query($conn, $qr);
+        // if(mysqli_num_rows($result)>0){
+        //     while($row = mysqli_fetch_array($result))
+        $qr1 = "SELECT * FROM hoadon where MaHD='".$_POST['id']."'";
         $result1 = mysqli_query($conn, $qr1);
         if(mysqli_num_rows($result1)>0){
             while($row1 = mysqli_fetch_array($result1)){

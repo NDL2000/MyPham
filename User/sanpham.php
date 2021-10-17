@@ -417,7 +417,7 @@
                             <div class="col-inner">
                                 <div class="badge-container absolute left top z-1">
                                     <div class="callout badge badge-circle">
-                                        <?php if($row["TyLeKM"]>0){ ?>
+                                        <?php if($row["TyLeKM"]>0&&$row["TrangThai"]=="Đang khuyến mãi"){ ?>
                                         <div class="badge-inner secondary on-sale">
                                             <span class="onsale"><?php echo $row["TyLeKM"]." %" ?></span>
                                         </div>
@@ -445,7 +445,7 @@
                                         </div>
                                         <div class="price-wrapper">
                                             <span class="price">
-                                                <?php if($row["TyLeKM"]>0){ ?>
+                                            <?php if($row["TyLeKM"]>0&&$row["TrangThai"]=="Đang khuyến mãi"){ ?>
                                                    
                                                 <del>
                                                     <span class="woocommerce-Price-amount amount" style="font-size: 12px !important;">
@@ -457,7 +457,7 @@
                                                     <?php echo number_format($row["DonGia"]-($row["DonGia"]*$row["TyLeKM"]/100),"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                     </span>
                                                 </ins>
-                                                <?php }if($row["TyLeKM"]==NULL){?>
+                                                <?php }else{?>
                                                     <span class="woocommerce-Price-amount amount" style="font-size: 17px !important;">
                                                             <?php echo number_format($row["DonGia"],"0",",",".") ?><span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                             </span>

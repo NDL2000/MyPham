@@ -36,7 +36,7 @@ $(document).ready(function(){
        
     });
 
-    $(".bill").mouseleave(function(){
+    $(".bill").blur(function(){
         var status = $(this).val();
         $("#bill").load("./trangthaidon.php",{"status":status});
     });
