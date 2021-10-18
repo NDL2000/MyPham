@@ -561,37 +561,6 @@
                         <!-- Right Elements -->
                         <div class="flex-col hide-for-medium flex-right">
                             <ul class="header-nav header-nav-main nav nav-right  nav-uppercase">
-                                <li class="header-search header-search-lightbox has-icon">
-                                    <a href="#search-lightbox" aria-label="Tìm kiếm" data-open="#search-lightbox" data-focus="input.search-field" class="is-small">
-                                    <i class="fas fa-search" style="opacity:0.5"></i></a>   
-                                        <!-- <i class="icon-search" style="font-size:16px;"></i> -->
-
-                                    <div id="search-lightbox" class="mfp-hide dark text-center">
-                                        <div class="searchform-wrapper ux-search-box relative form-flat is-large">
-                                            <form role="search" method="get" class="searchform" action="http://mauweb.monamedia.net/hachi/">
-                                                <div class="flex-row relative">
-                                                    <div class="flex-col search-form-categories">
-                                                        <select class="search_categories resize-select mb-0" name="product_cat"><option value="" selected='selected'>All</option><option value="cham-soc-da">Chăm sóc da</option><option value="cham-soc-toc">Chăm sóc tóc</option></select>                                                        </div>
-                                                    <!-- .flex-col -->
-                                                    <div class="flex-col flex-grow">
-                                                        <label class="screen-reader-text" for="woocommerce-product-search-field-0">Tìm kiếm:</label>
-                                                        <input type="search" id="woocommerce-product-search-field-0" class="search-field mb-0" placeholder="Tìm kiếm" value="" name="s" />
-                                                        <input type="hidden" name="post_type" value="product" />
-                                                    </div>
-                                                    <!-- .flex-col -->
-                                                    <div class="flex-col">
-                                                        <button type="submit" value="Tìm kiếm" class="ux-search-submit submit-button secondary button icon mb-0">
-                                                        <i class="fas fa-search"></i>			
-                                                    </button>
-                                                    </div>
-                                                    <!-- .flex-col -->
-                                                </div>
-                                                <!-- .flex-row -->
-                                                <div class="live-search-results text-left z-top"></div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </li>
                                 <li class="cart-item has-icon has-dropdown">
 
                                     <a href="" title="Giỏ hàng" class="header-cart-link is-small">
