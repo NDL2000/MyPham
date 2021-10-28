@@ -143,7 +143,7 @@ img.emoji {
 				 while($row = mysqli_fetch_array($result)){  
 			?>
 			<div class="product-info summary entry-summary col col-fit product-summary">
-				<nav class="woocommerce-breadcrumb breadcrumbs uppercase"><a href="http://mauweb.monamedia.net/hachi">Trang chủ</a> <span class="divider">&#47;</span> <a href="./header.php?url=sanpham&id<?php echo $row["MaSP"] ?>"><?php echo $row["TenDM"] ?></a> <span class="divider">&#47;</span> <a href="http://mauweb.monamedia.net/hachi/danh-muc-san-pham/cham-soc-toc/dau-xa/"></a></nav>
+				<nav class="woocommerce-breadcrumb breadcrumbs uppercase"><a href="../User/home.php">Trang chủ</a> <span class="divider">&#47;</span> <a href="./header.php?url=sanpham&id<?php echo $row["MaSP"] ?>"><?php echo $row["TenDM"] ?></a> <span class="divider">&#47;</span> <a href="http://mauweb.monamedia.net/hachi/danh-muc-san-pham/cham-soc-toc/dau-xa/"></a></nav>
 					<h2> <?php echo $row["TenSP"] ?></h2>
 					<h1 class="product-title product_title entry-title"></h1>
 

@@ -693,7 +693,7 @@
                     <div class="flex-col flex-grow medium-text-center">
                         <div class="is-large">
                             <nav class="woocommerce-breadcrumb breadcrumbs uppercase">
-                                <a href="http://mauweb.monamedia.net/hachi">Trang chủ</a>
+                                <a href="../User/home.php">Trang chủ</a>
                                 <span class="divider">&#47;</span>
                                 Cửa hàng
                             </nav>
