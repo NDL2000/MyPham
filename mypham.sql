@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 14, 2021 lúc 07:13 AM
+-- Thời gian đã tạo: Th10 28, 2021 lúc 10:30 AM
 -- Phiên bản máy phục vụ: 10.4.20-MariaDB
 -- Phiên bản PHP: 8.0.8
 
@@ -41,7 +41,10 @@ CREATE TABLE `cthoadon` (
 --
 
 INSERT INTO `cthoadon` (`MaHD`, `MaSP`, `TenKH`, `GiaGoc`, `TyLeKM`, `SoLuongMua`) VALUES
-(16, 9, 'Nguyễn Đức Lý', '370000', 0, 1);
+(16, 9, 'Nguyễn Đức Lý', '370000', 0, 1),
+(17, 8, 'Nguyễn Đức Lý', '125000', 0, 1),
+(18, 8, 'Nguyễn Đức Lý', '125000', 0, 1),
+(18, 11, 'Nguyễn Đức Lý', '950000', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -62,8 +65,8 @@ CREATE TABLE `ctkhuyenmai` (
 --
 
 INSERT INTO `ctkhuyenmai` (`MaKM`, `MaSP`, `TyLeKM`, `GhiChu`, `SoLuongKM`) VALUES
-(9, 8, 10, NULL, 10),
-(9, 11, 5, NULL, 10),
+(9, 8, 10, NULL, 8),
+(9, 11, 5, NULL, 9),
 (9, 14, 5, NULL, 10),
 (9, 20, 10, NULL, 10),
 (9, 22, 5, NULL, 10);
@@ -134,7 +137,9 @@ CREATE TABLE `hoadon` (
 --
 
 INSERT INTO `hoadon` (`TenDangNhap`, `MaHD`, `NgayHD`, `TrangThai`, `GhiChu`, `HoTenNN`, `SoDienThoaiNN`, `DiaChiNN`) VALUES
-('nguyenducly2000@gmail.com', 16, '2021-10-14', 'Chờ xét duyệt', '', 'Nguyễn Đức Lý', '0963700285', 'Hùng Vương');
+('nguyenducly2000@gmail.com', 16, '2021-10-14', 'Đã giao', '', 'Nguyễn Đức Lý', '0963700285', 'Hùng Vương'),
+('nguyenducly2000@gmail.com', 17, '2021-10-17', 'Đã giao', '', 'Nguyễn Đức Lý', '0963700285', 'Hùng Vương'),
+('nguyenducly2000@gmail.com', 18, '2021-10-17', 'Chờ xét duyệt', '', 'Nguyễn Đức Lý', '0963700285', 'Hùng Vương');
 
 -- --------------------------------------------------------
 
@@ -156,12 +161,7 @@ CREATE TABLE `khuyenmai` (
 
 INSERT INTO `khuyenmai` (`MaKM`, `TenKM`, `TuNgay`, `DenNgay`, `TrangThai`) VALUES
 (6, 'ABC', '2021-09-17', '2021-09-18', 'Hết khuyến mãi'),
-(9, 'Tết', '2021-10-02', '2021-10-04', 'Hết khuyến mãi'),
-(12, 'a', '2021-09-27', '2021-09-26', 'Hết khuyến mãi'),
-(13, 'aaaa', '2021-09-27', '2021-09-26', 'Hết khuyến mãi'),
-(14, 'rt', '2021-09-27', '2021-09-26', 'Hết khuyến mãi'),
-(15, 'aaaaa', '2021-09-27', '2021-09-26', 'Hết khuyến mãi'),
-(18, 'aa', '2021-09-27', '2021-09-28', 'Hết khuyến mãi');
+(9, 'Tết', '2021-10-17', '2021-10-18', 'Đang khuyến mãi');
 
 -- --------------------------------------------------------
 
@@ -247,10 +247,10 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`MaSP`, `TenSP`, `DonGia`, `HinhAnh`, `MaDM`, `TrangThai`, `MoTa`, `SoLuongTon`) VALUES
-(8, 'COMBO MINI TRỊ MỤN SIÊU HIỆU QUẢ TRONG 7 NGÀY', '125000', 'product_8.png', 1, 1, 'Có Combo Mini Trị Mụn Siêu Hiệu Quả Trong 7 Ngày việc trị mụn trở nên đơn giản hơn . M.E.N.L.Y xin giới thiệu đến các bạn bộ Combo Mini Trị Mụn Siêu Hiệu Quả Chỉ Trong 7 Ngày được tách ra từ bộ trị mụn siêu quả với vóc dáng nhỏ bé, tiện lợi cho bạn khi mang theo bên người. Với thành phần 100% thiên nhiên an toàn cho da. M.E.N.L.Y tự hào là mỹ phẩm thiên nhiên đầu tiên tại Việt Nam ', 10),
+(8, 'COMBO MINI TRỊ MỤN SIÊU HIỆU QUẢ TRONG 7 NGÀY', '125000', 'product_8.png', 1, 1, 'Có Combo Mini Trị Mụn Siêu Hiệu Quả Trong 7 Ngày việc trị mụn trở nên đơn giản hơn . M.E.N.L.Y xin giới thiệu đến các bạn bộ Combo Mini Trị Mụn Siêu Hiệu Quả Chỉ Trong 7 Ngày được tách ra từ bộ trị mụn siêu quả với vóc dáng nhỏ bé, tiện lợi cho bạn khi mang theo bên người. Với thành phần 100% thiên nhiên an toàn cho da. M.E.N.L.Y tự hào là mỹ phẩm thiên nhiên đầu tiên tại Việt Nam ', 8),
 (9, 'KEM TRỊ MỤN MENLY', '370000', 'product_5.png', 1, 1, 'Sản phẩm được làm 100% từ thiên nhiên được nhập khẩu từ Anh Và Pháp vì vậy không gây kích ứng da , rất phù hợp với từng loại da mặt . Với công dụng làm trị mụn bọc , cám , đầu đen ,... . \" KEM TRỊ MỤN MENLY \" sẽ giúp bạn lấy lại vẻ đẹp trai và tự tin mọi người người xung quanh ', 8),
 (10, 'CẶP ĐÔI TRỊ MỤN BỌC - TRỨNG CÁ MENLY TỐT NHẤT', '750000', 'product_9.png', 1, 1, 'Mụn bọc hay trứng cá là vấn đề rất thường gặp ở nam và nữ tuổi trẻ và tuổi dậy thì. Mụn có thể từ mức độ nhẹ chỉ là mụn đầu đen đến những trường hợp mụn bọc, viêm tấy đỏ khắp mặt. Điều trị mụn không đơn giản, cần có sự tư vấn và điều trị từ các bác sĩ chuyên khoa da liễu. Ngoài ra, tuân thủ điều trị và kiên nhẫn cũng là một trong những yếu tố quan trọng góp phần mau lành bệnh. Mỹ phẩm cho nam xin giới thiệu với các bạn một đòng sản phẩm chuyên trị mụn bọc và mụn cám rất hiệu quả , đang được rất nhiều người sử dụng hiện nay .', 10),
-(11, 'BỘ TRỊ MỤN BỌC,TRỨNG CÁ XÓA THÂM MENLY', '950000', 'product_10.png', 1, 1, 'Đầu tiên, trước khi đọc bài viết này, Mỹ Phẩm Cho Nam xin có đôi điều với các bạn. Nếu bạn nào tự nghĩ rằng da mặt của mình là đẹp nhất quả đất rồi, da mặt mình lúc nào cũng căng mịn, chẳng bao giờ có mụn và chất nhờn, hay những vết sẹo mụn, sẹo thâm không tồn tại trên mặt. Nếu vậy THÌ các bạn không cần đọc bài viết này làm gì cả nhé. Vì nó không cần thiết.', 10),
+(11, 'BỘ TRỊ MỤN BỌC,TRỨNG CÁ XÓA THÂM MENLY', '950000', 'product_10.png', 1, 1, 'Đầu tiên, trước khi đọc bài viết này, Mỹ Phẩm Cho Nam xin có đôi điều với các bạn. Nếu bạn nào tự nghĩ rằng da mặt của mình là đẹp nhất quả đất rồi, da mặt mình lúc nào cũng căng mịn, chẳng bao giờ có mụn và chất nhờn, hay những vết sẹo mụn, sẹo thâm không tồn tại trên mặt. Nếu vậy THÌ các bạn không cần đọc bài viết này làm gì cả nhé. Vì nó không cần thiết.', 9),
 (12, 'COMBO SẠCH MỤN CÁM, ĐẦU ĐEN MENLY', '560000', 'product_6.png', 1, 1, 'Sản phẩm đầu tiên và cũng là sản phẩm không thể thiếu trong Combo này chính là Sữa Rửa Mặt MENLY. Đây là dòng sản phẩm được sản xuất với công thức độc quyền dành riêng cho làn da nam giới. Là dòng sữa rửa mặt KHÔNG BỌT đầu tiên cho nam giới tại Việt Nam với độ pH 6.0 đạt CHUẨN đảm bảo lấy sạch bụi bẩn, nhờn thừa nhưng vẫn tuyệt đối AN TOÀN cho da.\r\n\r\nSữa Rửa Mặt MENLY với các thành phần tinh túy kết hợp với nhau gồm: Tinh chất nha đam, Đất sét xanh Pháp, Tinh dầu trà xanh, Tinh dầu bạc hà và Tinh dầu vỏ bưởi…', 10),
 (13, 'COMBO DƯỠNG DA HOÀN HẢO TOÀN THÂN MENLY', '1200000', 'product_11.png', 2, 1, 'COMBO DƯỠNG DA HOÀN HẢO TOÀN THÂN M.E.N.L.Y tập hợp các sản phẩm dưỡng trắng cho mặt và cơ thể cực kỳ hiệu quả, 100% THIÊN NHIÊN nên an toàn cho mọi loại da.\r\n\r\nCung cấp dưỡng chất làm trắng da an toàn ( Anphal Arburin và AHA độc quyền) giúp nuôi dưỡng từ tế bào, giúp mang lại cho nam giới làn  trắng khỏe tự nhiên và nam tính nhất.\r\n\r\nKhông bắt nắng, không bào mòn da.', 10),
 (14, 'BỘ TỨ DƯỠNG DA SẠCH MỤN MENLY', '1250000', 'product_12.png', 2, 1, 'Sở hữu làn da trắng, sạch mụn không chỉ là mơ ước của riêng phái nữ. Hiểu được tâm lý này của các đấng mài râu, BỘ TỨ DƯỠNG DA SẠCH MỤN MENLY sẽ giúp anh em có được làn da như ý!\r\n\r\nSử dụng trọn bộ mỹ phẩm chăm sóc da bao gồm: Sữa rửa mặt MENY, Toner dưỡng ẩm MENLY, Serum dưỡng trắng MENLY và Kem trị mụn MENLY sẽ mang lại cho bạn những kết quả ngoài mức mong đợi. BỘ TỨ DƯỠNG TRẮNG DA SẠCH MỤN MENLY với chiết xuất từ thiên nhiên giúp làn da nam giới được nâng niu trọn vẹn. \r\n\r\nHãy nhanh tay đặt hàng để sở hữu cho mình BỘ TỨ DƯỠNG TRẮNG DA SẠCH MỤN MENLY - làn da sáng mịn trong tầm tay bạn!', 10),
@@ -385,7 +385,7 @@ ALTER TABLE `danhmuc`
 -- AUTO_INCREMENT cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `MaHD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `MaHD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT cho bảng `khuyenmai`
